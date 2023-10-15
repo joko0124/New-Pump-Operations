@@ -1,0 +1,267 @@
+﻿Build1=PumpOp,bwsi.PumpOperations
+File1=bold.ttf
+File10=ListPSIRecords.bal
+File11=ListPumpTimeRecords.bal
+File12=login.bal
+File13=logo.png
+File14=mainmenu.bal
+File15=mainscreen.bal
+File16=MasterDB.db
+File17=non-op.png
+File18=Production.bal
+File19=production.png
+File2=hamburger.png
+File20=profile3.jpg
+File21=PumpTimeRecords.bal
+File22=repairs.png
+File23=reports.png
+File24=roboto-bold.ttf
+File25=roboto-regular.ttf
+File26=ultralight.ttf
+File27=wb.png
+File3=header.jpg
+File4=header.png
+File5=jo.png
+File6=light.ttf
+File7=ListChlorinatorRecords.bal
+File8=ListFMRdg.bal
+File9=ListPSIDistRecords.bal
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
+FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup23=Default Group
+FileGroup24=Default Group
+FileGroup25=Default Group
+FileGroup26=Default Group
+FileGroup27=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=core
+Library10=javaobject
+Library11=json
+Library12=maskededittext
+Library13=materialdialogs
+Library14=mscircularimageview
+Library15=phone
+Library16=reflection
+Library17=runtimepermissions
+Library18=randomaccessfile
+Library19=sql
+Library2=appcompat
+Library20=stringfunctions
+Library21=stringutils
+Library22=wobblemenu
+Library23=xui views
+Library24=xcustomlistview
+Library25=viewsex
+Library26=xui
+Library27=xmllayoutbuilder
+Library28=b4xdrawer
+Library3=bitmapcreator
+Library4=dateutils
+Library5=designsupport
+Library6=fiddlearound
+Library7=http
+Library8=httputils2
+Library9=ime
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(	~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="28"/>~\n~<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />~\n~<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>~\n~<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>~\n~<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true"~\n~    android:smallScreens="true"~\n~    android:windowActionBar="false"~\n~    android:windowFullscreen="true"~\n~    android:windowNoTitle="true"~\n~	android:anyDensity="true"/>)~\n~AddManifestText(<uses-feature android:name="android.hardware.telephony" android:required="false" />)~\n~AddManifestText(<uses-feature android:name="android.hardware.camera" android:required="false" />)~\n~AddManifestText(<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />)~\n~AddManifestText(<uses-feature android:name="android.hardware.camera.flash" android:required="false" />)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetActivityAttribute(main, android:windowSoftInputMode, adjustPan|stateHidden)~\n~SetManifestAttribute(android:installLocation, "auto")~\n~~\n~'End of default text.~\n~SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~CreateResource(values, themes.xml,~\n~<resources>~\n~    <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">~\n~		<item name="android:colorPrimary">#17a2b7</item> <!-- action bar -->~\n~		<item name="android:colorPrimaryDark">#1290a3</item> <!-- status bar -->~\n~		<item name="android:colorAccent">#FF8300</item> <!-- checkboxes,, switches,, etc. #0091ea -->~\n~		<item name="android:actionMenuTextColor">#0000FF</item>~\n~		~\n~		<item name="android:textColorPrimary">#007BFF</item> <!-- ? -->~\n~		<item name="android:textColorSecondary">#206671</item> <!-- inactive editText line,, scrollbar -->~\n~		<item name="android:textColor">#000000</item> <!-- menu text,, msgbox title -->~\n~		<item name="android:textColorLink">#44e3ff</item>~\n~		<item name="android:textColorHighlight">#00b07e</item>~\n~		~\n~		<item name="android:windowNoTitle">true</item>~\n~		<item name="android:windowActionBar">true</item>~\n~		<item name="android:windowActionModeOverlay">true</item>~\n~		~\n~		<item name="textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>~\n~	    	<item name="android:textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>~\n~	    	<item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>~\n~    		<item name="android:textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>~\n~    		<item name="popupMenuStyle">@style/myPopupMenuStyle</item>~\n~    		<item name="android:popupMenuStyle">@style/myPopupMenuStyle</item>~\n~	</style>~\n~	<style name="myPopupMenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu">~\n~		<item name="android:popupBackground">#1976D2</item>~\n~	</style>~\n~~\n~	<style name="myPopupMenuTextAppearanceSmall" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">~\n~	    <item name="android:textColor">#FFFFFF</item>~\n~	</style>~\n~~\n~	<style name="myPopupMenuTextAppearanceLarge" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large">~\n~	    <item name="android:textColor">#FFFFFF</item>~\n~	</style>~\n~  <style name="MyAppOptionsMenu">~\n~      <item name="android:popupBackground">#1A535C</item>~\n~      <item name="android:colorBackground">#1A535C</item>~\n~  </style>~\n~  	<style name="ToolbarMenu" parent="Base.ThemeOverlay.AppCompat.ActionBar">~\n~	    <item name="android:textColorPrimary">#fff</item>~\n~	    <item name="android:colorBackground">#4ECDC4</item>~\n~	</style>~\n~~\n~</resources>~\n~)~\n~~\n~AddPermission(android.permission.ACCESS_SUPERUSER)~\n~AddPermission(android.permission.CHANGE_WIFI_STATE)~\n~AddPermission(android.permission.ACCESS_WIFI_STATE)~\n~AddPermission(android.permission.READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.WRITE_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.BLUETOOTH) ~\n~AddPermission(android.permission.BLUETOOTH_ADMIN)~\n~AddPermission(android.permission.BLUETOOTH_PRIVILEGED)~\n~AddPermission(android.permission.BIND_PRINT_SERVICE)~\n~AddPermission(android.permission.CAMERA)~\n~AddPermission(android.permission.VIBRATE)
+Module1=actProduction
+Module2=|relative|..\AddEditTimeRecord
+Module3=|relative|..\DBaseFunctions
+Module4=DBUtils
+Module5=|relative|..\GlobalVar
+Module6=|relative|..\MainScreen
+Module7=MyFunctions
+Module8=MyScale
+Module9=Starter
+NumberOfFiles=27
+NumberOfLibraries=28
+NumberOfModules=9
+Version=9.9
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: BWSI Pump Operations
+	#VersionCode: 1
+	#VersionName: Version 1.0
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+	#AdditionalRes: C:\New Pump Operations\resource
+	#AdditionalRes: C:\New Pump Operations\md-app\res
+	#AdditionalRes: C:\New Pump Operations\md-lib\res
+#End Region
+	#Extends: android.support.v4.widget.DrawerLayout
+	#Extends: android.support.v7.app.AppCompatActivity
+
+#Region  Activity Attributes
+	#FullScreen: true
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+
+	Dim mySnack As DSSnackbar
+	Dim imeKeyboard As IME
+
+	Private btnLogin As B4XView
+	Private chkShowPass As B4XView
+	Private txtPassword As EditText
+	Private txtUserName As EditText
+	
+	Dim CDtxtBox As ColorDrawable
+	Private lblCheck As B4XView
+	
+	Dim isChecked As Boolean
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("login")
+	CDtxtBox.Initialize(Colors.Transparent,0)
+	
+	txtUserName.Background = CDtxtBox
+	txtPassword.Background = CDtxtBox
+	chkShowPass.Checked = False
+	isChecked = False
+	lblCheck.Text = ""
+	txtPassword.PasswordMode = True
+	txtUserName.Text = "joko"
+	txtPassword.Text = "
+End Sub
+
+Sub Activity_Resume
+	txtUserName.Background = CDtxtBox
+	txtPassword.Background = CDtxtBox
+	chkShowPass.Checked = False
+	isChecked = False
+	lblCheck.Text = ""
+	txtPassword.PasswordMode = True
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub Activity_PermissionResult (Permission As String, Result As Boolean)
+	
+End Sub
+
+Sub chkShowPass_CheckedChange(Checked As Boolean)
+	txtPassword.PasswordMode = Checked
+	If Checked = True Then
+		lblCheck.Text = ""
+	Else
+		lblCheck.Text = Chr(0xE5CA)
+	End If
+	isChecked = Checked
+End Sub
+
+Sub btnLogin_Click
+	Dim rsUser As Cursor
+	
+	If GlobalVar.SF.Len(GlobalVar.SF.Trim(txtUserName.Text)) = 0 Then
+		Return
+	End If
+	
+	If GlobalVar.SF.Len(GlobalVar.SF.Trim(txtPassword.Text)) = 0 Then
+		Return
+	End If
+	
+	Starter.strCriteria = "SELECT * FROM tblUsers " & _
+						  "WHERE UserName = '" & txtUserName.Text & "'"
+	rsUser = Starter.DBCon.ExecQuery(Starter.strCriteria)
+	If rsUser.RowCount > 0 Then
+		rsUser.Position = 0
+		If rsUser.GetString("UserPassword") <> txtPassword.Text Then
+			
+			mySnack.Initialize("", Activity, "Password is Incorrect", mySnack.DURATION_SHORT)
+			MyFunctions.SetSnackBarTextColor(mySnack, Colors.White)
+			MyFunctions.SetSnackBarBackground(mySnack, GlobalVar.RedColor)
+			mySnack.Show
+
+			txtPassword.Text = ""
+			txtPassword.RequestFocus
+			imeKeyboard.ShowKeyboard(txtPassword)
+
+			Return
+		Else
+			
+		End If
+	Else 'User already in Local Database
+		mySnack.Initialize("TryOtherUser", Activity, "User Name not Found on Local Database", mySnack.DURATION_SHORT)
+		MyFunctions.SetSnackBarTextColor(mySnack, Colors.White)
+		MyFunctions.SetSnackBarBackground(mySnack, GlobalVar.RedColor)
+		mySnack.SetAction($"Retry"$)
+		mySnack.Show
+		Return
+	End If
+	StartActivity(MainScreen)
+End Sub
+
+Private Sub TryOtherUser_Click
+	txtUserName.Text = ""
+	txtPassword.Text = ""
+	txtUserName.RequestFocus
+	imeKeyboard.ShowKeyboard(txtUserName)
+End Sub
+
+Sub lblCheck_Click
+	If isChecked = False Then
+		isChecked = True
+		lblCheck.Text = ""
+	Else
+		isChecked = False
+		lblCheck.Text = Chr(0xE5CA)
+	End If
+	chkShowPass_CheckedChange(isChecked)
+End Sub
+
+Private Sub isLocallyExisting(sUserName As String) As Boolean
+	Dim bRetVal As Boolean = False
+	Dim rsTemp As Cursor
+	Try
+		Starter.strCriteria = "SELECT UserID FROM tblUsers WHERE UserName ='" & sUserName & "'"
+		rsTemp = Starter.DBCon.ExecQuery(Starter.strCriteria)
+		LogColor(Starter.strCriteria, GlobalVar.RedColor)
+		If rsTemp.RowCount > 0 Then
+			bRetVal = True
+		Else
+			bRetVal = False
+		End If
+	Catch
+		bRetVal = False
+		Log(LastException)
+	End Try
+	rsTemp.Close
+	Return bRetVal
+End Sub
+
+Sub txtPassword_EnterPressed
+	btnLogin_Click
+End Sub

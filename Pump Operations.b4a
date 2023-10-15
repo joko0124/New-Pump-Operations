@@ -324,9 +324,9 @@ Version=10
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: unspecified
 	#CanInstallToExternalStorage: False
-	#AdditionalRes: C:\New Pump Operations\resource
-	#AdditionalRes: C:\New Pump Operations\md-app\res
-	#AdditionalRes: C:\New Pump Operations\md-lib\res
+	#AdditionalRes: C:\New-Pump-Operations\resource
+	#AdditionalRes: C:\New-Pump-Operations\md-app\res
+	#AdditionalRes: C:\New-Pump-Operations\md-lib\res
 	#AdditionalRes: ..\resAX_CustomAlertViewDialog
 	
 #End Region

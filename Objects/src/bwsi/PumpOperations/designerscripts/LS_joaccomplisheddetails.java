@@ -1,0 +1,96 @@
+package bwsi.PumpOperations.designerscripts;
+import anywheresoftware.b4a.objects.TextViewWrapper;
+import anywheresoftware.b4a.objects.ImageViewWrapper;
+import anywheresoftware.b4a.BA;
+
+
+public class LS_joaccomplisheddetails{
+
+public static void LS_general(java.util.LinkedHashMap<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) {
+anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
+anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
+views.get("pnlmain").vw.setTop((int)((0d / 100 * height)));
+views.get("pnlmain").vw.setHeight((int)((100d / 100 * height) - ((0d / 100 * height))));
+views.get("pnlmain").vw.setLeft((int)((0d / 100 * width)));
+views.get("pnlmain").vw.setWidth((int)((100d / 100 * width) - ((0d / 100 * width))));
+views.get("lbljotitle").vw.setLeft((int)((0d / 100 * width)));
+views.get("lbljotitle").vw.setWidth((int)((views.get("pnlmain").vw.getWidth()) - ((0d / 100 * width))));
+views.get("lbljotitle").vw.setTop((int)((0d / 100 * height)));
+views.get("lbljocat").vw.setLeft((int)((1d / 100 * width)));
+views.get("lbljocat").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(1d / 100 * width) - ((1d / 100 * width))));
+views.get("lbljocat").vw.setTop((int)((views.get("lbljotitle").vw.getTop() + views.get("lbljotitle").vw.getHeight())+(10d * scale)));
+views.get("lbljo_no").vw.setTop((int)((views.get("lbljocat").vw.getTop() + views.get("lbljocat").vw.getHeight())+(5d * scale)));
+views.get("lbljo_no").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblspacer1").vw.setTop((int)((views.get("lbljo_no").vw.getTop())));
+views.get("lblspacer1").vw.setLeft((int)((views.get("lbljo_no").vw.getLeft() + views.get("lbljo_no").vw.getWidth())+(5d * scale)));
+views.get("lbljono").vw.setTop((int)((views.get("lbljo_no").vw.getTop())));
+views.get("lbljono").vw.setLeft((int)((views.get("lblspacer1").vw.getLeft() + views.get("lblspacer1").vw.getWidth())-(5d * scale)));
+views.get("lbljono").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("lblspacer1").vw.getLeft() + views.get("lblspacer1").vw.getWidth())-(5d * scale))));
+views.get("lblref_no").vw.setTop((int)((views.get("lbljo_no").vw.getTop() + views.get("lbljo_no").vw.getHeight())+(2d * scale)));
+views.get("lblref_no").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblspacer2").vw.setTop((int)((views.get("lblref_no").vw.getTop())));
+views.get("lblspacer2").vw.setLeft((int)((views.get("lblref_no").vw.getLeft() + views.get("lblref_no").vw.getWidth())+(5d * scale)));
+views.get("lblrefno").vw.setTop((int)((views.get("lblref_no").vw.getTop())));
+views.get("lblrefno").vw.setLeft((int)((views.get("lblspacer2").vw.getLeft() + views.get("lblspacer2").vw.getWidth())-(5d * scale)));
+views.get("lblrefno").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("lblspacer2").vw.getLeft() + views.get("lblspacer2").vw.getWidth())-(5d * scale))));
+views.get("lblcust_name").vw.setTop((int)((views.get("lblref_no").vw.getTop() + views.get("lblref_no").vw.getHeight())+(2d * scale)));
+views.get("lblcust_name").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblspacer3").vw.setTop((int)((views.get("lblcust_name").vw.getTop())));
+views.get("lblspacer3").vw.setLeft((int)((views.get("lblcust_name").vw.getLeft() + views.get("lblcust_name").vw.getWidth())+(5d * scale)));
+views.get("lblcustname").vw.setTop((int)((views.get("lblcust_name").vw.getTop())));
+views.get("lblcustname").vw.setLeft((int)((views.get("lblspacer3").vw.getLeft() + views.get("lblspacer3").vw.getWidth())-(5d * scale)));
+views.get("lblcustname").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("lblspacer3").vw.getLeft() + views.get("lblspacer3").vw.getWidth())-(5d * scale))));
+views.get("pnladdress").vw.setTop((int)((views.get("lblcust_name").vw.getTop() + views.get("lblcust_name").vw.getHeight())+(2d * scale)));
+views.get("pnladdress").vw.setLeft((int)((views.get("lblcust_name").vw.getLeft())));
+views.get("pnladdress").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("lblcust_name").vw.getLeft()))));
+views.get("lblcustaddress").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblcustaddress").vw.setWidth((int)((views.get("pnladdress").vw.getWidth())-(1d / 100 * width) - ((2d / 100 * width))));
+views.get("lblcustaddress").vw.setTop((int)((0.75d / 100 * height)));
+views.get("lblcustaddress").vw.setHeight((int)((views.get("pnladdress").vw.getHeight())-(0.75d / 100 * height) - ((0.75d / 100 * height))));
+views.get("lblfindingstitle").vw.setTop((int)((views.get("pnladdress").vw.getTop() + views.get("pnladdress").vw.getHeight())+(5d * scale)));
+views.get("lblfindingstitle").vw.setLeft((int)((0d / 100 * width)));
+views.get("lblfindingstitle").vw.setWidth((int)((views.get("pnlmain").vw.getWidth()) - ((0d / 100 * width))));
+views.get("label1").vw.setTop((int)((views.get("lblfindingstitle").vw.getTop() + views.get("lblfindingstitle").vw.getHeight())+(10d * scale)));
+views.get("label1").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblacctclass").vw.setTop((int)((views.get("label1").vw.getTop())));
+views.get("lblacctclass").vw.setLeft((int)((views.get("label1").vw.getLeft() + views.get("label1").vw.getWidth())+(5d * scale)));
+views.get("lblacctclass").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("label1").vw.getLeft() + views.get("label1").vw.getWidth())+(5d * scale))));
+views.get("label2").vw.setTop((int)((views.get("label1").vw.getTop() + views.get("label1").vw.getHeight())+(5d * scale)));
+views.get("label2").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblcontype").vw.setTop((int)((views.get("label2").vw.getTop())));
+views.get("lblcontype").vw.setLeft((int)((views.get("label2").vw.getLeft() + views.get("label2").vw.getWidth())+(5d * scale)));
+views.get("lblcontype").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("label2").vw.getLeft() + views.get("label2").vw.getWidth())+(5d * scale))));
+views.get("label3").vw.setTop((int)((views.get("label2").vw.getTop() + views.get("label2").vw.getHeight())+(5d * scale)));
+views.get("label3").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblremarks").vw.setTop((int)((views.get("label3").vw.getTop() + views.get("label3").vw.getHeight())+(2d * scale)));
+views.get("lblremarks").vw.setLeft((int)((views.get("label3").vw.getLeft())));
+views.get("lblremarks").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("label3").vw.getLeft()))));
+views.get("lblaccomplishedtitle").vw.setTop((int)((views.get("lblremarks").vw.getTop() + views.get("lblremarks").vw.getHeight())+(5d * scale)));
+views.get("lblaccomplishedtitle").vw.setLeft((int)((0d / 100 * width)));
+views.get("lblaccomplishedtitle").vw.setWidth((int)((views.get("pnlmain").vw.getWidth()) - ((0d / 100 * width))));
+views.get("label4").vw.setTop((int)((views.get("lblaccomplishedtitle").vw.getTop() + views.get("lblaccomplishedtitle").vw.getHeight())+(10d * scale)));
+views.get("label4").vw.setLeft((int)((2d / 100 * width)));
+views.get("lbldatesstart").vw.setTop((int)((views.get("label4").vw.getTop())));
+views.get("lbldatesstart").vw.setLeft((int)((views.get("label4").vw.getLeft() + views.get("label4").vw.getWidth())+(5d * scale)));
+views.get("lbldatesstart").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("label4").vw.getLeft() + views.get("label4").vw.getWidth())+(5d * scale))));
+views.get("label5").vw.setTop((int)((views.get("label4").vw.getTop() + views.get("label4").vw.getHeight())+(3d * scale)));
+views.get("label5").vw.setLeft((int)((2d / 100 * width)));
+views.get("lbldateaccomplished").vw.setTop((int)((views.get("label5").vw.getTop())));
+views.get("lbldateaccomplished").vw.setLeft((int)((views.get("label5").vw.getLeft() + views.get("label5").vw.getWidth())+(5d * scale)));
+views.get("lbldateaccomplished").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("label5").vw.getLeft() + views.get("label5").vw.getWidth())+(5d * scale))));
+views.get("label6").vw.setTop((int)((views.get("label5").vw.getTop() + views.get("label5").vw.getHeight())+(3d * scale)));
+views.get("label6").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblaccomplishedby").vw.setTop((int)((views.get("label6").vw.getTop() + views.get("label6").vw.getHeight())));
+views.get("lblaccomplishedby").vw.setLeft((int)((views.get("label6").vw.getLeft())));
+views.get("lblaccomplishedby").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((views.get("label6").vw.getLeft()))));
+views.get("btnprint").vw.setLeft((int)((3d / 100 * width)));
+views.get("btnprint").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(67d / 100 * width) - ((3d / 100 * width))));
+views.get("btnprint").vw.setTop((int)((90d / 100 * height)));
+views.get("btnprint").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(1d / 100 * height) - ((90d / 100 * height))));
+views.get("btnok").vw.setLeft((int)((67d / 100 * width)));
+views.get("btnok").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(3d / 100 * width) - ((67d / 100 * width))));
+views.get("btnok").vw.setTop((int)((90d / 100 * height)));
+views.get("btnok").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(1d / 100 * height) - ((90d / 100 * height))));
+
+}
+}

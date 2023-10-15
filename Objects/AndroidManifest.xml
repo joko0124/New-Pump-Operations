@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="bwsi.PumpOperations"
+	android:versionCode="1"
+	android:versionName="Version 1.0"
+	android:installLocation="auto">
+	
+	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="28"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+	<supports-screens android:largeScreens="true" 
+	    android:normalScreens="true"
+	    android:smallScreens="true"
+	    android:windowActionBar="false"
+	    android:windowFullscreen="false"
+	    android:windowNoTitle="true"
+		android:anyDensity="true"/>
+	<uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+	<uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+	<uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+	<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+	<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+	<uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> 
+	<uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+	<uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
+	<uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+	<uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" />
+	<uses-feature android:name="android.hardware.telephony" android:required="false" />
+	<uses-feature android:name="android.hardware.camera" android:required="false" />
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+	<uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
+	<permission android:name="bwsi.PumpOperations.permission.C2D_MESSAGE"
+	  android:protectionLevel="signature" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+	<uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+	<uses-permission android:name="android.permission.BIND_PRINT_SERVICE"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+	<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<uses-permission android:name="bwsi.PumpOperations.permission.C2D_MESSAGE"/>
+	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+	<application
+		android:name="androidx.multidex.MultiDexApplication"
+		android:icon="@drawable/icon"
+		android:label="BWSI Operations"
+		android:theme="@style/MyAppTheme"
+		android:allowBackup="false">
+		
+		<meta-data
+		    android:name="com.google.android.gms.version"
+		    android:value="@integer/google_play_services_version" />
+		<activity android:name="com.google.android.gms.common.api.GoogleApiActivity"
+		  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+		  android:exported="false"/>
+		    <meta-data
+		  android:name="com.google.android.gms.version"
+		  android:value="@integer/google_play_services_version" />
+		<receiver
+		            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+		            android:enabled="true"
+		            android:exported="false" >
+		        </receiver>
+		
+		  <service
+		            android:name="com.google.android.gms.measurement.AppMeasurementService"
+		            android:enabled="true"
+		            android:exported="false" />
+					
+		 <receiver
+		            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+		            android:enabled="true"
+		            android:exported="true"
+		            android:permission="android.permission.INSTALL_PACKAGES" >
+		            <intent-filter>
+		                <action android:name="com.android.vending.INSTALL_REFERRER" />
+		            </intent-filter>
+		</receiver>
+		<service
+		            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+		            android:enabled="true"
+		            android:exported="false"
+		            android:permission="android.permission.BIND_JOB_SERVICE" />
+		
+		 <service android:name="com.google.firebase.components.ComponentDiscoveryService" >
+		            <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+					 <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		             <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		             <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		            <meta-data 
+						android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+						android:value="com.google.firebase.components.ComponentRegistrar"/>
+		
+					<meta-data
+		   				 android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+		   				 android:value="com.google.firebase.components.ComponentRegistrar"/>
+		   			 <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		</service>
+		   <provider
+		  android:authorities="bwsi.PumpOperations.firebaseinitprovider"
+		  android:name="com.google.firebase.provider.FirebaseInitProvider"
+		  android:exported="false"
+		  android:initOrder="100" />
+		  
+		   <receiver
+		  android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+		  android:exported="true"
+		  android:permission="com.google.android.c2dm.permission.SEND" >
+		  <intent-filter>
+		  <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		  <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		  <category android:name="bwsi.PumpOperations" />
+		  </intent-filter>
+		  </receiver>
+		    <receiver
+		  android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
+		  android:exported="false" />
+		
+		
+		  <service
+		  android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+		  android:exported="true">
+		  <intent-filter android:priority="-500">
+		  <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+		  </intent-filter>
+		  </service>
+		<service
+		  android:name="com.google.firebase.messaging.FirebaseMessagingService"
+		  android:exported="true">
+		  <intent-filter android:priority="-500">
+		  <action android:name="com.google.firebase.MESSAGING_EVENT" />
+		  </intent-filter>
+		  </service>
+		   <service android:name="anywheresoftware.b4a.objects.FirebaseNotificationsService">
+		     <intent-filter>
+		  <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+		     </intent-filter>
+		   </service>
+		<activity
+			android:windowSoftInputMode="adjustResize|stateHidden"
+			android:launchMode="singleTop"
+			android:name=".main"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified"
+			android:excludeFromRecents="true">
+			<intent-filter>
+			   <action android:name="android.intent.action.MAIN" />
+			   <category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actnewproduction"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actpumpoff"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addedittimerecord"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actcmjofindings"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actcriticalpoint"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actdccrjofindings"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actdcdajofindings"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actdebugkeyboard"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actgpmcalc"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actgpmhistory"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actjo"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actjoaccomplishedsas"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actjodetails"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actjonotification"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actjoreasons"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actjosummary"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actjowithreasons"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actmcjofindings"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actncjofindings"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actnonoperational"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actproduction"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actrcjofindings"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actrepmain"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actsasjofindings"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actwaterbalance"
+			android:label="BWSI Operations"
+			android:screenOrientation="landscape">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addeditchlorinerecord"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addeditfmrdg"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addeditnonoperational"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addeditproblem"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addeditpsidistrecord"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addeditpsirdg"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".edittimerecord"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<service android:name=".firebasemessaging">
+		</service>
+		<receiver android:name=".firebasemessaging$firebasemessaging_BR">
+		</receiver>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".mainscreen"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<service android:name=".starter">
+		</service>
+		<receiver android:name=".starter$starter_BR">
+		</receiver>
+		<service android:name=".httputils2service">
+		</service>
+		<receiver android:name=".httputils2service$httputils2service_BR">
+		</receiver>
+	</application>
+</manifest>
