@@ -187,14 +187,14 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".actpumpoff"
+			android:name=".addedittimerecord"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".addedittimerecord"
+			android:name=".mainscreen"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
 		</activity>
@@ -327,6 +327,13 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
+			android:name=".actpumpoff"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
 			android:name=".actrcjofindings"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
@@ -405,13 +412,6 @@
 		</service>
 		<receiver android:name=".firebasemessaging$firebasemessaging_BR">
 		</receiver>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".mainscreen"
-			android:label="BWSI Operations"
-			android:screenOrientation="unspecified">
-		</activity>
 		<service android:name=".starter">
 		</service>
 		<receiver android:name=".starter$starter_BR">

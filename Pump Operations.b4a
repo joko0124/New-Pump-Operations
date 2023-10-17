@@ -1,116 +1,119 @@
 ﻿Build1=PumpOp,bwsi.PumpOperations
 File1=a1.png
-File10=ChlorinatorRecords.bal
-File100=sourcesanspro-extralight.ttf
-File101=sourcesanspro-extralightitalic.ttf
-File102=sourcesanspro-italic.ttf
-File103=sourcesanspro-light.ttf
-File104=sourcesanspro-lightitalic.ttf
-File105=sourcesanspro-regular.ttf
-File106=sourcesanspro-semibold.ttf
-File107=sourcesanspro-semibolditalic.ttf
-File108=ultralight.ttf
-File109=WaterBalance.bal
-File11=CMJOFindings.bal
-File110=wb.png
-File12=cpm.png
-File13=cpm-disable.png
-File14=critical-point-monitoring-icon.png
-File15=critical-point-monitoring-new.png
-File16=Dashboard.bal
-File17=DCCRJOFindings.bal
-File18=DCDAJOFindings.bal
-File19=DebugKeyboard.bal
+File10=bwsi.png
+File100=sourcesanspro-bold.ttf
+File101=sourcesanspro-bolditalic.ttf
+File102=sourcesanspro-extralight.ttf
+File103=sourcesanspro-extralightitalic.ttf
+File104=sourcesanspro-italic.ttf
+File105=sourcesanspro-light.ttf
+File106=sourcesanspro-lightitalic.ttf
+File107=sourcesanspro-regular.ttf
+File108=sourcesanspro-semibold.ttf
+File109=sourcesanspro-semibolditalic.ttf
+File11=ChlorinatorRecords.bal
+File110=splash.jpg
+File111=ultralight.ttf
+File112=WaterBalance.bal
+File113=wb.png
+File12=CMJOFindings.bal
+File13=cpm.png
+File14=cpm-disable.png
+File15=critical-point-monitoring-icon.png
+File16=critical-point-monitoring-new.png
+File17=Dashboard.bal
+File18=DCCRJOFindings.bal
+File19=DCDAJOFindings.bal
 File2=actKeyboard.bas
-File20=EditPumpTimeRecords.bal
-File21=FMRdgRecords.bal
-File22=GPMCalc.bal
-File23=gpm-calc.png
-File24=gpm-calculator.png
-File25=gpm-disable.png
-File26=GPMHistory.bal
-File27=hamburger.png
-File28=header.jpg
-File29=header.png
+File20=DebugKeyboard.bal
+File21=EditPumpTimeRecords.bal
+File22=FMRdgRecords.bal
+File23=GPMCalc.bal
+File24=gpm-calc.png
+File25=gpm-calculator.png
+File26=gpm-disable.png
+File27=GPMHistory.bal
+File28=hamburger.png
+File29=header.jpg
 File3=AddEditPumpNonOperational.bal
-File30=icon.png
-File31=JOAccomplishedDetails.bal
-File32=JOAccomplishedDetailsSAS.bal
-File33=JOCategories.bal
-File34=JoDetails.bal
-File35=jo-disable.png
-File36=JOFindingsMain.bal
-File37=jo-icon.png
-File38=JOInfo.bal
-File39=JokoKeyboard.bal
+File30=header.png
+File31=icon.png
+File32=JOAccomplishedDetails.bal
+File33=JOAccomplishedDetailsSAS.bal
+File34=JOCategories.bal
+File35=JoDetails.bal
+File36=jo-disable.png
+File37=JOFindingsMain.bal
+File38=jo-icon.png
+File39=JOInfo.bal
 File4=baseline_cancel_white_18dp.png
-File40=JOList.bal
-File41=JONotification.bal
-File42=JONotifInfo.bal
-File43=JORecord.bal
-File44=JOSummaryList.bal
-File45=light.ttf
-File46=ListChlorinatorRecords.bal
-File47=ListFMRdg.bal
-File48=ListGPMResults.bal
-File49=ListNonOperationalRecords.bal
+File40=JokoKeyboard.bal
+File41=JOList.bal
+File42=JONotification.bal
+File43=JONotifInfo.bal
+File44=JORecord.bal
+File45=JOSummaryList.bal
+File46=light.ttf
+File47=ListChlorinatorRecords.bal
+File48=ListFMRdg.bal
+File49=ListGPMResults.bal
 File5=baseline_circle_notifications_white_24dp.png
-File50=ListProblemsRecords.bal
-File51=ListPSIDistRecords.bal
-File52=ListPSIRecords.bal
-File53=ListPumpTimeRecords.bal
-File54=login.bal
-File55=Login2.bal
-File56=LoginNew.bal
-File57=logo.png
-File58=mainmenu.bal
-File59=mainscreen.bal
+File50=ListNonOperationalRecords.bal
+File51=ListProblemsRecords.bal
+File52=ListPSIDistRecords.bal
+File53=ListPSIRecords.bal
+File54=ListPumpTimeRecords.bal
+File55=login.bal
+File56=login.jpg
+File57=Login2.bal
+File58=LoginNew.bal
+File59=mainmenu.bal
 File6=baseline_delete_forever_white_24dp.png
-File60=masterdb.db
-File61=MCJOFindings.bal
-File62=myfont.ttf
-File63=myfont_bold.ttf
-File64=NCJOFindings.bal
-File65=NewGPMCalc.bal
-File66=new-jo.png
-File67=NewPsiRdgDist.bal
-File68=NewPumpTimeRecords.bal
-File69=NewPumpTimeRecords2.bal
+File60=mainscreen.bal
+File61=masterdb.db
+File62=MCJOFindings.bal
+File63=myfont.ttf
+File64=myfont_bold.ttf
+File65=NCJOFindings.bal
+File66=NewGPMCalc.bal
+File67=new-jo.png
+File68=NewPsiRdgDist.bal
+File69=NewPumpTimeRecords.bal
 File7=baseline_engineering_white_24dp.png
-File70=Non-Op.png
-File71=non-op-disble.png
-File72=NonOperational.bal
-File73=notifBMP.png
-File74=point.png
-File75=ProblemEncMain.bal
-File76=ProblemRecords.bal
-File77=prod-disable.png
-File78=Production.bal
-File79=production.png
+File70=NewPumpTimeRecords2.bal
+File71=Non-Op.png
+File72=non-op-disble.png
+File73=NonOperational.bal
+File74=notifBMP.png
+File75=oplogo.png
+File76=point.png
+File77=ProblemEncMain.bal
+File78=ProblemRecords.bal
+File79=prod-disable.png
 File8=beep.wav
-File80=profile3.jpg
-File81=PSIDistRecords.bal
-File82=PSIRdgDistribution.bal
-File83=PSIReading.bal
-File84=PumpFMReading.bal
-File85=PumpList.bal
-File86=PumpOffTime.bal
-File87=PumpTimeRecords.bal
-File88=RCJOFindings.bal
-File89=repairs.png
+File80=Production.bal
+File81=production.png
+File82=profile3.jpg
+File83=PSIDistRecords.bal
+File84=PSIRdgDistribution.bal
+File85=PSIReading.bal
+File86=PumpFMReading.bal
+File87=PumpList.bal
+File88=PumpOffTime.bal
+File89=PumpTimeRecords.bal
 File9=bold.ttf
-File90=repairs-disable.png
-File91=reports.png
-File92=roboto-bold.ttf
-File93=roboto-regular.ttf
-File94=Sampol.bal
-File95=SASJOFindings.bal
-File96=sourcesanspro-black.ttf
-File97=sourcesanspro-blackitalic.ttf
-File98=sourcesanspro-bold.ttf
-File99=sourcesanspro-bolditalic.ttf
+File90=RCJOFindings.bal
+File91=repairs.png
+File92=repairs-disable.png
+File93=reports.png
+File94=roboto-bold.ttf
+File95=roboto-regular.ttf
+File96=Sampol.bal
+File97=SASJOFindings.bal
+File98=sourcesanspro-black.ttf
+File99=sourcesanspro-blackitalic.ttf
 FileGroup1=Default Group\Images
-FileGroup10=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup10=Default Group
 FileGroup100=Default Group\Fonts
 FileGroup101=Default Group\Fonts
 FileGroup102=Default Group\Fonts
@@ -120,47 +123,50 @@ FileGroup105=Default Group\Fonts
 FileGroup106=Default Group\Fonts
 FileGroup107=Default Group\Fonts
 FileGroup108=Default Group\Fonts
-FileGroup109=Default Group\Form Layouts\Other Layouts
-FileGroup11=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup110=Default Group\Enable Icons
-FileGroup12=Default Group\Images
-FileGroup13=Default Group\Disable Icons
-FileGroup14=Default Group\Images
-FileGroup15=Default Group\Enable Icons
-FileGroup16=Default Group\Form Layouts\Misc Activity Layout
-FileGroup17=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup109=Default Group\Fonts
+FileGroup11=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup110=Default Group
+FileGroup111=Default Group\Fonts
+FileGroup112=Default Group\Form Layouts\Other Layouts
+FileGroup113=Default Group\Enable Icons
+FileGroup12=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup13=Default Group\Images
+FileGroup14=Default Group\Disable Icons
+FileGroup15=Default Group\Images
+FileGroup16=Default Group\Enable Icons
+FileGroup17=Default Group\Form Layouts\Misc Activity Layout
 FileGroup18=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup19=Default Group\Form Layouts\Other Layouts
+FileGroup19=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup2=Default Group
-FileGroup20=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup20=Default Group\Form Layouts\Other Layouts
 FileGroup21=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup22=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup23=Default Group\Enable Icons
+FileGroup23=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup24=Default Group\Enable Icons
-FileGroup25=Default Group\Disable Icons
-FileGroup26=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup27=Default Group\Images
+FileGroup25=Default Group\Enable Icons
+FileGroup26=Default Group\Disable Icons
+FileGroup27=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup28=Default Group\Images
 FileGroup29=Default Group\Images
 FileGroup3=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup30=Default Group
-FileGroup31=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup30=Default Group\Images
+FileGroup31=Default Group
 FileGroup32=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup33=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup34=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup35=Default Group\Disable Icons
-FileGroup36=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup37=Default Group\Enable Icons
-FileGroup38=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup39=Default Group\Form Layouts\Other Layouts
+FileGroup35=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup36=Default Group\Disable Icons
+FileGroup37=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup38=Default Group\Enable Icons
+FileGroup39=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup4=Default Group\Images
-FileGroup40=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup40=Default Group\Form Layouts\Other Layouts
 FileGroup41=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup42=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup43=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup44=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup45=Default Group\Fonts
-FileGroup46=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup45=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup46=Default Group\Fonts
 FileGroup47=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup48=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup49=Default Group\Form Layouts\Pump Operator Activity Layout
@@ -169,54 +175,54 @@ FileGroup50=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup51=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup52=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup53=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup54=Default Group\Form Layouts\Misc Activity Layout
+FileGroup54=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup55=Default Group\Form Layouts\Misc Activity Layout
-FileGroup56=Default Group\Form Layouts\Misc Activity Layout
-FileGroup57=Default Group\Images
+FileGroup56=Default Group
+FileGroup57=Default Group\Form Layouts\Misc Activity Layout
 FileGroup58=Default Group\Form Layouts\Misc Activity Layout
 FileGroup59=Default Group\Form Layouts\Misc Activity Layout
 FileGroup6=Default Group\Images
-FileGroup60=Default Group
-FileGroup61=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup62=Default Group\Fonts
+FileGroup60=Default Group\Form Layouts\Misc Activity Layout
+FileGroup61=Default Group
+FileGroup62=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup63=Default Group\Fonts
-FileGroup64=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup65=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup66=Default Group\Enable Icons
-FileGroup67=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup64=Default Group\Fonts
+FileGroup65=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup66=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup67=Default Group\Enable Icons
 FileGroup68=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup69=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup7=Default Group
-FileGroup70=Default Group\Enable Icons
-FileGroup71=Default Group\Disable Icons
-FileGroup72=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup73=Default Group
-FileGroup74=Default Group\Enable Icons
-FileGroup75=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup76=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup77=Default Group\Disable Icons
+FileGroup70=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup71=Default Group\Enable Icons
+FileGroup72=Default Group\Disable Icons
+FileGroup73=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup74=Default Group
+FileGroup75=Default Group\Images
+FileGroup76=Default Group\Enable Icons
+FileGroup77=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup78=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup79=Default Group\Enable Icons
+FileGroup79=Default Group\Disable Icons
 FileGroup8=Default Group
-FileGroup80=Default Group\Images
-FileGroup81=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup82=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup80=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup81=Default Group\Enable Icons
+FileGroup82=Default Group\Images
 FileGroup83=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup84=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup85=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup84=Default Group\Form Layouts\Plumber Activity Layout
+FileGroup85=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup86=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup87=Default Group\Form Layouts\Pump Operator Activity Layout
-FileGroup88=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup89=Default Group\Enable Icons
+FileGroup88=Default Group\Form Layouts\Pump Operator Activity Layout
+FileGroup89=Default Group\Form Layouts\Pump Operator Activity Layout
 FileGroup9=Default Group\Fonts
-FileGroup90=Default Group\Disable Icons
+FileGroup90=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup91=Default Group\Enable Icons
-FileGroup92=Default Group\Fonts
-FileGroup93=Default Group\Fonts
-FileGroup94=Default Group\Form Layouts\Other Layouts
-FileGroup95=Default Group\Form Layouts\Plumber Activity Layout
-FileGroup96=Default Group\Fonts
-FileGroup97=Default Group\Fonts
+FileGroup92=Default Group\Disable Icons
+FileGroup93=Default Group\Enable Icons
+FileGroup94=Default Group\Fonts
+FileGroup95=Default Group\Fonts
+FileGroup96=Default Group\Form Layouts\Other Layouts
+FileGroup97=Default Group\Form Layouts\Plumber Activity Layout
 FileGroup98=Default Group\Fonts
 FileGroup99=Default Group\Fonts
 Group=Default Group
@@ -312,7 +318,7 @@ Module6=actGPMCalc
 Module7=actGPMHistory
 Module8=actJO
 Module9=actJOAccomplishedSAS
-NumberOfFiles=110
+NumberOfFiles=113
 NumberOfLibraries=44
 NumberOfModules=47
 Version=10
@@ -347,6 +353,7 @@ Sub Process_Globals
 	Public Permissions As RuntimePermissions
 	Dim InpTyp As SLInpTypeConst
 	Private Font As Typeface = Typeface.LoadFromAssets("myfont.ttf")
+	Dim tmrSplash As Timer
 End Sub
 
 Sub Globals
@@ -385,6 +392,7 @@ Sub Globals
 	Private FineLocPermission As Boolean
 	
 	Private KVS As KeyValueStore
+	Private pnlSplash As Panel
 
 End Sub
 
@@ -406,8 +414,9 @@ Sub Activity_Create(FirstTime As Boolean)
 	txtPassword.PasswordMode = True
 	txtUserName.Text = "joko"
 	txtPassword.Text = "0124"
-		
+	Log(FirstTime)
 	If FirstTime = True Then
+		ShowSplash
 		GlobalVar.DBVersion = DBaseFunctions.GetDBVersionNo
 		LogColor ($"App Version: "$ & Application.VersionCode, Colors.Yellow)
 		LogColor ($"DBase Version: "$ & GlobalVar.DBVersion, Colors.Blue)
@@ -420,33 +429,39 @@ Sub Activity_Create(FirstTime As Boolean)
 			ExitApplication
 		End If
 	End If
+	
+	tmrSplash.Initialize("DoSomething",300)
+	tmrSplash.Enabled = True
+
 	imeKeyboard.Initialize("ime")
 	CheckPermissions
-	csAns.Initialize.Color(Colors.White).Bold.Append($"YES"$).PopAll
+	csAns.Initialize.Bold.Size(16).Color(Colors.White).Append($"YES"$).PopAll
 	
 	KVS.Initialize(File.DirInternal, "operations.dat")
 End Sub
 
 Sub Activity_Resume
-	If Starter.GPS1.GPSEnabled = False Then
-		ShowGPSWarning
-		Return
-	Else
-		Starter.rtp.CheckAndRequest(Starter.rtp.PERMISSION_ACCESS_FINE_LOCATION)
-		Wait For Activity_PermissionResult (Permission As String, Result As Boolean)
-		If Result Then CallSubDelayed(Starter, "StartGPS")
-	End If
-	
-	If KVS.IsInitialized = False Then
-		KVS.Initialize(File.DirInternal,"operations.dat")
-	Else
-		If IsThereUserData = True Then
-			Wait For(RetrieveUserData) Complete(bRetVal As Boolean)
-			If bRetVal = True Then
-				StartActivity(MainScreen)
-			End If
-		End If
-	End If
+'	pnlSplash.Visible = False
+'	tmrSplash.Enabled = False
+'	If Starter.GPS1.GPSEnabled = False Then
+'		ShowGPSWarning
+'		Return
+'	Else
+'		Starter.rtp.CheckAndRequest(Starter.rtp.PERMISSION_ACCESS_FINE_LOCATION)
+'		Wait For Activity_PermissionResult (Permission As String, Result As Boolean)
+'		If Result Then CallSubDelayed(Starter, "StartGPS")
+'	End If
+'	
+'	If KVS.IsInitialized = False Then
+'		KVS.Initialize(File.DirInternal,"operations.dat")
+'	Else
+'		If IsThereUserData = True Then
+'			Wait For(RetrieveUserData) Complete(bRetVal As Boolean)
+'			If bRetVal = True Then
+'				StartActivity(MainScreen)
+'			End If
+'		End If
+'	End If
 '	CheckPermissions
 End Sub
 
@@ -456,9 +471,10 @@ End Sub
 
 Sub Activity_KeyPress (KeyCode As Int) As Boolean 'Return True to consume the event
 	If KeyCode = 4 Then
+		If pnlSplash.Visible = True Then Return False
 		vibration.vibrateOnce(1000)
 		snack.Initialize("btnClose", Activity, $"Close Pump Operations?"$, snack.DURATION_SHORT)
-		MyFunctions.SetSnackBarBackground(snack, GlobalVar.RedColor)
+		MyFunctions.SetSnackBarBackground(snack, GlobalVar.PriColor)
 		MyFunctions.SetSnackBarTextColor(snack, Colors.White)
 		snack.SetAction(csAns)
 		snack.Show
@@ -840,4 +856,18 @@ Private Sub IsThereUserData As Boolean
 	Return bRetVal
 End Sub
 
+#End Region
+#Region Splash
+Private Sub DoSomething_Tick
+	Log("WORKING...")
+End Sub
+Private Sub ShowSplash
+	pnlSplash.Visible = True
+	Sleep(3000)
+	pnlSplash.Visible = False
+	tmrSplash.Enabled = False
+End Sub
+Private Sub pnlSplash_Touch (Action As Int, X As Float, Y As Float)
+	
+End Sub
 #End Region

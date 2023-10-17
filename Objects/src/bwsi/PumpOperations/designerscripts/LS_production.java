@@ -39,18 +39,18 @@ views.get("clvtime").vw.setLeft((int)(0d));
 views.get("clvtime").vw.setWidth((int)((views.get("pnltime").vw.getWidth())));
 views.get("btnaddtime").vw.setLeft((int)((views.get("pnltime").vw.getLeft() + views.get("pnltime").vw.getWidth())-(views.get("btnaddtime").vw.getWidth())-(20d * scale)));
 views.get("btnaddtime").vw.setTop((int)((views.get("clvtime").vw.getTop() + views.get("clvtime").vw.getHeight())-(views.get("btnaddtime").vw.getHeight())-(20d * scale)));
-views.get("pnlfmrdg").vw.setWidth((int)((100d / 100 * width)));
 views.get("pnlfmrdg").vw.setLeft((int)(0d));
+views.get("pnlfmrdg").vw.setWidth((int)((100d / 100 * width) - (0d)));
 views.get("pnlfmrdg").vw.setTop((int)((views.get("toolbar").vw.getTop() + views.get("toolbar").vw.getHeight())));
 views.get("pnlfmrdg").vw.setHeight((int)((views.get("tabmenu").vw.getTop()) - ((views.get("toolbar").vw.getTop() + views.get("toolbar").vw.getHeight()))));
 views.get("label4").vw.setLeft((int)(0d));
 views.get("label4").vw.setWidth((int)((30d / 100 * width) - (0d)));
 views.get("label5").vw.setLeft((int)((30d / 100 * width)));
-views.get("label5").vw.setWidth((int)((50d / 100 * width) - ((30d / 100 * width))));
-views.get("label6").vw.setLeft((int)((50d / 100 * width)));
-views.get("label6").vw.setWidth((int)((70d / 100 * width) - ((50d / 100 * width))));
-views.get("label7").vw.setLeft((int)((70d / 100 * width)));
-views.get("label7").vw.setWidth((int)((100d / 100 * width) - ((70d / 100 * width))));
+views.get("label5").vw.setWidth((int)((52d / 100 * width) - ((30d / 100 * width))));
+views.get("label6").vw.setLeft((int)((52d / 100 * width)));
+views.get("label6").vw.setWidth((int)((74d / 100 * width) - ((52d / 100 * width))));
+views.get("label7").vw.setLeft((int)((74d / 100 * width)));
+views.get("label7").vw.setWidth((int)((100d / 100 * width) - ((74d / 100 * width))));
 views.get("clvfm").vw.setTop((int)((views.get("label4").vw.getTop() + views.get("label4").vw.getHeight())));
 views.get("clvfm").vw.setHeight((int)((views.get("pnlfmrdg").vw.getHeight())-(views.get("label4").vw.getHeight())-(5d * scale)));
 views.get("clvfm").vw.setLeft((int)(0d));
@@ -76,9 +76,9 @@ views.get("pnlchlorinator").vw.setLeft((int)(0d));
 views.get("pnlchlorinator").vw.setTop((int)((views.get("toolbar").vw.getTop() + views.get("toolbar").vw.getHeight())));
 views.get("pnlchlorinator").vw.setHeight((int)((views.get("tabmenu").vw.getTop()) - ((views.get("toolbar").vw.getTop() + views.get("toolbar").vw.getHeight()))));
 views.get("label10").vw.setLeft((int)(0d));
-views.get("label10").vw.setWidth((int)((35d / 100 * width) - (0d)));
-views.get("label11").vw.setLeft((int)((35d / 100 * width)));
-views.get("label11").vw.setWidth((int)((83d / 100 * width) - ((35d / 100 * width))));
+views.get("label10").vw.setWidth((int)((36d / 100 * width) - (0d)));
+views.get("label11").vw.setLeft((int)((36d / 100 * width)));
+views.get("label11").vw.setWidth((int)((83d / 100 * width) - ((36d / 100 * width))));
 views.get("label12").vw.setLeft((int)((83d / 100 * width)));
 views.get("label12").vw.setWidth((int)((99d / 100 * width) - ((83d / 100 * width))));
 views.get("clvchlorine").vw.setTop((int)((views.get("label10").vw.getTop() + views.get("label10").vw.getHeight())));
@@ -92,9 +92,9 @@ views.get("pnlconcerns").vw.setLeft((int)(0d));
 views.get("pnlconcerns").vw.setTop((int)((views.get("toolbar").vw.getTop() + views.get("toolbar").vw.getHeight())));
 views.get("pnlconcerns").vw.setHeight((int)((views.get("tabmenu").vw.getTop()) - ((views.get("toolbar").vw.getTop() + views.get("toolbar").vw.getHeight()))));
 views.get("label13").vw.setLeft((int)(0d));
-views.get("label13").vw.setWidth((int)((28d / 100 * width) - (0d)));
-views.get("label14").vw.setLeft((int)((28d / 100 * width)));
-views.get("label14").vw.setWidth((int)((100d / 100 * width) - ((28d / 100 * width))));
+views.get("label13").vw.setWidth((int)((30d / 100 * width) - (0d)));
+views.get("label14").vw.setLeft((int)((30d / 100 * width)));
+views.get("label14").vw.setWidth((int)((100d / 100 * width) - ((30d / 100 * width))));
 views.get("clvconcerns").vw.setTop((int)((views.get("label13").vw.getTop() + views.get("label13").vw.getHeight())));
 views.get("clvconcerns").vw.setHeight((int)((views.get("pnlconcerns").vw.getHeight())-(5d * scale)-(views.get("label13").vw.getHeight())-(5d * scale)));
 views.get("clvconcerns").vw.setLeft((int)(0d));
@@ -288,48 +288,47 @@ views.get("msktimeoff").vw.setWidth((int)((views.get("pnltimeoffanchor").vw.getW
 views.get("pnlstyle5").vw.setTop((int)((views.get("chkdefaulttimeoff").vw.getTop() + views.get("chkdefaulttimeoff").vw.getHeight())+(5d * scale)));
 views.get("pnlstyle5").vw.setLeft((int)((views.get("pnltimeoffanchor").vw.getLeft() + views.get("pnltimeoffanchor").vw.getWidth())-(18d * scale)));
 views.get("pnlstyle5").vw.setWidth((int)((views.get("pnltimeoff").vw.getWidth())-(2d / 100 * width) - ((views.get("pnltimeoffanchor").vw.getLeft() + views.get("pnltimeoffanchor").vw.getWidth())-(18d * scale))));
-//BA.debugLineNum = 252;BA.debugLine="Label16.SetLeftAndRight(1%x, pnlStyle5.Width-1%x)"[Production/General script]
 views.get("label16").vw.setLeft((int)((1d / 100 * width)));
 views.get("label16").vw.setWidth((int)((views.get("pnlstyle5").vw.getWidth())-(1d / 100 * width) - ((1d / 100 * width))));
-//BA.debugLineNum = 254;BA.debugLine="pnlCover2.Left = pnlStyle5.Left"[Production/General script]
+//BA.debugLineNum = 257;BA.debugLine="pnlCover2.Left = pnlStyle5.Left"[Production/General script]
 views.get("pnlcover2").vw.setLeft((int)((views.get("pnlstyle5").vw.getLeft())));
-//BA.debugLineNum = 255;BA.debugLine="pnlCover2.Top = chkDefaultTimeOff.Bottom + 5dip"[Production/General script]
+//BA.debugLineNum = 258;BA.debugLine="pnlCover2.Top = chkDefaultTimeOff.Bottom + 5dip"[Production/General script]
 views.get("pnlcover2").vw.setTop((int)((views.get("chkdefaulttimeoff").vw.getTop() + views.get("chkdefaulttimeoff").vw.getHeight())+(5d * scale)));
-//BA.debugLineNum = 257;BA.debugLine="pnlOffRemarks.SetTopAndBottom(pnlTimeOff.Bottom + 10dip, pnlPumpOffBackground.Height - 10%y)"[Production/General script]
+//BA.debugLineNum = 260;BA.debugLine="pnlOffRemarks.SetTopAndBottom(pnlTimeOff.Bottom + 10dip, pnlPumpOffBackground.Height - 10%y)"[Production/General script]
 views.get("pnloffremarks").vw.setTop((int)((views.get("pnltimeoff").vw.getTop() + views.get("pnltimeoff").vw.getHeight())+(10d * scale)));
 views.get("pnloffremarks").vw.setHeight((int)((views.get("pnlpumpoffbackground").vw.getHeight())-(10d / 100 * height) - ((views.get("pnltimeoff").vw.getTop() + views.get("pnltimeoff").vw.getHeight())+(10d * scale))));
-//BA.debugLineNum = 258;BA.debugLine="pnlOffRemarks.SetLeftAndRight(2%x, pnlPumpOffBackground.Width - 2%x)"[Production/General script]
+//BA.debugLineNum = 261;BA.debugLine="pnlOffRemarks.SetLeftAndRight(2%x, pnlPumpOffBackground.Width - 2%x)"[Production/General script]
 views.get("pnloffremarks").vw.setLeft((int)((2d / 100 * width)));
 views.get("pnloffremarks").vw.setWidth((int)((views.get("pnlpumpoffbackground").vw.getWidth())-(2d / 100 * width) - ((2d / 100 * width))));
-//BA.debugLineNum = 260;BA.debugLine="lblRemarksOffTitle.Top = 0dip"[Production/General script]
+//BA.debugLineNum = 263;BA.debugLine="lblRemarksOffTitle.Top = 0dip"[Production/General script]
 views.get("lblremarksofftitle").vw.setTop((int)((0d * scale)));
-//BA.debugLineNum = 261;BA.debugLine="lblRemarksOffTitle.Left = 0dip"[Production/General script]
+//BA.debugLineNum = 264;BA.debugLine="lblRemarksOffTitle.Left = 0dip"[Production/General script]
 views.get("lblremarksofftitle").vw.setLeft((int)((0d * scale)));
-//BA.debugLineNum = 262;BA.debugLine="lblRemarksOffTitle.SetLeftAndRight (0dip, 97%x)"[Production/General script]
+//BA.debugLineNum = 265;BA.debugLine="lblRemarksOffTitle.SetLeftAndRight (0dip, 97%x)"[Production/General script]
 views.get("lblremarksofftitle").vw.setLeft((int)((0d * scale)));
 views.get("lblremarksofftitle").vw.setWidth((int)((97d / 100 * width) - ((0d * scale))));
-//BA.debugLineNum = 264;BA.debugLine="pnlRemarksOffAnchor.SetLeftAndRight (2%x, pnlOffRemarks.Width - 2%x)"[Production/General script]
+//BA.debugLineNum = 267;BA.debugLine="pnlRemarksOffAnchor.SetLeftAndRight (2%x, pnlOffRemarks.Width - 2%x)"[Production/General script]
 views.get("pnlremarksoffanchor").vw.setLeft((int)((2d / 100 * width)));
 views.get("pnlremarksoffanchor").vw.setWidth((int)((views.get("pnloffremarks").vw.getWidth())-(2d / 100 * width) - ((2d / 100 * width))));
-//BA.debugLineNum = 265;BA.debugLine="pnlRemarksOffAnchor.SetTopAndBottom(lblRemarksOffTitle.Bottom + 5dip, pnlOffRemarks.Height - 1.5%y)"[Production/General script]
+//BA.debugLineNum = 268;BA.debugLine="pnlRemarksOffAnchor.SetTopAndBottom(lblRemarksOffTitle.Bottom + 5dip, pnlOffRemarks.Height - 1.5%y)"[Production/General script]
 views.get("pnlremarksoffanchor").vw.setTop((int)((views.get("lblremarksofftitle").vw.getTop() + views.get("lblremarksofftitle").vw.getHeight())+(5d * scale)));
 views.get("pnlremarksoffanchor").vw.setHeight((int)((views.get("pnloffremarks").vw.getHeight())-(1.5d / 100 * height) - ((views.get("lblremarksofftitle").vw.getTop() + views.get("lblremarksofftitle").vw.getHeight())+(5d * scale))));
-//BA.debugLineNum = 267;BA.debugLine="txtOffRemarks.SetLeftAndRight(3%x, pnlRemarksOffAnchor.Width - 3%x)"[Production/General script]
+//BA.debugLineNum = 270;BA.debugLine="txtOffRemarks.SetLeftAndRight(3%x, pnlRemarksOffAnchor.Width - 3%x)"[Production/General script]
 views.get("txtoffremarks").vw.setLeft((int)((3d / 100 * width)));
 views.get("txtoffremarks").vw.setWidth((int)((views.get("pnlremarksoffanchor").vw.getWidth())-(3d / 100 * width) - ((3d / 100 * width))));
-//BA.debugLineNum = 268;BA.debugLine="txtOffRemarks.SetTopAndBottom(1%y, pnlRemarksOffAnchor.Height - 1%y)"[Production/General script]
+//BA.debugLineNum = 271;BA.debugLine="txtOffRemarks.SetTopAndBottom(1%y, pnlRemarksOffAnchor.Height - 1%y)"[Production/General script]
 views.get("txtoffremarks").vw.setTop((int)((1d / 100 * height)));
 views.get("txtoffremarks").vw.setHeight((int)((views.get("pnlremarksoffanchor").vw.getHeight())-(1d / 100 * height) - ((1d / 100 * height))));
-//BA.debugLineNum = 270;BA.debugLine="btnPumpOffCancel.SetLeftAndRight(3%x, 46%x)"[Production/General script]
+//BA.debugLineNum = 273;BA.debugLine="btnPumpOffCancel.SetLeftAndRight(3%x, 46%x)"[Production/General script]
 views.get("btnpumpoffcancel").vw.setLeft((int)((3d / 100 * width)));
 views.get("btnpumpoffcancel").vw.setWidth((int)((46d / 100 * width) - ((3d / 100 * width))));
-//BA.debugLineNum = 271;BA.debugLine="btnPumpOffCancel.SetTopAndBottom(pnlOffRemarks.Bottom + 10dip, pnlPumpOffBackground.Height - 1%y)"[Production/General script]
+//BA.debugLineNum = 274;BA.debugLine="btnPumpOffCancel.SetTopAndBottom(pnlOffRemarks.Bottom + 10dip, pnlPumpOffBackground.Height - 1%y)"[Production/General script]
 views.get("btnpumpoffcancel").vw.setTop((int)((views.get("pnloffremarks").vw.getTop() + views.get("pnloffremarks").vw.getHeight())+(10d * scale)));
 views.get("btnpumpoffcancel").vw.setHeight((int)((views.get("pnlpumpoffbackground").vw.getHeight())-(1d / 100 * height) - ((views.get("pnloffremarks").vw.getTop() + views.get("pnloffremarks").vw.getHeight())+(10d * scale))));
-//BA.debugLineNum = 273;BA.debugLine="btnPumpOffSave.SetLeftAndRight(52%x, pnlPumpOffBackground.Width - 3%x)"[Production/General script]
+//BA.debugLineNum = 276;BA.debugLine="btnPumpOffSave.SetLeftAndRight(52%x, pnlPumpOffBackground.Width - 3%x)"[Production/General script]
 views.get("btnpumpoffsave").vw.setLeft((int)((52d / 100 * width)));
 views.get("btnpumpoffsave").vw.setWidth((int)((views.get("pnlpumpoffbackground").vw.getWidth())-(3d / 100 * width) - ((52d / 100 * width))));
-//BA.debugLineNum = 274;BA.debugLine="btnPumpOffSave.SetTopAndBottom(pnlOffRemarks.Bottom + 10dip, pnlPumpOffBackground.Height - 1%y)"[Production/General script]
+//BA.debugLineNum = 277;BA.debugLine="btnPumpOffSave.SetTopAndBottom(pnlOffRemarks.Bottom + 10dip, pnlPumpOffBackground.Height - 1%y)"[Production/General script]
 views.get("btnpumpoffsave").vw.setTop((int)((views.get("pnloffremarks").vw.getTop() + views.get("pnloffremarks").vw.getHeight())+(10d * scale)));
 views.get("btnpumpoffsave").vw.setHeight((int)((views.get("pnlpumpoffbackground").vw.getHeight())-(1d / 100 * height) - ((views.get("pnloffremarks").vw.getTop() + views.get("pnloffremarks").vw.getHeight())+(10d * scale))));
 

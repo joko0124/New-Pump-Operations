@@ -943,7 +943,7 @@ Private Sub ShowPumpList (iUserID As Double)
 	
 	Try
 		Starter.strCriteria = "SELECT Assignment.StationID, PumpStation.PumpHouseCode " & _
-							  "FROM tblAssignedStation AS Assignment " & _
+						  "FROM tblAssignedStation AS Assignment " & _
 							  "INNER JOIN tblPumpStation AS PumpStation ON Assignment.StationID = PumpStation.StationID " & _
 							  "WHERE Assignment.OpID = " & iUserID & " " & _
 							  "ORDER BY PumpStation.StationID ASC		"
