@@ -13,12 +13,13 @@ public static Object getObject() {
  public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.example.dateutils _dateutils = null;
 public bwsi.PumpOperations.main _main = null;
+public bwsi.PumpOperations.globalvar _globalvar = null;
+public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
 public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
-public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
-public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
 public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
@@ -45,11 +46,10 @@ public bwsi.PumpOperations.addeditnonoperational _addeditnonoperational = null;
 public bwsi.PumpOperations.addeditproblem _addeditproblem = null;
 public bwsi.PumpOperations.addeditpsidistrecord _addeditpsidistrecord = null;
 public bwsi.PumpOperations.addeditpsirdg _addeditpsirdg = null;
-public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
+public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.dbutils _dbutils = null;
 public bwsi.PumpOperations.edittimerecord _edittimerecord = null;
 public bwsi.PumpOperations.firebasemessaging _firebasemessaging = null;
-public bwsi.PumpOperations.globalvar _globalvar = null;
 public bwsi.PumpOperations.miscfunctions _miscfunctions = null;
 public bwsi.PumpOperations.myscale _myscale = null;
 public bwsi.PumpOperations.starter _starter = null;
@@ -96,6 +96,28 @@ if (true) return _bmp;
  //BA.debugLineNum = 42;BA.debugLine="End Sub";
 return null;
 }
+public static boolean  _isthereuserdata(anywheresoftware.b4a.BA _ba) throws Exception{
+boolean _blnretval = false;
+ //BA.debugLineNum = 108;BA.debugLine="Public Sub IsThereUserData() As Boolean";
+ //BA.debugLineNum = 109;BA.debugLine="Dim blnRetVal As Boolean";
+_blnretval = false;
+ //BA.debugLineNum = 110;BA.debugLine="blnRetVal = False";
+_blnretval = anywheresoftware.b4a.keywords.Common.False;
+ //BA.debugLineNum = 112;BA.debugLine="Try";
+try { //BA.debugLineNum = 113;BA.debugLine="blnRetVal = True";
+_blnretval = anywheresoftware.b4a.keywords.Common.True;
+ } 
+       catch (Exception e6) {
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6); //BA.debugLineNum = 115;BA.debugLine="blnRetVal = False";
+_blnretval = anywheresoftware.b4a.keywords.Common.False;
+ //BA.debugLineNum = 116;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("83145736",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+ };
+ //BA.debugLineNum = 118;BA.debugLine="Return blnRetVal";
+if (true) return _blnretval;
+ //BA.debugLineNum = 119;BA.debugLine="End Sub";
+return false;
+}
 public static anywheresoftware.b4a.objects.drawable.ColorDrawable  _mycd(anywheresoftware.b4a.BA _ba) throws Exception{
 anywheresoftware.b4a.objects.drawable.ColorDrawable _mcd = null;
  //BA.debugLineNum = 97;BA.debugLine="Public Sub myCD As ColorDrawable";
@@ -120,6 +142,16 @@ return "";
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 1;BA.debugLine="Sub Process_Globals";
  //BA.debugLineNum = 3;BA.debugLine="End Sub";
+return "";
+}
+public static String  _retrieveusersettings(anywheresoftware.b4a.BA _ba) throws Exception{
+ //BA.debugLineNum = 121;BA.debugLine="Public Sub RetrieveUserSettings";
+ //BA.debugLineNum = 123;BA.debugLine="End Sub";
+return "";
+}
+public static String  _saveusersettings(anywheresoftware.b4a.BA _ba) throws Exception{
+ //BA.debugLineNum = 104;BA.debugLine="Public Sub SaveUserSettings";
+ //BA.debugLineNum = 106;BA.debugLine="End Sub";
 return "";
 }
 public static String  _setbutton(anywheresoftware.b4a.BA _ba,anywheresoftware.b4a.objects.ConcreteViewWrapper _v,float _rx_topleft,float _ry_topleft,float _rx_topright,float _ry_topright,float _rx_bottomright,float _ry_bottomright,float _rx_bottomleft,float _ry_bottomleft) throws Exception{

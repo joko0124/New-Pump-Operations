@@ -615,7 +615,7 @@ Private Sub SaveWaterMeters(sData As String)
 
 	Try
 		For Each MP As Map In root
-			Starter.strCriteria="INSERT INTO tblMeters VALUES (?, ?, ?, )"
+			Starter.strCriteria="INSERT INTO tblMeters VALUES (?, ?, ?)"
 			Starter.DBCon.AddNonQueryToBatch(Starter.strCriteria ,Array(MP.Get("MeterID"), MP.Get("MeterNo"), MP.Get("BrandName")))
 		Next
 		

@@ -28,7 +28,7 @@ views.get("pnlmain").vw.setHeight((int)((100d / 100 * height) - ((views.get("too
 views.get("pnlmain").vw.setLeft((int)((0d / 100 * width)));
 views.get("pnlmain").vw.setWidth((int)((100d / 100 * width) - ((0d / 100 * width))));
 views.get("pnlreadingtime").vw.setTop((int)((5d / 100 * height)));
-views.get("pnlreadingtime").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(67.5d / 100 * height) - ((5d / 100 * height))));
+views.get("pnlreadingtime").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(67d / 100 * height) - ((5d / 100 * height))));
 views.get("pnlreadingtime").vw.setLeft((int)((2d / 100 * width)));
 views.get("pnlreadingtime").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((2d / 100 * width))));
 views.get("lblrdgtimetitle").vw.setLeft((int)((0d / 100 * width)));
@@ -55,7 +55,7 @@ views.get("label16").vw.setWidth((int)((views.get("pnlstyle5").vw.getWidth())-(1
 views.get("pnlcover2").vw.setLeft((int)((views.get("pnlstyle5").vw.getLeft())));
 views.get("pnlcover2").vw.setTop((int)((views.get("chkdefaulttimeread").vw.getTop() + views.get("chkdefaulttimeread").vw.getHeight())+(5d * scale)));
 views.get("pnlrdg").vw.setTop((int)((views.get("pnlreadingtime").vw.getTop() + views.get("pnlreadingtime").vw.getHeight())+(15d * scale)));
-views.get("pnlrdg").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(45d / 100 * height) - ((views.get("pnlreadingtime").vw.getTop() + views.get("pnlreadingtime").vw.getHeight())+(15d * scale))));
+views.get("pnlrdg").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(44d / 100 * height) - ((views.get("pnlreadingtime").vw.getTop() + views.get("pnlreadingtime").vw.getHeight())+(15d * scale))));
 views.get("pnlrdg").vw.setLeft((int)((2d / 100 * width)));
 views.get("pnlrdg").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((2d / 100 * width))));
 views.get("lblpsirdgtitle").vw.setLeft((int)((0d / 100 * width)));
@@ -70,7 +70,7 @@ views.get("txtpsirdg").vw.setWidth((int)((views.get("pnlpsirdganchor").vw.getWid
 views.get("txtpsirdg").vw.setTop((int)((1d / 100 * height)));
 views.get("txtpsirdg").vw.setHeight((int)((views.get("pnlpsirdganchor").vw.getHeight())-(1d / 100 * height) - ((1d / 100 * height))));
 views.get("pnlpsirdgremarks").vw.setTop((int)((views.get("pnlrdg").vw.getTop() + views.get("pnlrdg").vw.getHeight())+(10d * scale)));
-views.get("pnlpsirdgremarks").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(25d / 100 * height) - ((views.get("pnlrdg").vw.getTop() + views.get("pnlrdg").vw.getHeight())+(10d * scale))));
+views.get("pnlpsirdgremarks").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(23d / 100 * height) - ((views.get("pnlrdg").vw.getTop() + views.get("pnlrdg").vw.getHeight())+(10d * scale))));
 views.get("pnlpsirdgremarks").vw.setLeft((int)((2d / 100 * width)));
 views.get("pnlpsirdgremarks").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((2d / 100 * width))));
 views.get("lblpsirdgremarkstitle").vw.setTop((int)((0d * scale)));

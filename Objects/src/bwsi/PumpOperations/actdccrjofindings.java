@@ -397,8 +397,10 @@ public static boolean _coarselocpermission = false;
 public static boolean _finelocpermission = false;
 public b4a.example.dateutils _dateutils = null;
 public bwsi.PumpOperations.main _main = null;
+public bwsi.PumpOperations.globalvar _globalvar = null;
+public bwsi.PumpOperations.myfunctions _myfunctions = null;
+public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
 public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
-public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
 public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
@@ -428,13 +430,11 @@ public bwsi.PumpOperations.addeditnonoperational _addeditnonoperational = null;
 public bwsi.PumpOperations.addeditproblem _addeditproblem = null;
 public bwsi.PumpOperations.addeditpsidistrecord _addeditpsidistrecord = null;
 public bwsi.PumpOperations.addeditpsirdg _addeditpsirdg = null;
-public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
+public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.dbutils _dbutils = null;
 public bwsi.PumpOperations.edittimerecord _edittimerecord = null;
 public bwsi.PumpOperations.firebasemessaging _firebasemessaging = null;
-public bwsi.PumpOperations.globalvar _globalvar = null;
 public bwsi.PumpOperations.miscfunctions _miscfunctions = null;
-public bwsi.PumpOperations.myfunctions _myfunctions = null;
 public bwsi.PumpOperations.myscale _myscale = null;
 public bwsi.PumpOperations.starter _starter = null;
 public bwsi.PumpOperations.validation _validation = null;
@@ -571,22 +571,22 @@ if (_result) {
  //BA.debugLineNum = 156;BA.debugLine="If Permission = Starter.RTP.PERMISSION_READ_EXTE";
 if ((_permission).equals(mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_READ_EXTERNAL_STORAGE)) { 
  //BA.debugLineNum = 157;BA.debugLine="LogColor($\"Permission to Read External Storage";
-anywheresoftware.b4a.keywords.Common.LogImpl("114680067",("Permission to Read External Storage GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("817432579",("Permission to Read External Storage GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 158;BA.debugLine="ReadStoragePermission = True";
 _readstoragepermission = anywheresoftware.b4a.keywords.Common.True;
  }else if((_permission).equals(mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_WRITE_EXTERNAL_STORAGE)) { 
  //BA.debugLineNum = 160;BA.debugLine="LogColor($\"Permission to Write External Storage";
-anywheresoftware.b4a.keywords.Common.LogImpl("114680070",("Permission to Write External Storage GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.White);
+anywheresoftware.b4a.keywords.Common.LogImpl("817432582",("Permission to Write External Storage GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.White);
  //BA.debugLineNum = 161;BA.debugLine="WriteStoragePermission = True";
 _writestoragepermission = anywheresoftware.b4a.keywords.Common.True;
  }else if((_permission).equals(mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_ACCESS_COARSE_LOCATION)) { 
  //BA.debugLineNum = 163;BA.debugLine="LogColor($\"Permission to Access Coarse Location";
-anywheresoftware.b4a.keywords.Common.LogImpl("114680073",("Permission to Access Coarse Location GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("817432585",("Permission to Access Coarse Location GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 164;BA.debugLine="CoarseLocPermission = True";
 _coarselocpermission = anywheresoftware.b4a.keywords.Common.True;
  }else if((_permission).equals(mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_ACCESS_FINE_LOCATION)) { 
  //BA.debugLineNum = 166;BA.debugLine="LogColor($\"Permission to Access Fine Location G";
-anywheresoftware.b4a.keywords.Common.LogImpl("114680076",("Permission to Access Fine Location GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("817432588",("Permission to Access Fine Location GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 167;BA.debugLine="FineLocPermission = True";
 _finelocpermission = anywheresoftware.b4a.keywords.Common.True;
  };
@@ -605,7 +605,7 @@ _finelocpermission = anywheresoftware.b4a.keywords.Common.False;
 _result = anywheresoftware.b4a.keywords.Common.False;
  };
  //BA.debugLineNum = 177;BA.debugLine="Log (Permission)";
-anywheresoftware.b4a.keywords.Common.LogImpl("114680087",_permission,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("817432599",_permission,0);
  //BA.debugLineNum = 178;BA.debugLine="End Sub";
 return "";
 }
@@ -696,7 +696,7 @@ _requiredmsgbox(BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Chr((int)
 if (true) return "";
  };
  //BA.debugLineNum = 381;BA.debugLine="Log(\"SignaturePad_onSigned(sign)\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("115532041","SignaturePad_onSigned(sign)",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("818284553","SignaturePad_onSigned(sign)",0);
  //BA.debugLineNum = 383;BA.debugLine="pnlConfirmSig.Visible = True";
 mostCurrent._pnlconfirmsig.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 384;BA.debugLine="pnlSignature.Visible = False";
@@ -736,7 +736,7 @@ _requiredmsgbox(("ERROR"),("Unable to Accomplshed JO due to No selected plumber(
  //BA.debugLineNum = 442;BA.debugLine="spnPlumbers.RequestFocus";
 mostCurrent._spnplumbers.RequestFocus();
  //BA.debugLineNum = 443;BA.debugLine="Log(\"No Selected\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("115859716","No Selected",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("818612228","No Selected",0);
  //BA.debugLineNum = 444;BA.debugLine="Return";
 if (true) return "";
  };
@@ -861,7 +861,7 @@ return "";
 public static String  _checkpermissions() throws Exception{
  //BA.debugLineNum = 142;BA.debugLine="Private Sub CheckPermissions";
  //BA.debugLineNum = 143;BA.debugLine="Log(\"Checking Permissions\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("114614529","Checking Permissions",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("817367041","Checking Permissions",0);
  //BA.debugLineNum = 145;BA.debugLine="Starter.RTP.CheckAndRequest(Starter.RTP.PERMISSIO";
 mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .CheckAndRequest(processBA,mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_READ_EXTERNAL_STORAGE);
  //BA.debugLineNum = 146;BA.debugLine="Starter.RTP.CheckAndRequest(Starter.RTP.PERMISSIO";
@@ -1040,7 +1040,7 @@ _dmeterid = 0;
 try { //BA.debugLineNum = 300;BA.debugLine="Starter.strCriteria = \"SELECT * FROM tblJOs \" &";
 mostCurrent._starter._strcriteria /*String*/  = "SELECT * FROM tblJOs "+"WHERE JOID = "+BA.NumberToString(_ijoid);
  //BA.debugLineNum = 302;BA.debugLine="LogColor(Starter.strCriteria, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("115269894",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("818022406",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 304;BA.debugLine="rsJONCDetails = Starter.DBCon.ExecQuery(Starter.";
 _rsjoncdetails = (anywheresoftware.b4a.sql.SQL.CursorWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.CursorWrapper(), (android.database.Cursor)(mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery(mostCurrent._starter._strcriteria /*String*/ )));
  //BA.debugLineNum = 306;BA.debugLine="If rsJONCDetails.RowCount > 0 Then";
@@ -1077,7 +1077,7 @@ mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.activity
  //BA.debugLineNum = 322;BA.debugLine="snack.Show";
 mostCurrent._snack.Show();
  //BA.debugLineNum = 323;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("115269915",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("818022427",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 324;BA.debugLine="Return";
 if (true) return "";
  };
@@ -1086,7 +1086,7 @@ mostCurrent._lblmeterno.setText(BA.ObjectToCharSequence(mostCurrent._dbasefuncti
  } 
        catch (Exception e29) {
 			processBA.setLastException(e29); //BA.debugLineNum = 328;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("115269920",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("818022432",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 330;BA.debugLine="rsJONCDetails.Close";
 _rsjoncdetails.Close();
@@ -1126,7 +1126,7 @@ mostCurrent._cbopipesize.Add(BA.ObjectToCharSequence(mostCurrent._globalvar._sf 
 			processBA.setLastException(e13); //BA.debugLineNum = 496;BA.debugLine="ToastMessageShow(\"Unable to Load Pipe Type due t";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Unable to Load Pipe Type due to "+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage()),anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 497;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("115990798",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("818743310",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 499;BA.debugLine="rsPipeSize.Close";
 _rspipesize.Close();
@@ -1166,7 +1166,7 @@ mostCurrent._cbopipetype.Add(BA.ObjectToCharSequence(mostCurrent._globalvar._sf 
 			processBA.setLastException(e13); //BA.debugLineNum = 477;BA.debugLine="ToastMessageShow(\"Unable to Load Pipe Type due t";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Unable to Load Pipe Type due to "+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage()),anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 478;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("115925262",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("818677774",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 480;BA.debugLine="rsPipeType.Close";
 _rspipetype.Close();
@@ -1193,7 +1193,7 @@ _pcount = 0;
 try { //BA.debugLineNum = 510;BA.debugLine="Starter.strCriteria = \"SELECT * FROM tblPlumbers";
 mostCurrent._starter._strcriteria /*String*/  = "SELECT * FROM tblPlumbers "+"ORDER BY id ASC";
  //BA.debugLineNum = 513;BA.debugLine="LogColor(Starter.strCriteria, Colors.Blue)";
-anywheresoftware.b4a.keywords.Common.LogImpl("116056331",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Blue);
+anywheresoftware.b4a.keywords.Common.LogImpl("818808843",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Blue);
  //BA.debugLineNum = 515;BA.debugLine="rsPlumbers =  Starter.DBCon.ExecQuery (Starter.s";
 _rsplumbers = (anywheresoftware.b4a.sql.SQL.CursorWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.CursorWrapper(), (android.database.Cursor)(mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery(mostCurrent._starter._strcriteria /*String*/ )));
  //BA.debugLineNum = 516;BA.debugLine="If rsPlumbers.RowCount > 0 Then";
@@ -1462,7 +1462,7 @@ return "";
 public static String  _spnplumbers_onitemselected(int _position,boolean _ischecked,String _item) throws Exception{
  //BA.debugLineNum = 689;BA.debugLine="Sub spnPlumbers_onItemSelected(position As Int, is";
  //BA.debugLineNum = 690;BA.debugLine="LogColor(item, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("116711681",_item,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("819464193",_item,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 691;BA.debugLine="End Sub";
 return "";
 }
@@ -1637,15 +1637,15 @@ _sremarks = mostCurrent._txtremarks.getText();
  //BA.debugLineNum = 734;BA.debugLine="Starter.FLP.Connect";
 mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .Connect();
  //BA.debugLineNum = 736;BA.debugLine="Log($\"FLP is COnnected? \"$ & Starter.FLP.IsConnec";
-anywheresoftware.b4a.keywords.Common.LogImpl("116777256",("FLP is COnnected? ")+BA.ObjectToString(mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .IsConnected()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("819529768",("FLP is COnnected? ")+BA.ObjectToString(mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .IsConnected()),0);
  //BA.debugLineNum = 738;BA.debugLine="LogColor($\"Latitude: \"$ & GlobalVar.Lat, Colors.M";
-anywheresoftware.b4a.keywords.Common.LogImpl("116777258",("Latitude: ")+mostCurrent._globalvar._lat /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("819529770",("Latitude: ")+mostCurrent._globalvar._lat /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 739;BA.debugLine="LogColor($\"Longitude: \"$ & GlobalVar.Lon, Colors.";
-anywheresoftware.b4a.keywords.Common.LogImpl("116777259",("Longitude: ")+mostCurrent._globalvar._lon /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("819529771",("Longitude: ")+mostCurrent._globalvar._lon /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 741;BA.debugLine="sLocation = GlobalVar.Lat & \",\" & GlobalVar.Lon";
 _slocation = mostCurrent._globalvar._lat /*String*/ +","+mostCurrent._globalvar._lon /*String*/ ;
  //BA.debugLineNum = 742;BA.debugLine="LogColor($\"Location is \"$ & sLocation, Colors.Yel";
-anywheresoftware.b4a.keywords.Common.LogImpl("116777262",("Location is ")+_slocation,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("819529774",("Location is ")+_slocation,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 744;BA.debugLine="lngDateTime = DateTime.Now";
 _lngdatetime = anywheresoftware.b4a.keywords.Common.DateTime.getNow();
  //BA.debugLineNum = 745;BA.debugLine="DateTime.DateFormat = \"yyyy-MM-dd hh:mm:ss a\"";
@@ -1681,7 +1681,7 @@ mostCurrent._imgsignature.setBitmap((android.graphics.Bitmap)(_bmp.getObject()))
  //BA.debugLineNum = 765;BA.debugLine="SignaturePad.saveBitmapToJPG(bmp,File.Combine(Sig";
 mostCurrent._signaturepad.saveBitmapToJPG((android.graphics.Bitmap)(_bmp.getObject()),anywheresoftware.b4a.keywords.Common.File.Combine(mostCurrent._sigfoldername,mostCurrent._sigfilename));
  //BA.debugLineNum = 766;BA.debugLine="Log(SigFilename & \" Saved\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("116777286",mostCurrent._sigfilename+" Saved",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("819529798",mostCurrent._sigfilename+" Saved",0);
  //BA.debugLineNum = 768;BA.debugLine="Dim Phone As Phone";
 _phone = new anywheresoftware.b4a.phone.Phone();
  //BA.debugLineNum = 769;BA.debugLine="Dim i As Intent";
@@ -1712,7 +1712,7 @@ _dispinfomsg(("JO ACCOMPLISHED"),("JO has been successfully accomplished."));
  } 
        catch (Exception e66) {
 			processBA.setLastException(e66); //BA.debugLineNum = 793;BA.debugLine="Log(LastException.Message)";
-anywheresoftware.b4a.keywords.Common.LogImpl("116777313",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("819529825",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
  };
  //BA.debugLineNum = 795;BA.debugLine="Starter.DBCon.EndTransaction";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .EndTransaction();
@@ -1811,7 +1811,7 @@ if (true) return anywheresoftware.b4a.keywords.Common.True;
  } 
        catch (Exception e51) {
 			processBA.setLastException(e51); //BA.debugLineNum = 607;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("116121918",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("818874430",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 608;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };

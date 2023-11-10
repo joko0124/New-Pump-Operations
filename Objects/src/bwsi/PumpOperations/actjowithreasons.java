@@ -352,12 +352,14 @@ public anywheresoftware.b4a.objects.LabelWrapper _lblcancelled = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lbltotals = null;
 public b4a.example.dateutils _dateutils = null;
 public bwsi.PumpOperations.main _main = null;
+public bwsi.PumpOperations.globalvar _globalvar = null;
+public bwsi.PumpOperations.myfunctions _myfunctions = null;
+public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
 public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
-public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
-public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
 public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
@@ -383,13 +385,11 @@ public bwsi.PumpOperations.addeditnonoperational _addeditnonoperational = null;
 public bwsi.PumpOperations.addeditproblem _addeditproblem = null;
 public bwsi.PumpOperations.addeditpsidistrecord _addeditpsidistrecord = null;
 public bwsi.PumpOperations.addeditpsirdg _addeditpsirdg = null;
-public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
+public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.dbutils _dbutils = null;
 public bwsi.PumpOperations.edittimerecord _edittimerecord = null;
 public bwsi.PumpOperations.firebasemessaging _firebasemessaging = null;
-public bwsi.PumpOperations.globalvar _globalvar = null;
 public bwsi.PumpOperations.miscfunctions _miscfunctions = null;
-public bwsi.PumpOperations.myfunctions _myfunctions = null;
 public bwsi.PumpOperations.myscale _myscale = null;
 public bwsi.PumpOperations.starter _starter = null;
 public bwsi.PumpOperations.validation _validation = null;
@@ -514,13 +514,13 @@ bwsi.PumpOperations.actjowithreasons._josummary _jocount = null;
  //BA.debugLineNum = 173;BA.debugLine="Dim JOCount As JOSummary = Value";
 _jocount = (bwsi.PumpOperations.actjowithreasons._josummary)(_value);
  //BA.debugLineNum = 175;BA.debugLine="LogColor(Value, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171106563",BA.ObjectToString(_value),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("838666243",BA.ObjectToString(_value),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 176;BA.debugLine="LogColor(JOCount.JOCatCode, Colors.Red)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171106564",_jocount.JOCatCode /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Red);
+anywheresoftware.b4a.keywords.Common.LogImpl("838666244",_jocount.JOCatCode /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Red);
  //BA.debugLineNum = 177;BA.debugLine="LogColor(JOCount.JODesc, Colors.Magenta)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171106565",_jocount.JODesc /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("838666245",_jocount.JODesc /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 178;BA.debugLine="LogColor(JOCount.JOTotals, Colors.Red)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171106566",BA.NumberToString(_jocount.JOTotals /*int*/ ),anywheresoftware.b4a.keywords.Common.Colors.Red);
+anywheresoftware.b4a.keywords.Common.LogImpl("838666246",BA.NumberToString(_jocount.JOTotals /*int*/ ),anywheresoftware.b4a.keywords.Common.Colors.Red);
  //BA.debugLineNum = 181;BA.debugLine="GlobalVar.SelectedJODesc = JOCount.JODesc";
 mostCurrent._globalvar._selectedjodesc /*String*/  = _jocount.JODesc /*String*/ ;
  //BA.debugLineNum = 182;BA.debugLine="StartActivity(actJOReasons)";
@@ -674,7 +674,7 @@ this.catchState = 20;
  //BA.debugLineNum = 121;BA.debugLine="Starter.strCriteria = \"SELECT sum(CASE WHEN JOs.";
 parent.mostCurrent._starter._strcriteria /*String*/  = "SELECT sum(CASE WHEN JOs.JOStatus = 1 THEN 1 ELSE 0 END) AS PendingJOs, "+"sum(CASE WHEN JOs.JOStatus = 2 THEN 1 ELSE 0 END) AS OnGoingJOs, "+"sum(CASE WHEN JOs.JOStatus = 3 THEN 1 ELSE 0 END) AS AccomplishedJOs, "+"sum(CASE WHEN JOs.JOStatus = 4 THEN 1 ELSE 0 END) AS CancelledJOs, "+"count(JOs.JOID) AS TotalJOs, JOs.JoDesc "+"FROM tblJOs AS JOs "+"INNER JOIN constant_jo_categories AS JOCat ON JOs.JOCatCode = JOCat.jo_code "+"WHERE JOs.JOAssignedTo = "+BA.NumberToString(_iuserid)+" "+"AND JOs.BranchID = "+BA.NumberToString(_ibranchid)+" "+"AND JOs.JOCatCode = '"+_sjocatcode+"' "+"GROUP BY JOs.JoDesc ORDER BY JOCat.id ASC";
  //BA.debugLineNum = 132;BA.debugLine="LogColor(Starter.strCriteria, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171041038",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("838600718",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 134;BA.debugLine="SenderFilter = Starter.DBCon.ExecQueryAsync(\"SQL";
 _senderfilter = parent.mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQueryAsync(processBA,"SQL",parent.mostCurrent._starter._strcriteria /*String*/ ,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(anywheresoftware.b4a.keywords.Common.Null)));
  //BA.debugLineNum = 135;BA.debugLine="Wait For (SenderFilter) SQL_QueryComplete (Succe";
@@ -781,7 +781,7 @@ case 17:
 //C
 this.state = 18;
  //BA.debugLineNum = 159;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171041065",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("838600745",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 18:
@@ -789,7 +789,7 @@ case 18:
 this.state = 21;
 ;
  //BA.debugLineNum = 162;BA.debugLine="Log($\"List of Job Order Records = ${NumberFormat";
-anywheresoftware.b4a.keywords.Common.LogImpl("171041068",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("838600748",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
  if (true) break;
 
 case 20:
@@ -797,7 +797,7 @@ case 20:
 this.state = 21;
 this.catchState = 0;
  //BA.debugLineNum = 164;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171041070",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("838600750",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -975,7 +975,7 @@ case 12:
 this.state = 13;
 ;
  //BA.debugLineNum = 275;BA.debugLine="LogColor(Starter.strCriteria, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171237665",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("838797345",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 276;BA.debugLine="SenderFilter = Starter.DBCon.ExecQueryAsync(\"SQL\"";
 _senderfilter = parent.mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQueryAsync(processBA,"SQL",parent.mostCurrent._starter._strcriteria /*String*/ ,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(anywheresoftware.b4a.keywords.Common.Null)));
  //BA.debugLineNum = 278;BA.debugLine="Wait For (SenderFilter) SQL_QueryComplete (Succes";
@@ -1082,7 +1082,7 @@ case 26:
 //C
 this.state = 27;
  //BA.debugLineNum = 302;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("171237692",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("838797372",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 27:
@@ -1090,7 +1090,7 @@ case 27:
 this.state = -1;
 ;
  //BA.debugLineNum = 305;BA.debugLine="Log($\"List of Job Order Records = ${NumberFormat2";
-anywheresoftware.b4a.keywords.Common.LogImpl("171237695",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("838797375",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
  //BA.debugLineNum = 307;BA.debugLine="End Sub";
 if (true) break;
 

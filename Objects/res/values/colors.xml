@@ -22,7 +22,7 @@
 
     <color name="joko_keyboard_none_key_bg_normal">#ffefefef</color>
     <color name="joko_keyboard_none_key_bg_pressed">#ffefefef</color>
-	<color name="joko_keyboard_round_gradient_button_start_color">#FFECE9E6</color>
-	<color name="joko_keyboard_round_gradient_button_end_color">#FFFFFFFF</color>
+	<color name="joko_keyboard_round_gradient_button_start_color">#FF0055B3</color>
+	<color name="joko_keyboard_round_gradient_button_end_color">#FF1CB5CE</color>
 
 </resources>

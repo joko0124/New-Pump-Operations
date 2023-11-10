@@ -137,10 +137,14 @@ Sub Activity_Create(FirstTime As Boolean)
 	txtTry1.Background = CDtxtBox
 	txtTry2.Background = CDtxtBox
 	txtTry3.Background = CDtxtBox
+	txtTry1.Padding = Array As Int(1dip, 0dip, 10dip, 0dip)
+	txtTry2.Padding = Array As Int(1dip, 0dip, 10dip, 0dip)
+	txtTry3.Padding = Array As Int(1dip, 0dip, 10dip, 0dip)
 	
 	cdGPM.Initialize2(Colors.Black, 0, 0, Colors.Transparent)
 	txtGPM.Background = cdGPM
 	txtGPM.TextColor = 0xFFADFF2F
+	txtGPM.Padding = Array As Int(0dip, 0dip, 0dip, -5dip)
 	
 	cdRem.Initialize2(Colors.Transparent, 0, 0, Colors.Transparent)
 	txtRemarks.Background = cdRem
@@ -690,7 +694,7 @@ Sub ShowTimer
 	pnlStopWatch.AddView(SW1,1%x, 1%y, pnlStopWatch.Width - 1%x, pnlStopWatch.Height - 1%y)
 	SW1.Color = Colors.Black
 	SW1.TextColor = 0xFFADFF2F
-	SW1.TextSize = 40
+	SW1.TextSize = 35
 	SW1.Typeface = Typeface.DEFAULT_BOLD
 	SW1.Gravity = Gravity.CENTER
 	

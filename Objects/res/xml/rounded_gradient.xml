@@ -3,9 +3,11 @@
     <gradient
         android:angle="45"
         android:startColor="@color/joko_keyboard_round_gradient_button_start_color"
-        android:endColor="@color/joko_keyboard_round_gradient_button_end_color" />
+        android:centerColor="@color/joko_keyboard_round_gradient_button_end_color" 
+        android:endColor="@color/joko_keyboard_round_gradient_button_start_color" 
+		android:type="linear" />
 
     <corners android:radius="10dp" />
-	<stroke android:width="2dp" android:color="#FF17A2B8" />
+	<stroke android:width="2dp" android:color="#FFFFFFFF" />
 	<padding android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp" />
 </shape>

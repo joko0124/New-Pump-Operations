@@ -34,13 +34,11 @@ views.get("pnlpump").vw.setHeight((int)((23.5d / 100 * height) - ((1d / 100 * he
 views.get("lblpumptitle").vw.setLeft((int)(0d));
 views.get("lblpumptitle").vw.setWidth((int)((views.get("pnlpump").vw.getWidth()) - (0d)));
 views.get("lblpumptitle").vw.setTop((int)(0d));
-views.get("lbl1").vw.setTop((int)((views.get("lblpumptitle").vw.getTop() + views.get("lblpumptitle").vw.getHeight())+(3d * scale)));
-views.get("lbl1").vw.setLeft((int)((2d / 100 * width)));
 views.get("lblcode").vw.setTop((int)((views.get("lblpumptitle").vw.getTop() + views.get("lblpumptitle").vw.getHeight())+(3d * scale)));
-views.get("lblcode").vw.setLeft((int)((views.get("lbl1").vw.getLeft() + views.get("lbl1").vw.getWidth())+(3d * scale)));
-views.get("lblcode").vw.setWidth((int)((views.get("pnlpump").vw.getWidth())-(5d * scale) - ((views.get("lbl1").vw.getLeft() + views.get("lbl1").vw.getWidth())+(3d * scale))));
-views.get("lbl6").vw.setTop((int)((views.get("lbl1").vw.getTop() + views.get("lbl1").vw.getHeight())+(10d * scale)));
-views.get("lbl6").vw.setLeft((int)((views.get("lbl1").vw.getLeft())));
+views.get("lblcode").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblcode").vw.setWidth((int)((views.get("pnlpump").vw.getWidth())-(5d * scale) - ((2d / 100 * width))));
+views.get("lbl6").vw.setTop((int)((views.get("lblcode").vw.getTop() + views.get("lblcode").vw.getHeight())+(10d * scale)));
+views.get("lbl6").vw.setLeft((int)((views.get("lblcode").vw.getLeft())));
 views.get("pnlpsipoint").vw.setTop((int)((views.get("lbl6").vw.getTop())));
 views.get("pnlpsipoint").vw.setLeft((int)((views.get("lbl6").vw.getLeft() + views.get("lbl6").vw.getWidth())+(5d * scale)));
 views.get("pnlpsipoint").vw.setWidth((int)((views.get("pnlpump").vw.getWidth())-(2d / 100 * width) - ((views.get("lbl6").vw.getLeft() + views.get("lbl6").vw.getWidth())+(5d * scale))));
@@ -85,7 +83,7 @@ views.get("pnlcover2").vw.setTop((int)((views.get("chkdefaulttimeread").vw.getTo
 views.get("pnlreading").vw.setLeft((int)((2d / 100 * width)));
 views.get("pnlreading").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((2d / 100 * width))));
 views.get("pnlreading").vw.setTop((int)((views.get("pnlreadingtime").vw.getTop() + views.get("pnlreadingtime").vw.getHeight())+(5d * scale)));
-views.get("pnlreading").vw.setHeight((int)((58d / 100 * height) - ((views.get("pnlreadingtime").vw.getTop() + views.get("pnlreadingtime").vw.getHeight())+(5d * scale))));
+views.get("pnlreading").vw.setHeight((int)((60d / 100 * height) - ((views.get("pnlreadingtime").vw.getTop() + views.get("pnlreadingtime").vw.getHeight())+(5d * scale))));
 views.get("lblreadingtitle").vw.setTop((int)(0d));
 views.get("lblreadingtitle").vw.setLeft((int)(0d));
 views.get("lblreadingtitle").vw.setWidth((int)((views.get("pnlreading").vw.getWidth()) - (0d)));
@@ -95,12 +93,12 @@ views.get("pnlanchorpsi").vw.setLeft((int)((3d / 100 * width)));
 views.get("pnlanchorpsi").vw.setWidth((int)((views.get("pnlreading").vw.getWidth())-(3d / 100 * width) - ((3d / 100 * width))));
 views.get("txtpsirdg").vw.setLeft((int)((1d / 100 * width)));
 views.get("txtpsirdg").vw.setWidth((int)((views.get("pnlanchorpsi").vw.getWidth())-(1d / 100 * width) - ((1d / 100 * width))));
-views.get("txtpsirdg").vw.setTop((int)((1d / 100 * height)));
-views.get("txtpsirdg").vw.setHeight((int)((views.get("pnlanchorpsi").vw.getHeight())-(1d / 100 * height) - ((1d / 100 * height))));
+views.get("txtpsirdg").vw.setTop((int)((0.5d / 100 * height)));
+views.get("txtpsirdg").vw.setHeight((int)((views.get("pnlanchorpsi").vw.getHeight())-(0.5d / 100 * height) - ((0.5d / 100 * height))));
 views.get("pnlremarks").vw.setLeft((int)((2d / 100 * width)));
 views.get("pnlremarks").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((2d / 100 * width))));
 views.get("pnlremarks").vw.setTop((int)((views.get("pnlreading").vw.getTop() + views.get("pnlreading").vw.getHeight())+(15d * scale)));
-views.get("pnlremarks").vw.setHeight((int)((77d / 100 * height) - ((views.get("pnlreading").vw.getTop() + views.get("pnlreading").vw.getHeight())+(15d * scale))));
+views.get("pnlremarks").vw.setHeight((int)((80d / 100 * height) - ((views.get("pnlreading").vw.getTop() + views.get("pnlreading").vw.getHeight())+(15d * scale))));
 views.get("lblremarkstitle").vw.setLeft((int)(0d));
 views.get("lblremarkstitle").vw.setWidth((int)((views.get("pnlremarks").vw.getWidth()) - (0d)));
 views.get("lblremarkstitle").vw.setTop((int)(0d));
@@ -114,8 +112,8 @@ views.get("txtremarks").vw.setTop((int)((1d / 100 * height)));
 views.get("txtremarks").vw.setHeight((int)((views.get("pnlremarksanchor").vw.getHeight())-(1d / 100 * height) - ((1d / 100 * height))));
 views.get("btnsaveupdate").vw.setLeft((int)((2d / 100 * width)));
 views.get("btnsaveupdate").vw.setWidth((int)((views.get("pnlmain").vw.getWidth())-(2d / 100 * width) - ((2d / 100 * width))));
-views.get("btnsaveupdate").vw.setTop((int)((views.get("pnlremarks").vw.getTop() + views.get("pnlremarks").vw.getHeight())+(20d * scale)));
-views.get("btnsaveupdate").vw.setHeight((int)((90d / 100 * height) - ((views.get("pnlremarks").vw.getTop() + views.get("pnlremarks").vw.getHeight())+(20d * scale))));
+views.get("btnsaveupdate").vw.setTop((int)((views.get("pnlremarks").vw.getTop() + views.get("pnlremarks").vw.getHeight())+(10d * scale)));
+views.get("btnsaveupdate").vw.setHeight((int)((views.get("pnlmain").vw.getHeight())-(1d / 100 * height) - ((views.get("pnlremarks").vw.getTop() + views.get("pnlremarks").vw.getHeight())+(10d * scale))));
 
 }
 }

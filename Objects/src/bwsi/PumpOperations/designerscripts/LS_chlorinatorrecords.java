@@ -113,9 +113,9 @@ views.get("cbotype").vw.setHeight((int)((views.get("pnltypeanchor").vw.getHeight
 views.get("lbl7").vw.setTop((int)((views.get("lbl6").vw.getTop() + views.get("lbl6").vw.getHeight())+(5d * scale)));
 //BA.debugLineNum = 92;BA.debugLine="pnlVolAnchor.Top = pnlTypeAnchor.Bottom + 5dip"[ChlorinatorRecords/General script]
 views.get("pnlvolanchor").vw.setTop((int)((views.get("pnltypeanchor").vw.getTop() + views.get("pnltypeanchor").vw.getHeight())+(5d * scale)));
-//BA.debugLineNum = 93;BA.debugLine="pnlVolAnchor.SetLeftAndRight(lbl7.Right + 5dip, pnlChlorine.Width - 35%x)"[ChlorinatorRecords/General script]
+//BA.debugLineNum = 93;BA.debugLine="pnlVolAnchor.SetLeftAndRight(lbl7.Right + 5dip, pnlChlorine.Width - 40%x)"[ChlorinatorRecords/General script]
 views.get("pnlvolanchor").vw.setLeft((int)((views.get("lbl7").vw.getLeft() + views.get("lbl7").vw.getWidth())+(5d * scale)));
-views.get("pnlvolanchor").vw.setWidth((int)((views.get("pnlchlorine").vw.getWidth())-(35d / 100 * width) - ((views.get("lbl7").vw.getLeft() + views.get("lbl7").vw.getWidth())+(5d * scale))));
+views.get("pnlvolanchor").vw.setWidth((int)((views.get("pnlchlorine").vw.getWidth())-(40d / 100 * width) - ((views.get("lbl7").vw.getLeft() + views.get("lbl7").vw.getWidth())+(5d * scale))));
 //BA.debugLineNum = 94;BA.debugLine="txtVolume.SetLeftAndRight(1%x, pnlVolAnchor.Width - 15%x)"[ChlorinatorRecords/General script]
 views.get("txtvolume").vw.setLeft((int)((1d / 100 * width)));
 views.get("txtvolume").vw.setWidth((int)((views.get("pnlvolanchor").vw.getWidth())-(15d / 100 * width) - ((1d / 100 * width))));

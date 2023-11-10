@@ -362,12 +362,14 @@ public bm.watscho.keyboard.CustomKeyboard _ckeyboard = null;
 public anywheresoftware.b4a.objects.IME _imekeyboard = null;
 public b4a.example.dateutils _dateutils = null;
 public bwsi.PumpOperations.main _main = null;
+public bwsi.PumpOperations.globalvar _globalvar = null;
+public bwsi.PumpOperations.myfunctions _myfunctions = null;
+public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
 public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
-public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
-public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
 public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
@@ -393,13 +395,11 @@ public bwsi.PumpOperations.addeditfmrdg _addeditfmrdg = null;
 public bwsi.PumpOperations.addeditnonoperational _addeditnonoperational = null;
 public bwsi.PumpOperations.addeditproblem _addeditproblem = null;
 public bwsi.PumpOperations.addeditpsirdg _addeditpsirdg = null;
-public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
+public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.dbutils _dbutils = null;
 public bwsi.PumpOperations.edittimerecord _edittimerecord = null;
 public bwsi.PumpOperations.firebasemessaging _firebasemessaging = null;
-public bwsi.PumpOperations.globalvar _globalvar = null;
 public bwsi.PumpOperations.miscfunctions _miscfunctions = null;
-public bwsi.PumpOperations.myfunctions _myfunctions = null;
 public bwsi.PumpOperations.myscale _myscale = null;
 public bwsi.PumpOperations.starter _starter = null;
 public bwsi.PumpOperations.validation _validation = null;
@@ -421,8 +421,8 @@ anywheresoftware.b4a.object.XmlLayoutBuilder _xl = null;
 mostCurrent._myscale._setrate /*String*/ (mostCurrent.activityBA,0.5);
  //BA.debugLineNum = 57;BA.debugLine="Activity.LoadLayout(\"NewPsiRdgDist\")";
 mostCurrent._activity.LoadLayout("NewPsiRdgDist",mostCurrent.activityBA);
- //BA.debugLineNum = 59;BA.debugLine="lblCode.Text = GlobalVar.PumpHouseCode & $\" - \"$";
-mostCurrent._lblcode.setText(BA.ObjectToCharSequence(mostCurrent._globalvar._pumphousecode /*String*/ +(" - ")+_getpumplocation(mostCurrent._globalvar._pumphouseid /*int*/ )));
+ //BA.debugLineNum = 59;BA.debugLine="lblCode.Text = $\"PUMP - \"$ & GlobalVar.PumpHouseC";
+mostCurrent._lblcode.setText(BA.ObjectToCharSequence(("PUMP - ")+mostCurrent._globalvar._pumphousecode /*String*/ +(" - ")+_getpumplocation(mostCurrent._globalvar._pumphouseid /*int*/ )));
  //BA.debugLineNum = 60;BA.debugLine="imeKeyboard.Initialize(\"ime\")";
 mostCurrent._imekeyboard.Initialize("ime");
  //BA.debugLineNum = 62;BA.debugLine="InpTyp.Initialize";
@@ -473,8 +473,6 @@ _getpsidistrdgdetails(mostCurrent._globalvar._psidistdetailid /*int*/ );
  };
  //BA.debugLineNum = 92;BA.debugLine="If FirstTime Then";
 if (_firsttime) { 
- //BA.debugLineNum = 93;BA.debugLine="FillPressurePoint(GlobalVar.PumpHouseID)";
-_fillpressurepoint(mostCurrent._globalvar._pumphouseid /*int*/ );
  };
  //BA.debugLineNum = 95;BA.debugLine="txtPSIRdg.InputType = Bit.Or(txtPSIRdg.InputType,";
 mostCurrent._txtpsirdg.setInputType(anywheresoftware.b4a.keywords.Common.Bit.Or(mostCurrent._txtpsirdg.getInputType(),_type_text_flag_no_suggestions));
@@ -527,22 +525,22 @@ if (_result) {
  //BA.debugLineNum = 119;BA.debugLine="If Permission = Starter.RTP.PERMISSION_READ_EXTE";
 if ((_permission).equals(mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_READ_EXTERNAL_STORAGE)) { 
  //BA.debugLineNum = 120;BA.debugLine="LogColor($\"Permission to Read External Storage";
-anywheresoftware.b4a.keywords.Common.LogImpl("1103743491",("Permission to Read External Storage GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("871303171",("Permission to Read External Storage GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 121;BA.debugLine="GlobalVar.ReadStoragePermission = True";
 mostCurrent._globalvar._readstoragepermission /*boolean*/  = anywheresoftware.b4a.keywords.Common.True;
  }else if((_permission).equals(mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_WRITE_EXTERNAL_STORAGE)) { 
  //BA.debugLineNum = 123;BA.debugLine="LogColor($\"Permission to Write External Storage";
-anywheresoftware.b4a.keywords.Common.LogImpl("1103743494",("Permission to Write External Storage GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.White);
+anywheresoftware.b4a.keywords.Common.LogImpl("871303174",("Permission to Write External Storage GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.White);
  //BA.debugLineNum = 124;BA.debugLine="GlobalVar.WriteStoragePermission = True";
 mostCurrent._globalvar._writestoragepermission /*boolean*/  = anywheresoftware.b4a.keywords.Common.True;
  }else if((_permission).equals(mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_ACCESS_COARSE_LOCATION)) { 
  //BA.debugLineNum = 126;BA.debugLine="LogColor($\"Permission to Access Coarse Location";
-anywheresoftware.b4a.keywords.Common.LogImpl("1103743497",("Permission to Access Coarse Location GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("871303177",("Permission to Access Coarse Location GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 127;BA.debugLine="GlobalVar.CoarseLocPermission = True";
 mostCurrent._globalvar._coarselocpermission /*boolean*/  = anywheresoftware.b4a.keywords.Common.True;
  }else if((_permission).equals(mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_ACCESS_FINE_LOCATION)) { 
  //BA.debugLineNum = 129;BA.debugLine="LogColor($\"Permission to Access Fine Location G";
-anywheresoftware.b4a.keywords.Common.LogImpl("1103743500",("Permission to Access Fine Location GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("871303180",("Permission to Access Fine Location GRANTED"),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 130;BA.debugLine="GlobalVar.FineLocPermission = True";
 mostCurrent._globalvar._finelocpermission /*boolean*/  = anywheresoftware.b4a.keywords.Common.True;
  };
@@ -561,7 +559,7 @@ mostCurrent._globalvar._finelocpermission /*boolean*/  = anywheresoftware.b4a.ke
 _result = anywheresoftware.b4a.keywords.Common.False;
  };
  //BA.debugLineNum = 140;BA.debugLine="Log (Permission)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1103743511",_permission,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("871303191",_permission,0);
  //BA.debugLineNum = 141;BA.debugLine="End Sub";
 return "";
 }
@@ -571,18 +569,18 @@ public static String  _activity_resume() throws Exception{
 return "";
 }
 public static String  _addupdatepsireading_buttonpressed(de.amberhome.materialdialogs.MaterialDialogWrapper _mdialog,String _saction) throws Exception{
- //BA.debugLineNum = 734;BA.debugLine="Private Sub AddUpdatePSIReading_ButtonPressed(mDia";
- //BA.debugLineNum = 735;BA.debugLine="Select Case sAction";
+ //BA.debugLineNum = 736;BA.debugLine="Private Sub AddUpdatePSIReading_ButtonPressed(mDia";
+ //BA.debugLineNum = 737;BA.debugLine="Select Case sAction";
 switch (BA.switchObjectToInt(_saction,_mdialog.ACTION_POSITIVE)) {
 case 0: {
- //BA.debugLineNum = 737;BA.debugLine="imeKeyboard.HideKeyboard";
+ //BA.debugLineNum = 739;BA.debugLine="imeKeyboard.HideKeyboard";
 mostCurrent._imekeyboard.HideKeyboard(mostCurrent.activityBA);
- //BA.debugLineNum = 738;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 740;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  break; }
 }
 ;
- //BA.debugLineNum = 740;BA.debugLine="End Sub";
+ //BA.debugLineNum = 742;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnsaveupdate_click() throws Exception{
@@ -660,7 +658,7 @@ mostCurrent._srdgtime = _shr+":"+_smin+" PM";
  };
  };
  //BA.debugLineNum = 225;BA.debugLine="LogColor($\"Reading Time: \"$ & sRdgTime,Colors.Yel";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104202287",("Reading Time: ")+mostCurrent._srdgtime,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("871761967",("Reading Time: ")+mostCurrent._srdgtime,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 227;BA.debugLine="ConfirmSaveUpdateReading";
 _confirmsaveupdatereading();
  //BA.debugLineNum = 228;BA.debugLine="End Sub";
@@ -669,7 +667,7 @@ return "";
 public static String  _cbopsipoint_itemclick(int _position,Object _value) throws Exception{
  //BA.debugLineNum = 230;BA.debugLine="Sub cboPSIPoint_ItemClick (Position As Int, Value";
  //BA.debugLineNum = 231;BA.debugLine="LogColor($\"Selected \"$ & Position & \" - \" & Value";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104267777",("Selected ")+BA.NumberToString(_position)+" - "+BA.ObjectToString(_value),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("871827457",("Selected ")+BA.NumberToString(_position)+" - "+BA.ObjectToString(_value),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 232;BA.debugLine="txtLocation.Text = GetLocation(Value)";
 mostCurrent._txtlocation.setText(BA.ObjectToCharSequence(_getlocation(BA.ObjectToString(_value))));
  //BA.debugLineNum = 233;BA.debugLine="End Sub";
@@ -678,7 +676,7 @@ return "";
 public static String  _checkpermissions() throws Exception{
  //BA.debugLineNum = 105;BA.debugLine="Private Sub CheckPermissions";
  //BA.debugLineNum = 106;BA.debugLine="Log(\"Checking Permissions\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("1103677953","Checking Permissions",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("871237633","Checking Permissions",0);
  //BA.debugLineNum = 108;BA.debugLine="Starter.RTP.CheckAndRequest(Starter.RTP.PERMISSIO";
 mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .CheckAndRequest(processBA,mostCurrent._starter._rtp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .PERMISSION_READ_EXTERNAL_STORAGE);
  //BA.debugLineNum = 109;BA.debugLine="Starter.RTP.CheckAndRequest(Starter.RTP.PERMISSIO";
@@ -749,65 +747,65 @@ mostCurrent._imekeyboard.ShowKeyboard((android.view.View)(mostCurrent._msktimere
 return "";
 }
 public static String  _clearui() throws Exception{
- //BA.debugLineNum = 485;BA.debugLine="Private Sub ClearUI";
- //BA.debugLineNum = 486;BA.debugLine="cboPSIPoint.Clear";
+ //BA.debugLineNum = 486;BA.debugLine="Private Sub ClearUI";
+ //BA.debugLineNum = 487;BA.debugLine="cboPSIPoint.Clear";
 mostCurrent._cbopsipoint.Clear();
- //BA.debugLineNum = 487;BA.debugLine="txtLocation.Text = \"\"";
+ //BA.debugLineNum = 488;BA.debugLine="txtLocation.Text = \"\"";
 mostCurrent._txtlocation.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 488;BA.debugLine="chkDefaultTimeRead.Checked = False";
+ //BA.debugLineNum = 489;BA.debugLine="chkDefaultTimeRead.Checked = False";
 mostCurrent._chkdefaulttimeread.setChecked(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 489;BA.debugLine="mskTimeRead.Text = \"__:__\"";
+ //BA.debugLineNum = 490;BA.debugLine="mskTimeRead.Text = \"__:__\"";
 mostCurrent._msktimeread.setText((Object)("__:__"));
- //BA.debugLineNum = 490;BA.debugLine="txtPSIRdg.Text = \"\"";
+ //BA.debugLineNum = 491;BA.debugLine="txtPSIRdg.Text = \"\"";
 mostCurrent._txtpsirdg.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 491;BA.debugLine="txtRemarks.Text = \"\"";
+ //BA.debugLineNum = 492;BA.debugLine="txtRemarks.Text = \"\"";
 mostCurrent._txtremarks.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 492;BA.debugLine="CDtxtBox.Initialize(Colors.Transparent,0)";
+ //BA.debugLineNum = 493;BA.debugLine="CDtxtBox.Initialize(Colors.Transparent,0)";
 mostCurrent._cdtxtbox.Initialize(anywheresoftware.b4a.keywords.Common.Colors.Transparent,(int) (0));
- //BA.debugLineNum = 494;BA.debugLine="txtLocation.Background = CDtxtBox";
+ //BA.debugLineNum = 495;BA.debugLine="txtLocation.Background = CDtxtBox";
 mostCurrent._txtlocation.setBackground((android.graphics.drawable.Drawable)(mostCurrent._cdtxtbox.getObject()));
- //BA.debugLineNum = 495;BA.debugLine="mskTimeRead.Background = CDtxtBox";
+ //BA.debugLineNum = 496;BA.debugLine="mskTimeRead.Background = CDtxtBox";
 mostCurrent._msktimeread.setBackground((android.graphics.drawable.Drawable)(mostCurrent._cdtxtbox.getObject()));
- //BA.debugLineNum = 496;BA.debugLine="txtRemarks.Background = CDtxtBox";
+ //BA.debugLineNum = 497;BA.debugLine="txtRemarks.Background = CDtxtBox";
 mostCurrent._txtremarks.setBackground((android.graphics.drawable.Drawable)(mostCurrent._cdtxtbox.getObject()));
- //BA.debugLineNum = 497;BA.debugLine="cboPSIPoint.Background = CDtxtBox";
+ //BA.debugLineNum = 498;BA.debugLine="cboPSIPoint.Background = CDtxtBox";
 mostCurrent._cbopsipoint.setBackground((android.graphics.drawable.Drawable)(mostCurrent._cdtxtbox.getObject()));
- //BA.debugLineNum = 499;BA.debugLine="cdReading.Initialize2(Colors.Black,0,0,0)";
+ //BA.debugLineNum = 500;BA.debugLine="cdReading.Initialize2(Colors.Black,0,0,0)";
 mostCurrent._cdreading.Initialize2(anywheresoftware.b4a.keywords.Common.Colors.Black,(int) (0),(int) (0),(int) (0));
- //BA.debugLineNum = 500;BA.debugLine="txtPSIRdg.Background = cdReading";
+ //BA.debugLineNum = 501;BA.debugLine="txtPSIRdg.Background = cdReading";
 mostCurrent._txtpsirdg.setBackground((android.graphics.drawable.Drawable)(mostCurrent._cdreading.getObject()));
- //BA.debugLineNum = 501;BA.debugLine="End Sub";
+ //BA.debugLineNum = 502;BA.debugLine="End Sub";
 return "";
 }
 public static String  _confirmsaveupdatereading() throws Exception{
 com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder _alert = null;
 String _stitle = "";
 String _smsg = "";
- //BA.debugLineNum = 642;BA.debugLine="Private Sub ConfirmSaveUpdateReading";
- //BA.debugLineNum = 643;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
+ //BA.debugLineNum = 644;BA.debugLine="Private Sub ConfirmSaveUpdateReading";
+ //BA.debugLineNum = 645;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
 _alert = new com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder();
- //BA.debugLineNum = 644;BA.debugLine="Dim sTitle, sMsg As String";
+ //BA.debugLineNum = 646;BA.debugLine="Dim sTitle, sMsg As String";
 _stitle = "";
 _smsg = "";
- //BA.debugLineNum = 646;BA.debugLine="If GlobalVar.blnNewPSIDist = True Then";
+ //BA.debugLineNum = 648;BA.debugLine="If GlobalVar.blnNewPSIDist = True Then";
 if (mostCurrent._globalvar._blnnewpsidist /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 647;BA.debugLine="sTitle = $\"SAVE NEW PSI READING\"$";
+ //BA.debugLineNum = 649;BA.debugLine="sTitle = $\"SAVE NEW PSI READING\"$";
 _stitle = ("SAVE NEW PSI READING");
- //BA.debugLineNum = 648;BA.debugLine="sMsg = $\"Save New Pressure Reading?\"$";
+ //BA.debugLineNum = 650;BA.debugLine="sMsg = $\"Save New Pressure Reading?\"$";
 _smsg = ("Save New Pressure Reading?");
  }else {
- //BA.debugLineNum = 650;BA.debugLine="sTitle = $\"UPDATE PSI READING\"$";
+ //BA.debugLineNum = 652;BA.debugLine="sTitle = $\"UPDATE PSI READING\"$";
 _stitle = ("UPDATE PSI READING");
- //BA.debugLineNum = 651;BA.debugLine="sMsg = $\"Update Pressure Reading?\"$";
+ //BA.debugLineNum = 653;BA.debugLine="sMsg = $\"Update Pressure Reading?\"$";
 _smsg = ("Update Pressure Reading?");
  };
- //BA.debugLineNum = 654;BA.debugLine="Alert.Initialize.Create _ 			.SetDialogStyleName(";
+ //BA.debugLineNum = 656;BA.debugLine="Alert.Initialize.Create _ 			.SetDialogStyleName(";
 _alert.Initialize().Create(mostCurrent.activityBA).SetDialogStyleName("MyDialogDisableStatus").SetStyle(_alert.getSTYLE_DIALOGUE()).SetCancelable(anywheresoftware.b4a.keywords.Common.False).SetTitle(_stitle).SetTitleColor((int) (mostCurrent._globalvar._bluecolor /*double*/ )).SetTitleTypeface((android.graphics.Typeface)(mostCurrent._fontbold.getObject())).SetMessage(_smsg).SetMessageTypeface((android.graphics.Typeface)(mostCurrent._font.getObject())).SetPositiveText("Confirm").SetPositiveColor((int) (mostCurrent._globalvar._poscolor /*double*/ )).SetPositiveTypeface((android.graphics.Typeface)(mostCurrent._fontbold.getObject())).SetNegativeText("Cancel").SetNegativeColor((int) (mostCurrent._globalvar._negcolor /*double*/ )).SetNegativeTypeface((android.graphics.Typeface)(mostCurrent._font.getObject())).SetOnPositiveClicked(mostCurrent.activityBA,"SavePSIReading").SetOnNegativeClicked(mostCurrent.activityBA,"SavePSIReading");
- //BA.debugLineNum = 671;BA.debugLine="Alert.SetDialogBackground(MyFunctions.myCD)";
+ //BA.debugLineNum = 673;BA.debugLine="Alert.SetDialogBackground(MyFunctions.myCD)";
 _alert.SetDialogBackground((android.graphics.drawable.Drawable)(mostCurrent._myfunctions._mycd /*anywheresoftware.b4a.objects.drawable.ColorDrawable*/ (mostCurrent.activityBA).getObject()));
- //BA.debugLineNum = 672;BA.debugLine="Alert.Build.Show";
+ //BA.debugLineNum = 674;BA.debugLine="Alert.Build.Show";
 _alert.Build().Show();
- //BA.debugLineNum = 673;BA.debugLine="End Sub";
+ //BA.debugLineNum = 675;BA.debugLine="End Sub";
 return "";
 }
 public static void  _fillpressurepoint(int _ipumpid) throws Exception{
@@ -838,11 +836,11 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 518;BA.debugLine="Dim SenderFilter As Object";
+ //BA.debugLineNum = 519;BA.debugLine="Dim SenderFilter As Object";
 _senderfilter = new Object();
- //BA.debugLineNum = 519;BA.debugLine="cboPSIPoint.Clear";
+ //BA.debugLineNum = 520;BA.debugLine="cboPSIPoint.Clear";
 parent.mostCurrent._cbopsipoint.Clear();
- //BA.debugLineNum = 520;BA.debugLine="Try";
+ //BA.debugLineNum = 521;BA.debugLine="Try";
 if (true) break;
 
 case 1:
@@ -856,11 +854,11 @@ case 3:
 //C
 this.state = 4;
 this.catchState = 15;
- //BA.debugLineNum = 521;BA.debugLine="Starter.strCriteria = \"SELECT PPointNo FROM tblP";
+ //BA.debugLineNum = 522;BA.debugLine="Starter.strCriteria = \"SELECT PPointNo FROM tblP";
 parent.mostCurrent._starter._strcriteria /*String*/  = "SELECT PPointNo FROM tblPressurePoint WHERE PumpHouseID = "+BA.NumberToString(_ipumpid);
- //BA.debugLineNum = 523;BA.debugLine="SenderFilter = Starter.DBCon.ExecQueryAsync(\"SQL";
+ //BA.debugLineNum = 524;BA.debugLine="SenderFilter = Starter.DBCon.ExecQueryAsync(\"SQL";
 _senderfilter = parent.mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQueryAsync(processBA,"SQL",parent.mostCurrent._starter._strcriteria /*String*/ ,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(anywheresoftware.b4a.keywords.Common.Null)));
- //BA.debugLineNum = 524;BA.debugLine="Wait For (SenderFilter) SQL_QueryComplete (Succe";
+ //BA.debugLineNum = 525;BA.debugLine="Wait For (SenderFilter) SQL_QueryComplete (Succe";
 anywheresoftware.b4a.keywords.Common.WaitFor("sql_querycomplete", processBA, this, _senderfilter);
 this.state = 17;
 return;
@@ -870,7 +868,7 @@ this.state = 4;
 _success = (Boolean) result[0];
 _rs = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) result[1];
 ;
- //BA.debugLineNum = 526;BA.debugLine="If Success Then";
+ //BA.debugLineNum = 527;BA.debugLine="If Success Then";
 if (true) break;
 
 case 4:
@@ -885,7 +883,7 @@ this.state = 12;
 case 6:
 //C
 this.state = 7;
- //BA.debugLineNum = 527;BA.debugLine="Do While RS.NextRow";
+ //BA.debugLineNum = 528;BA.debugLine="Do While RS.NextRow";
 if (true) break;
 
 case 7:
@@ -900,7 +898,7 @@ if (true) break;
 case 9:
 //C
 this.state = 7;
- //BA.debugLineNum = 528;BA.debugLine="cboPSIPoint.Add(GlobalVar.SF.Upper(RS.GetStrin";
+ //BA.debugLineNum = 529;BA.debugLine="cboPSIPoint.Add(GlobalVar.SF.Upper(RS.GetStrin";
 parent.mostCurrent._cbopsipoint.Add(BA.ObjectToCharSequence(parent.mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvvvv5(_rs.GetString("PPointNo"))));
  if (true) break;
 
@@ -913,40 +911,42 @@ this.state = 13;
 case 12:
 //C
 this.state = 13;
- //BA.debugLineNum = 531;BA.debugLine="snack.Initialize(\"\", Activity, $\"Cannot get Pre";
+ //BA.debugLineNum = 532;BA.debugLine="snack.Initialize(\"\", Activity, $\"Cannot get Pre";
 parent.mostCurrent._snack.Initialize(mostCurrent.activityBA,"",(android.view.View)(parent.mostCurrent._activity.getObject()),("Cannot get Pressure Point due to ")+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),(int) (5000));
- //BA.debugLineNum = 532;BA.debugLine="MyFunctions.SetSnackBarTextColor(snack, Colors.";
+ //BA.debugLineNum = 533;BA.debugLine="MyFunctions.SetSnackBarTextColor(snack, Colors.";
 parent.mostCurrent._myfunctions._setsnackbartextcolor /*String*/ (mostCurrent.activityBA,parent.mostCurrent._snack,anywheresoftware.b4a.keywords.Common.Colors.White);
- //BA.debugLineNum = 533;BA.debugLine="MyFunctions.SetSnackBarBackground(snack, Global";
+ //BA.debugLineNum = 534;BA.debugLine="MyFunctions.SetSnackBarBackground(snack, Global";
 parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.activityBA,parent.mostCurrent._snack,(int) (parent.mostCurrent._globalvar._redcolor /*double*/ ));
- //BA.debugLineNum = 534;BA.debugLine="snack.Show";
+ //BA.debugLineNum = 535;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
- //BA.debugLineNum = 535;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104923154",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 536;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872482834",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 13:
 //C
 this.state = 16;
 ;
- //BA.debugLineNum = 537;BA.debugLine="txtLocation.Text = GetLocation(cboPSIPoint.Selec";
+ //BA.debugLineNum = 538;BA.debugLine="txtLocation.Text = GetLocation(cboPSIPoint.Selec";
 parent.mostCurrent._txtlocation.setText(BA.ObjectToCharSequence(_getlocation(parent.mostCurrent._cbopsipoint.getSelectedItem())));
+ //BA.debugLineNum = 539;BA.debugLine="txtLocation.Padding = Array As Int (10dip, 0dip,";
+parent.mostCurrent._txtlocation.setPadding(new int[]{anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (0)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (0)),(int) (-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5)))});
  if (true) break;
 
 case 15:
 //C
 this.state = 16;
 this.catchState = 0;
- //BA.debugLineNum = 540;BA.debugLine="snack.Initialize(\"\", Activity,$\"\"$ & LastExcepti";
+ //BA.debugLineNum = 542;BA.debugLine="snack.Initialize(\"\", Activity,$\"\"$ & LastExcepti";
 parent.mostCurrent._snack.Initialize(mostCurrent.activityBA,"",(android.view.View)(parent.mostCurrent._activity.getObject()),("")+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),(int) (5000));
- //BA.debugLineNum = 541;BA.debugLine="MyFunctions.SetSnackBarTextColor(snack, Colors.W";
+ //BA.debugLineNum = 543;BA.debugLine="MyFunctions.SetSnackBarTextColor(snack, Colors.W";
 parent.mostCurrent._myfunctions._setsnackbartextcolor /*String*/ (mostCurrent.activityBA,parent.mostCurrent._snack,anywheresoftware.b4a.keywords.Common.Colors.White);
- //BA.debugLineNum = 542;BA.debugLine="MyFunctions.SetSnackBarBackground(snack, GlobalV";
+ //BA.debugLineNum = 544;BA.debugLine="MyFunctions.SetSnackBarBackground(snack, GlobalV";
 parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.activityBA,parent.mostCurrent._snack,(int) (parent.mostCurrent._globalvar._redcolor /*double*/ ));
- //BA.debugLineNum = 543;BA.debugLine="snack.Show";
+ //BA.debugLineNum = 545;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
- //BA.debugLineNum = 544;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104923163",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 546;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872482844",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -955,7 +955,7 @@ case 16:
 this.state = -1;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 546;BA.debugLine="End Sub";
+ //BA.debugLineNum = 548;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -975,78 +975,78 @@ public static String  _fontsizebinder_onbindview(anywheresoftware.b4a.objects.Co
 com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder _alert = null;
 anywheresoftware.b4a.objects.LabelWrapper _lbl = null;
 anywheresoftware.b4a.objects.CSBuilder _cs = null;
- //BA.debugLineNum = 695;BA.debugLine="Private Sub FontSizeBinder_OnBindView (View As Vie";
- //BA.debugLineNum = 696;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
+ //BA.debugLineNum = 697;BA.debugLine="Private Sub FontSizeBinder_OnBindView (View As Vie";
+ //BA.debugLineNum = 698;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
 _alert = new com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder();
- //BA.debugLineNum = 697;BA.debugLine="Alert.Initialize";
+ //BA.debugLineNum = 699;BA.debugLine="Alert.Initialize";
 _alert.Initialize();
- //BA.debugLineNum = 698;BA.debugLine="If ViewType = Alert.VIEW_TITLE Then ' Title";
+ //BA.debugLineNum = 700;BA.debugLine="If ViewType = Alert.VIEW_TITLE Then ' Title";
 if (_viewtype==_alert.VIEW_TITLE) { 
- //BA.debugLineNum = 699;BA.debugLine="Dim lbl As Label = View";
+ //BA.debugLineNum = 701;BA.debugLine="Dim lbl As Label = View";
 _lbl = new anywheresoftware.b4a.objects.LabelWrapper();
 _lbl = (anywheresoftware.b4a.objects.LabelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.LabelWrapper(), (android.widget.TextView)(_view.getObject()));
- //BA.debugLineNum = 700;BA.debugLine="lbl.TextSize = 30";
+ //BA.debugLineNum = 702;BA.debugLine="lbl.TextSize = 30";
 _lbl.setTextSize((float) (30));
- //BA.debugLineNum = 701;BA.debugLine="lbl.SetTextColorAnimated(2000,Colors.Magenta)";
+ //BA.debugLineNum = 703;BA.debugLine="lbl.SetTextColorAnimated(2000,Colors.Magenta)";
 _lbl.SetTextColorAnimated((int) (2000),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
- //BA.debugLineNum = 703;BA.debugLine="Dim CS As CSBuilder";
+ //BA.debugLineNum = 705;BA.debugLine="Dim CS As CSBuilder";
 _cs = new anywheresoftware.b4a.objects.CSBuilder();
- //BA.debugLineNum = 704;BA.debugLine="CS.Initialize.Typeface(Typeface.MATERIALICONS).S";
+ //BA.debugLineNum = 706;BA.debugLine="CS.Initialize.Typeface(Typeface.MATERIALICONS).S";
 _cs.Initialize().Typeface(anywheresoftware.b4a.keywords.Common.Typeface.getMATERIALICONS()).Size((int) (26)).Color(anywheresoftware.b4a.keywords.Common.Colors.Red).Append(BA.ObjectToCharSequence(BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Chr((int) (0xe88e)))+"  "));
- //BA.debugLineNum = 705;BA.debugLine="CS.Typeface(Font).Size(24).Append(lbl.Text).Pop";
+ //BA.debugLineNum = 707;BA.debugLine="CS.Typeface(Font).Size(24).Append(lbl.Text).Pop";
 _cs.Typeface((android.graphics.Typeface)(mostCurrent._font.getObject())).Size((int) (24)).Append(BA.ObjectToCharSequence(_lbl.getText())).Pop();
- //BA.debugLineNum = 707;BA.debugLine="lbl.Text = CS.PopAll";
+ //BA.debugLineNum = 709;BA.debugLine="lbl.Text = CS.PopAll";
 _lbl.setText(BA.ObjectToCharSequence(_cs.PopAll().getObject()));
  };
- //BA.debugLineNum = 709;BA.debugLine="End Sub";
+ //BA.debugLineNum = 711;BA.debugLine="End Sub";
 return "";
 }
 public static String  _getlocation(String _svalue) throws Exception{
 String _sretval = "";
- //BA.debugLineNum = 548;BA.debugLine="Private Sub GetLocation (sValue As String) As Stri";
- //BA.debugLineNum = 549;BA.debugLine="Dim sRetval As String";
+ //BA.debugLineNum = 550;BA.debugLine="Private Sub GetLocation (sValue As String) As Stri";
+ //BA.debugLineNum = 551;BA.debugLine="Dim sRetval As String";
 _sretval = "";
- //BA.debugLineNum = 550;BA.debugLine="sRetval = \"\"";
+ //BA.debugLineNum = 552;BA.debugLine="sRetval = \"\"";
 _sretval = "";
- //BA.debugLineNum = 551;BA.debugLine="Try";
-try { //BA.debugLineNum = 552;BA.debugLine="Starter.strCriteria = \"SELECT PLocation FROM tbl";
+ //BA.debugLineNum = 553;BA.debugLine="Try";
+try { //BA.debugLineNum = 554;BA.debugLine="Starter.strCriteria = \"SELECT PLocation FROM tbl";
 mostCurrent._starter._strcriteria /*String*/  = "SELECT PLocation FROM tblPressurePoint WHERE UPPER(PPointNo) = '"+_svalue+"'";
- //BA.debugLineNum = 553;BA.debugLine="sRetval = Starter.DBCon.ExecQuerySingleResult(St";
+ //BA.debugLineNum = 555;BA.debugLine="sRetval = Starter.DBCon.ExecQuerySingleResult(St";
 _sretval = mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQuerySingleResult(mostCurrent._starter._strcriteria /*String*/ );
  } 
        catch (Exception e7) {
-			processBA.setLastException(e7); //BA.debugLineNum = 555;BA.debugLine="sRetval = \"\"";
+			processBA.setLastException(e7); //BA.debugLineNum = 557;BA.debugLine="sRetval = \"\"";
 _sretval = "";
- //BA.debugLineNum = 556;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104988680",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 558;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872548360",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
- //BA.debugLineNum = 558;BA.debugLine="Return sRetval";
+ //BA.debugLineNum = 560;BA.debugLine="Return sRetval";
 if (true) return _sretval;
- //BA.debugLineNum = 559;BA.debugLine="End Sub";
+ //BA.debugLineNum = 561;BA.debugLine="End Sub";
 return "";
 }
 public static int  _getpointid(String _svalue) throws Exception{
 int _iretval = 0;
- //BA.debugLineNum = 561;BA.debugLine="Private Sub GetPointID (sValue As String) As Int";
- //BA.debugLineNum = 562;BA.debugLine="Dim iRetval As Int";
+ //BA.debugLineNum = 563;BA.debugLine="Private Sub GetPointID (sValue As String) As Int";
+ //BA.debugLineNum = 564;BA.debugLine="Dim iRetval As Int";
 _iretval = 0;
- //BA.debugLineNum = 563;BA.debugLine="iRetval = 0";
+ //BA.debugLineNum = 565;BA.debugLine="iRetval = 0";
 _iretval = (int) (0);
- //BA.debugLineNum = 564;BA.debugLine="Try";
-try { //BA.debugLineNum = 565;BA.debugLine="Starter.strCriteria = \"SELECT ID FROM tblPressur";
+ //BA.debugLineNum = 566;BA.debugLine="Try";
+try { //BA.debugLineNum = 567;BA.debugLine="Starter.strCriteria = \"SELECT ID FROM tblPressur";
 mostCurrent._starter._strcriteria /*String*/  = "SELECT ID FROM tblPressurePoint WHERE UPPER(PPointNo) = '"+_svalue+"'";
- //BA.debugLineNum = 566;BA.debugLine="iRetval = Starter.DBCon.ExecQuerySingleResult(St";
+ //BA.debugLineNum = 568;BA.debugLine="iRetval = Starter.DBCon.ExecQuerySingleResult(St";
 _iretval = (int)(Double.parseDouble(mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQuerySingleResult(mostCurrent._starter._strcriteria /*String*/ )));
  } 
        catch (Exception e7) {
-			processBA.setLastException(e7); //BA.debugLineNum = 568;BA.debugLine="iRetval = 0";
+			processBA.setLastException(e7); //BA.debugLineNum = 570;BA.debugLine="iRetval = 0";
 _iretval = (int) (0);
- //BA.debugLineNum = 569;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1105054216",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 571;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872613896",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
- //BA.debugLineNum = 571;BA.debugLine="Return iRetval";
+ //BA.debugLineNum = 573;BA.debugLine="Return iRetval";
 if (true) return _iretval;
- //BA.debugLineNum = 572;BA.debugLine="End Sub";
+ //BA.debugLineNum = 574;BA.debugLine="End Sub";
 return 0;
 }
 public static void  _getpsidistrdgdetails(int _irdgid) throws Exception{
@@ -1084,13 +1084,13 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 337;BA.debugLine="Dim sPointNo As String";
+ //BA.debugLineNum = 338;BA.debugLine="Dim sPointNo As String";
 _spointno = "";
- //BA.debugLineNum = 338;BA.debugLine="Dim sTimeRdg As String";
+ //BA.debugLineNum = 339;BA.debugLine="Dim sTimeRdg As String";
 _stimerdg = "";
- //BA.debugLineNum = 339;BA.debugLine="Dim Matcher1 As Matcher";
+ //BA.debugLineNum = 340;BA.debugLine="Dim Matcher1 As Matcher";
 _matcher1 = new anywheresoftware.b4a.keywords.Regex.MatcherWrapper();
- //BA.debugLineNum = 341;BA.debugLine="Try";
+ //BA.debugLineNum = 342;BA.debugLine="Try";
 if (true) break;
 
 case 1:
@@ -1104,13 +1104,13 @@ case 3:
 //C
 this.state = 4;
 this.catchState = 44;
- //BA.debugLineNum = 342;BA.debugLine="Dim SenderFilter As Object";
+ //BA.debugLineNum = 343;BA.debugLine="Dim SenderFilter As Object";
 _senderfilter = new Object();
- //BA.debugLineNum = 344;BA.debugLine="Starter.strCriteria = \"SELECT PressurePointRdg.R";
+ //BA.debugLineNum = 345;BA.debugLine="Starter.strCriteria = \"SELECT PressurePointRdg.R";
 parent.mostCurrent._starter._strcriteria /*String*/  = "SELECT PressurePointRdg.RdgID, "+"PressurePoint.PumpHouseID, PressurePointRdg.PSIPointID, PressurePoint.PPointNo,PressurePoint.PLocation, "+"PressurePointRdg.RdgTime, PressurePointRdg.PSIReading, PressurePointRdg.Remarks "+"FROM PressureDistReadings AS PressurePointRdg "+"INNER JOIN tblPressurePoint AS PressurePoint ON PressurePointRdg.PSIPointID = PressurePoint.ID "+"WHERE PressurePointRdg.RdgID = "+BA.NumberToString(_irdgid);
- //BA.debugLineNum = 351;BA.debugLine="SenderFilter = Starter.DBCon.ExecQueryAsync(\"SQL";
+ //BA.debugLineNum = 352;BA.debugLine="SenderFilter = Starter.DBCon.ExecQueryAsync(\"SQL";
 _senderfilter = parent.mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQueryAsync(processBA,"SQL",parent.mostCurrent._starter._strcriteria /*String*/ ,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(anywheresoftware.b4a.keywords.Common.Null)));
- //BA.debugLineNum = 352;BA.debugLine="Wait For (SenderFilter) SQL_QueryComplete (Succe";
+ //BA.debugLineNum = 353;BA.debugLine="Wait For (SenderFilter) SQL_QueryComplete (Succe";
 anywheresoftware.b4a.keywords.Common.WaitFor("sql_querycomplete", processBA, this, _senderfilter);
 this.state = 46;
 return;
@@ -1120,7 +1120,7 @@ this.state = 4;
 _success = (Boolean) result[0];
 _rs = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) result[1];
 ;
- //BA.debugLineNum = 354;BA.debugLine="If Success Then";
+ //BA.debugLineNum = 355;BA.debugLine="If Success Then";
 if (true) break;
 
 case 4:
@@ -1135,29 +1135,29 @@ this.state = 41;
 case 6:
 //C
 this.state = 7;
- //BA.debugLineNum = 355;BA.debugLine="RS.Position = 0";
+ //BA.debugLineNum = 356;BA.debugLine="RS.Position = 0";
 _rs.setPosition((int) (0));
- //BA.debugLineNum = 356;BA.debugLine="GlobalVar.PumpHouseID = RS.GetInt(\"PumpHouseID\"";
+ //BA.debugLineNum = 357;BA.debugLine="GlobalVar.PumpHouseID = RS.GetInt(\"PumpHouseID\"";
 parent.mostCurrent._globalvar._pumphouseid /*int*/  = _rs.GetInt("PumpHouseID");
- //BA.debugLineNum = 357;BA.debugLine="sPointNo = RS.GetString(\"PPointNo\")";
+ //BA.debugLineNum = 358;BA.debugLine="sPointNo = RS.GetString(\"PPointNo\")";
 _spointno = _rs.GetString("PPointNo");
- //BA.debugLineNum = 358;BA.debugLine="cboPSIPoint.SelectedIndex = cboPSIPoint.IndexOf";
+ //BA.debugLineNum = 359;BA.debugLine="cboPSIPoint.SelectedIndex = cboPSIPoint.IndexOf";
 parent.mostCurrent._cbopsipoint.setSelectedIndex(parent.mostCurrent._cbopsipoint.IndexOf(BA.ObjectToCharSequence(_spointno)));
- //BA.debugLineNum = 359;BA.debugLine="txtLocation.Text = RS.GetString(\"PLocation\")";
+ //BA.debugLineNum = 360;BA.debugLine="txtLocation.Text = RS.GetString(\"PLocation\")";
 parent.mostCurrent._txtlocation.setText(BA.ObjectToCharSequence(_rs.GetString("PLocation")));
- //BA.debugLineNum = 360;BA.debugLine="chkDefaultTimeRead.Checked = False";
+ //BA.debugLineNum = 361;BA.debugLine="chkDefaultTimeRead.Checked = False";
 parent.mostCurrent._chkdefaulttimeread.setChecked(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 361;BA.debugLine="sTimeRdg = RS.GetString(\"RdgTime\")";
+ //BA.debugLineNum = 362;BA.debugLine="sTimeRdg = RS.GetString(\"RdgTime\")";
 _stimerdg = _rs.GetString("RdgTime");
- //BA.debugLineNum = 362;BA.debugLine="txtPSIRdg.Text = RS.GetString(\"PSIReading\")";
+ //BA.debugLineNum = 363;BA.debugLine="txtPSIRdg.Text = RS.GetString(\"PSIReading\")";
 parent.mostCurrent._txtpsirdg.setText(BA.ObjectToCharSequence(_rs.GetString("PSIReading")));
- //BA.debugLineNum = 363;BA.debugLine="txtRemarks.Text = RS.GetString(\"Remarks\")";
+ //BA.debugLineNum = 364;BA.debugLine="txtRemarks.Text = RS.GetString(\"Remarks\")";
 parent.mostCurrent._txtremarks.setText(BA.ObjectToCharSequence(_rs.GetString("Remarks")));
- //BA.debugLineNum = 365;BA.debugLine="DateTime.TimeFormat = \"HH:mm\"";
+ //BA.debugLineNum = 366;BA.debugLine="DateTime.TimeFormat = \"HH:mm\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setTimeFormat("HH:mm");
- //BA.debugLineNum = 366;BA.debugLine="Matcher1 = Regex.Matcher(\"(\\d\\d):(\\d\\d) (\\S\\S)\"";
+ //BA.debugLineNum = 367;BA.debugLine="Matcher1 = Regex.Matcher(\"(\\d\\d):(\\d\\d) (\\S\\S)\"";
 _matcher1 = anywheresoftware.b4a.keywords.Common.Regex.Matcher("(\\d\\d):(\\d\\d) (\\S\\S)",_stimerdg);
- //BA.debugLineNum = 367;BA.debugLine="If Matcher1.Find Then";
+ //BA.debugLineNum = 368;BA.debugLine="If Matcher1.Find Then";
 if (true) break;
 
 case 7:
@@ -1170,22 +1170,22 @@ this.state = 9;
 case 9:
 //C
 this.state = 10;
- //BA.debugLineNum = 368;BA.debugLine="Dim iHrs, iMins As Int";
+ //BA.debugLineNum = 369;BA.debugLine="Dim iHrs, iMins As Int";
 _ihrs = 0;
 _imins = 0;
- //BA.debugLineNum = 369;BA.debugLine="Dim AmPm As String";
+ //BA.debugLineNum = 370;BA.debugLine="Dim AmPm As String";
 _ampm = "";
- //BA.debugLineNum = 370;BA.debugLine="Dim sMin As String";
+ //BA.debugLineNum = 371;BA.debugLine="Dim sMin As String";
 _smin = "";
- //BA.debugLineNum = 372;BA.debugLine="iHrs = Matcher1.Group(1)";
+ //BA.debugLineNum = 373;BA.debugLine="iHrs = Matcher1.Group(1)";
 _ihrs = (int)(Double.parseDouble(_matcher1.Group((int) (1))));
- //BA.debugLineNum = 373;BA.debugLine="iMins = Matcher1.Group(2)";
+ //BA.debugLineNum = 374;BA.debugLine="iMins = Matcher1.Group(2)";
 _imins = (int)(Double.parseDouble(_matcher1.Group((int) (2))));
- //BA.debugLineNum = 374;BA.debugLine="AmPm = Matcher1.Group(3)";
+ //BA.debugLineNum = 375;BA.debugLine="AmPm = Matcher1.Group(3)";
 _ampm = _matcher1.Group((int) (3));
- //BA.debugLineNum = 376;BA.debugLine="LogColor(AmPm,Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104661032",_ampm,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
- //BA.debugLineNum = 378;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(iMins))";
+ //BA.debugLineNum = 377;BA.debugLine="LogColor(AmPm,Colors.Cyan)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872220712",_ampm,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+ //BA.debugLineNum = 379;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(iMins))";
 if (true) break;
 
 case 10:
@@ -1200,18 +1200,18 @@ this.state = 14;
 case 12:
 //C
 this.state = 15;
- //BA.debugLineNum = 379;BA.debugLine="sMin = $\"0\"$ & iMins";
+ //BA.debugLineNum = 380;BA.debugLine="sMin = $\"0\"$ & iMins";
 _smin = ("0")+BA.NumberToString(_imins);
  if (true) break;
 
 case 14:
 //C
 this.state = 15;
- //BA.debugLineNum = 381;BA.debugLine="sMin = iMins";
+ //BA.debugLineNum = 382;BA.debugLine="sMin = iMins";
 _smin = BA.NumberToString(_imins);
  if (true) break;
 ;
- //BA.debugLineNum = 384;BA.debugLine="If AmPm = \"AM\" Then";
+ //BA.debugLineNum = 385;BA.debugLine="If AmPm = \"AM\" Then";
 
 case 15:
 //if
@@ -1225,7 +1225,7 @@ this.state = 31;
 case 17:
 //C
 this.state = 18;
- //BA.debugLineNum = 385;BA.debugLine="If iHrs = 12 Then";
+ //BA.debugLineNum = 386;BA.debugLine="If iHrs = 12 Then";
 if (true) break;
 
 case 18:
@@ -1240,14 +1240,14 @@ this.state = 22;
 case 20:
 //C
 this.state = 29;
- //BA.debugLineNum = 386;BA.debugLine="mskTimeRead.Text = $\"00:\"$ & sMin";
+ //BA.debugLineNum = 387;BA.debugLine="mskTimeRead.Text = $\"00:\"$ & sMin";
 parent.mostCurrent._msktimeread.setText((Object)(("00:")+_smin));
  if (true) break;
 
 case 22:
 //C
 this.state = 23;
- //BA.debugLineNum = 388;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(iHrs))";
+ //BA.debugLineNum = 389;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(iHrs))";
 if (true) break;
 
 case 23:
@@ -1262,14 +1262,14 @@ this.state = 27;
 case 25:
 //C
 this.state = 28;
- //BA.debugLineNum = 389;BA.debugLine="mskTimeRead.Text = $\"0\"$ & iHrs & $\":\"$ & s";
+ //BA.debugLineNum = 390;BA.debugLine="mskTimeRead.Text = $\"0\"$ & iHrs & $\":\"$ & s";
 parent.mostCurrent._msktimeread.setText((Object)(("0")+BA.NumberToString(_ihrs)+(":")+_smin));
  if (true) break;
 
 case 27:
 //C
 this.state = 28;
- //BA.debugLineNum = 391;BA.debugLine="mskTimeRead.Text = iHrs & $\":\"$ & sMin";
+ //BA.debugLineNum = 392;BA.debugLine="mskTimeRead.Text = iHrs & $\":\"$ & sMin";
 parent.mostCurrent._msktimeread.setText((Object)(BA.NumberToString(_ihrs)+(":")+_smin));
  if (true) break;
 
@@ -1288,7 +1288,7 @@ this.state = 38;
 case 31:
 //C
 this.state = 32;
- //BA.debugLineNum = 395;BA.debugLine="If iHrs < 12 Then";
+ //BA.debugLineNum = 396;BA.debugLine="If iHrs < 12 Then";
 if (true) break;
 
 case 32:
@@ -1303,14 +1303,14 @@ this.state = 36;
 case 34:
 //C
 this.state = 37;
- //BA.debugLineNum = 396;BA.debugLine="mskTimeRead.Text = (iHrs + 12) & $\":\"$ & sMi";
+ //BA.debugLineNum = 397;BA.debugLine="mskTimeRead.Text = (iHrs + 12) & $\":\"$ & sMi";
 parent.mostCurrent._msktimeread.setText((Object)(BA.NumberToString((_ihrs+12))+(":")+_smin));
  if (true) break;
 
 case 36:
 //C
 this.state = 37;
- //BA.debugLineNum = 398;BA.debugLine="mskTimeRead.Text = iHrs & $\":\"$ & sMin";
+ //BA.debugLineNum = 399;BA.debugLine="mskTimeRead.Text = iHrs & $\":\"$ & sMin";
 parent.mostCurrent._msktimeread.setText((Object)(BA.NumberToString(_ihrs)+(":")+_smin));
  if (true) break;
 
@@ -1335,42 +1335,42 @@ this.state = 42;
 case 41:
 //C
 this.state = 42;
- //BA.debugLineNum = 405;BA.debugLine="snack.Initialize(\"\", Activity,$\"Cannot Return P";
+ //BA.debugLineNum = 406;BA.debugLine="snack.Initialize(\"\", Activity,$\"Cannot Return P";
 parent.mostCurrent._snack.Initialize(mostCurrent.activityBA,"",(android.view.View)(parent.mostCurrent._activity.getObject()),("Cannot Return PSI Distribution Reading due to ")+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),(int) (5000));
- //BA.debugLineNum = 406;BA.debugLine="MyFunctions.SetSnackBarTextColor(snack, Colors.";
+ //BA.debugLineNum = 407;BA.debugLine="MyFunctions.SetSnackBarTextColor(snack, Colors.";
 parent.mostCurrent._myfunctions._setsnackbartextcolor /*String*/ (mostCurrent.activityBA,parent.mostCurrent._snack,anywheresoftware.b4a.keywords.Common.Colors.White);
- //BA.debugLineNum = 407;BA.debugLine="MyFunctions.SetSnackBarBackground(snack, Global";
+ //BA.debugLineNum = 408;BA.debugLine="MyFunctions.SetSnackBarBackground(snack, Global";
 parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.activityBA,parent.mostCurrent._snack,(int) (parent.mostCurrent._globalvar._redcolor /*double*/ ));
- //BA.debugLineNum = 408;BA.debugLine="snack.Show";
+ //BA.debugLineNum = 409;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
- //BA.debugLineNum = 409;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104661065",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 410;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872220745",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 42:
 //C
 this.state = 45;
 ;
- //BA.debugLineNum = 412;BA.debugLine="Starter.strCriteria = \"\"";
+ //BA.debugLineNum = 413;BA.debugLine="Starter.strCriteria = \"\"";
 parent.mostCurrent._starter._strcriteria /*String*/  = "";
- //BA.debugLineNum = 413;BA.debugLine="LogColor(Starter.strCriteria, Colors.Magenta)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104661069",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+ //BA.debugLineNum = 414;BA.debugLine="LogColor(Starter.strCriteria, Colors.Magenta)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872220749",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  if (true) break;
 
 case 44:
 //C
 this.state = 45;
 this.catchState = 0;
- //BA.debugLineNum = 416;BA.debugLine="snack.Initialize(\"\", Activity,$\"Cannot Return PS";
+ //BA.debugLineNum = 417;BA.debugLine="snack.Initialize(\"\", Activity,$\"Cannot Return PS";
 parent.mostCurrent._snack.Initialize(mostCurrent.activityBA,"",(android.view.View)(parent.mostCurrent._activity.getObject()),("Cannot Return PSI Distribution Reading due to ")+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),(int) (5000));
- //BA.debugLineNum = 417;BA.debugLine="MyFunctions.SetSnackBarTextColor(snack, Colors.W";
+ //BA.debugLineNum = 418;BA.debugLine="MyFunctions.SetSnackBarTextColor(snack, Colors.W";
 parent.mostCurrent._myfunctions._setsnackbartextcolor /*String*/ (mostCurrent.activityBA,parent.mostCurrent._snack,anywheresoftware.b4a.keywords.Common.Colors.White);
- //BA.debugLineNum = 418;BA.debugLine="MyFunctions.SetSnackBarBackground(snack, GlobalV";
+ //BA.debugLineNum = 419;BA.debugLine="MyFunctions.SetSnackBarBackground(snack, GlobalV";
 parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.activityBA,parent.mostCurrent._snack,(int) (parent.mostCurrent._globalvar._redcolor /*double*/ ));
- //BA.debugLineNum = 419;BA.debugLine="snack.Show";
+ //BA.debugLineNum = 420;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
- //BA.debugLineNum = 420;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104661076",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 421;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872220756",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1379,7 +1379,7 @@ case 45:
 this.state = -1;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 422;BA.debugLine="End Sub";
+ //BA.debugLineNum = 423;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -1395,26 +1395,26 @@ processBA.setLastException(e0);}
 }
 public static String  _getpumplocation(int _ipumpid) throws Exception{
 String _sretval = "";
- //BA.debugLineNum = 503;BA.debugLine="Private Sub GetPumpLocation (iPumpID As Int) As St";
- //BA.debugLineNum = 504;BA.debugLine="Dim sRetval As String";
+ //BA.debugLineNum = 504;BA.debugLine="Private Sub GetPumpLocation (iPumpID As Int) As St";
+ //BA.debugLineNum = 505;BA.debugLine="Dim sRetval As String";
 _sretval = "";
- //BA.debugLineNum = 505;BA.debugLine="sRetval = \"\"";
+ //BA.debugLineNum = 506;BA.debugLine="sRetval = \"\"";
 _sretval = "";
- //BA.debugLineNum = 506;BA.debugLine="Try";
-try { //BA.debugLineNum = 507;BA.debugLine="Starter.strCriteria = \"SELECT PumpLocation FROM";
+ //BA.debugLineNum = 507;BA.debugLine="Try";
+try { //BA.debugLineNum = 508;BA.debugLine="Starter.strCriteria = \"SELECT PumpLocation FROM";
 mostCurrent._starter._strcriteria /*String*/  = "SELECT PumpLocation FROM tblPumpStation WHERE StationID = "+BA.NumberToString(_ipumpid);
- //BA.debugLineNum = 508;BA.debugLine="sRetval = Starter.DBCon.ExecQuerySingleResult(St";
+ //BA.debugLineNum = 509;BA.debugLine="sRetval = Starter.DBCon.ExecQuerySingleResult(St";
 _sretval = mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQuerySingleResult(mostCurrent._starter._strcriteria /*String*/ );
  } 
        catch (Exception e7) {
-			processBA.setLastException(e7); //BA.debugLineNum = 510;BA.debugLine="sRetval = \"\"";
+			processBA.setLastException(e7); //BA.debugLineNum = 511;BA.debugLine="sRetval = \"\"";
 _sretval = "";
- //BA.debugLineNum = 511;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104857608",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 512;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872417288",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
- //BA.debugLineNum = 513;BA.debugLine="Return sRetval";
+ //BA.debugLineNum = 514;BA.debugLine="Return sRetval";
 if (true) return _sretval;
- //BA.debugLineNum = 514;BA.debugLine="End Sub";
+ //BA.debugLineNum = 515;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -1466,52 +1466,52 @@ mostCurrent._imekeyboard = new anywheresoftware.b4a.objects.IME();
 return "";
 }
 public static boolean  _isvalidentries() throws Exception{
- //BA.debugLineNum = 574;BA.debugLine="Private Sub IsValidEntries () As Boolean";
- //BA.debugLineNum = 575;BA.debugLine="Try";
-try { //BA.debugLineNum = 576;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(cboPSIPoin";
+ //BA.debugLineNum = 576;BA.debugLine="Private Sub IsValidEntries () As Boolean";
+ //BA.debugLineNum = 577;BA.debugLine="Try";
+try { //BA.debugLineNum = 578;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(cboPSIPoin";
 if (mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvv7(mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvvvv4(mostCurrent._cbopsipoint.getSelectedItem()))<=0) { 
- //BA.debugLineNum = 577;BA.debugLine="RequiredMsgBox($\"ERROR\"$, $\"Pressure Point cann";
+ //BA.debugLineNum = 579;BA.debugLine="RequiredMsgBox($\"ERROR\"$, $\"Pressure Point cann";
 _requiredmsgbox(("ERROR"),("Pressure Point cannot be blank!"));
- //BA.debugLineNum = 578;BA.debugLine="cboPSIPoint.RequestFocus";
+ //BA.debugLineNum = 580;BA.debugLine="cboPSIPoint.RequestFocus";
 mostCurrent._cbopsipoint.RequestFocus();
- //BA.debugLineNum = 579;BA.debugLine="Return False";
+ //BA.debugLineNum = 581;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 582;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(mskTimeRea";
+ //BA.debugLineNum = 584;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(mskTimeRea";
 if (mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvv7(mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvvvv4(mostCurrent._msktimeread.getText()))<=0 || (mostCurrent._msktimeread.getText()).equals("__:__")) { 
- //BA.debugLineNum = 583;BA.debugLine="RequiredMsgBox($\"ERROR\"$, $\"Reading Time cannot";
+ //BA.debugLineNum = 585;BA.debugLine="RequiredMsgBox($\"ERROR\"$, $\"Reading Time cannot";
 _requiredmsgbox(("ERROR"),("Reading Time cannot be blank!"));
- //BA.debugLineNum = 584;BA.debugLine="mskTimeRead.RequestFocus";
+ //BA.debugLineNum = 586;BA.debugLine="mskTimeRead.RequestFocus";
 mostCurrent._msktimeread.RequestFocus();
- //BA.debugLineNum = 585;BA.debugLine="Return False";
+ //BA.debugLineNum = 587;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  }else if(mostCurrent._validation._istime /*boolean*/ (mostCurrent.activityBA,mostCurrent._msktimeread.getText())==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 588;BA.debugLine="RequiredMsgBox($\"ERROR\"$, $\"Invalid Reading Tim";
+ //BA.debugLineNum = 590;BA.debugLine="RequiredMsgBox($\"ERROR\"$, $\"Invalid Reading Tim";
 _requiredmsgbox(("ERROR"),("Invalid Reading Time!"));
- //BA.debugLineNum = 589;BA.debugLine="mskTimeRead.RequestFocus";
+ //BA.debugLineNum = 591;BA.debugLine="mskTimeRead.RequestFocus";
 mostCurrent._msktimeread.RequestFocus();
- //BA.debugLineNum = 590;BA.debugLine="Return False";
+ //BA.debugLineNum = 592;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 593;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(txtPSIRdg.";
+ //BA.debugLineNum = 595;BA.debugLine="If GlobalVar.SF.Len(GlobalVar.SF.Trim(txtPSIRdg.";
 if (mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvv7(mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvvvv4(mostCurrent._txtpsirdg.getText()))<=0) { 
- //BA.debugLineNum = 594;BA.debugLine="RequiredMsgBox($\"ERROR\"$, $\"Pressure Reading ca";
+ //BA.debugLineNum = 596;BA.debugLine="RequiredMsgBox($\"ERROR\"$, $\"Pressure Reading ca";
 _requiredmsgbox(("ERROR"),("Pressure Reading cannot be blank!"));
- //BA.debugLineNum = 595;BA.debugLine="txtPSIRdg.RequestFocus";
+ //BA.debugLineNum = 597;BA.debugLine="txtPSIRdg.RequestFocus";
 mostCurrent._txtpsirdg.RequestFocus();
- //BA.debugLineNum = 596;BA.debugLine="Return False";
+ //BA.debugLineNum = 598;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 599;BA.debugLine="Return True";
+ //BA.debugLineNum = 601;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  } 
        catch (Exception e23) {
-			processBA.setLastException(e23); //BA.debugLineNum = 601;BA.debugLine="Return False";
+			processBA.setLastException(e23); //BA.debugLineNum = 603;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 602;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1105119772",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 604;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872679452",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
- //BA.debugLineNum = 604;BA.debugLine="End Sub";
+ //BA.debugLineNum = 606;BA.debugLine="End Sub";
 return false;
 }
 public static String  _msktimeread_focuschanged(boolean _hasfocus) throws Exception{
@@ -1532,28 +1532,28 @@ return "";
 }
 public static String  _requiredmsg_onpositiveclicked(anywheresoftware.b4a.objects.ConcreteViewWrapper _view,Object _dialog) throws Exception{
 com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder _alert = null;
- //BA.debugLineNum = 635;BA.debugLine="Private Sub RequiredMsg_OnPositiveClicked (View As";
- //BA.debugLineNum = 636;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
+ //BA.debugLineNum = 637;BA.debugLine="Private Sub RequiredMsg_OnPositiveClicked (View As";
+ //BA.debugLineNum = 638;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
 _alert = new com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder();
- //BA.debugLineNum = 637;BA.debugLine="Alert.Initialize.Dismiss(Dialog)";
+ //BA.debugLineNum = 639;BA.debugLine="Alert.Initialize.Dismiss(Dialog)";
 _alert.Initialize().Dismiss((android.app.Dialog)(_dialog));
- //BA.debugLineNum = 638;BA.debugLine="End Sub";
+ //BA.debugLineNum = 640;BA.debugLine="End Sub";
 return "";
 }
 public static String  _requiredmsgbox(String _stitle,String _smsg) throws Exception{
 com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder _alert = null;
- //BA.debugLineNum = 610;BA.debugLine="Private Sub RequiredMsgBox(sTitle As String, sMsg";
- //BA.debugLineNum = 611;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
+ //BA.debugLineNum = 612;BA.debugLine="Private Sub RequiredMsgBox(sTitle As String, sMsg";
+ //BA.debugLineNum = 613;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
 _alert = new com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder();
- //BA.debugLineNum = 612;BA.debugLine="Alert.Initialize.Dismiss2";
+ //BA.debugLineNum = 614;BA.debugLine="Alert.Initialize.Dismiss2";
 _alert.Initialize().Dismiss2();
- //BA.debugLineNum = 614;BA.debugLine="Alert.Initialize.Create _ 			.SetDialogStyleName(";
+ //BA.debugLineNum = 616;BA.debugLine="Alert.Initialize.Create _ 			.SetDialogStyleName(";
 _alert.Initialize().Create(mostCurrent.activityBA).SetDialogStyleName("MyDialogDisableStatus").SetStyle(_alert.getSTYLE_DIALOGUE()).SetCancelable(anywheresoftware.b4a.keywords.Common.False).SetTitle(_stitle).SetTitleColor((int) (mostCurrent._globalvar._redcolor /*double*/ )).SetTitleTypeface((android.graphics.Typeface)(mostCurrent._fontbold.getObject())).SetMessage(_smsg).SetPositiveText("OK").SetPositiveColor((int) (mostCurrent._globalvar._poscolor /*double*/ )).SetPositiveTypeface((android.graphics.Typeface)(mostCurrent._fontbold.getObject())).SetMessageTypeface((android.graphics.Typeface)(mostCurrent._font.getObject())).SetOnPositiveClicked(mostCurrent.activityBA,"RequiredMsg").SetOnViewBinder(mostCurrent.activityBA,"FontSizeBinder");
- //BA.debugLineNum = 629;BA.debugLine="Alert.SetDialogBackground(MyFunctions.myCD)";
+ //BA.debugLineNum = 631;BA.debugLine="Alert.SetDialogBackground(MyFunctions.myCD)";
 _alert.SetDialogBackground((android.graphics.drawable.Drawable)(mostCurrent._myfunctions._mycd /*anywheresoftware.b4a.objects.drawable.ColorDrawable*/ (mostCurrent.activityBA).getObject()));
- //BA.debugLineNum = 630;BA.debugLine="Alert.Build.Show";
+ //BA.debugLineNum = 632;BA.debugLine="Alert.Build.Show";
 _alert.Build().Show();
- //BA.debugLineNum = 631;BA.debugLine="End Sub";
+ //BA.debugLineNum = 633;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _savepsidistrdg() throws Exception{
@@ -1566,150 +1566,150 @@ long _ldate = 0L;
 int _ipsi = 0;
 String _slocation = "";
 String _sremarks = "";
- //BA.debugLineNum = 286;BA.debugLine="Private Sub SavePSIDistRdg() As Boolean";
- //BA.debugLineNum = 287;BA.debugLine="Dim bRetVal As Boolean";
+ //BA.debugLineNum = 287;BA.debugLine="Private Sub SavePSIDistRdg() As Boolean";
+ //BA.debugLineNum = 288;BA.debugLine="Dim bRetVal As Boolean";
 _bretval = false;
- //BA.debugLineNum = 288;BA.debugLine="Dim DateRead, TimeRead As String";
+ //BA.debugLineNum = 289;BA.debugLine="Dim DateRead, TimeRead As String";
 _dateread = "";
 _timeread = "";
- //BA.debugLineNum = 289;BA.debugLine="Dim PSIPointID As Int";
+ //BA.debugLineNum = 290;BA.debugLine="Dim PSIPointID As Int";
 _psipointid = 0;
- //BA.debugLineNum = 290;BA.debugLine="Dim sDateTime As String";
+ //BA.debugLineNum = 291;BA.debugLine="Dim sDateTime As String";
 _sdatetime = "";
- //BA.debugLineNum = 291;BA.debugLine="Dim lDate As Long";
+ //BA.debugLineNum = 292;BA.debugLine="Dim lDate As Long";
 _ldate = 0L;
- //BA.debugLineNum = 292;BA.debugLine="Dim iPSI As Int";
+ //BA.debugLineNum = 293;BA.debugLine="Dim iPSI As Int";
 _ipsi = 0;
- //BA.debugLineNum = 293;BA.debugLine="Dim sLocation, sRemarks As String";
+ //BA.debugLineNum = 294;BA.debugLine="Dim sLocation, sRemarks As String";
 _slocation = "";
 _sremarks = "";
- //BA.debugLineNum = 295;BA.debugLine="bRetVal = False";
+ //BA.debugLineNum = 296;BA.debugLine="bRetVal = False";
 _bretval = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 296;BA.debugLine="lDate = DateTime.Now";
+ //BA.debugLineNum = 297;BA.debugLine="lDate = DateTime.Now";
 _ldate = anywheresoftware.b4a.keywords.Common.DateTime.getNow();
- //BA.debugLineNum = 297;BA.debugLine="DateTime.DateFormat = \"yyyy-MM-dd HH:mm:ss a\"";
+ //BA.debugLineNum = 298;BA.debugLine="DateTime.DateFormat = \"yyyy-MM-dd HH:mm:ss a\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("yyyy-MM-dd HH:mm:ss a");
- //BA.debugLineNum = 298;BA.debugLine="sDateTime = DateTime.Date(lDate)";
+ //BA.debugLineNum = 299;BA.debugLine="sDateTime = DateTime.Date(lDate)";
 _sdatetime = anywheresoftware.b4a.keywords.Common.DateTime.Date(_ldate);
- //BA.debugLineNum = 301;BA.debugLine="TimeRead = sRdgTime";
+ //BA.debugLineNum = 302;BA.debugLine="TimeRead = sRdgTime";
 _timeread = mostCurrent._srdgtime;
- //BA.debugLineNum = 302;BA.debugLine="DateRead = GlobalVar.TranDate";
+ //BA.debugLineNum = 303;BA.debugLine="DateRead = GlobalVar.TranDate";
 _dateread = mostCurrent._globalvar._trandate /*String*/ ;
- //BA.debugLineNum = 305;BA.debugLine="PSIPointID = GetPointID(cboPSIPoint.SelectedItem)";
+ //BA.debugLineNum = 306;BA.debugLine="PSIPointID = GetPointID(cboPSIPoint.SelectedItem)";
 _psipointid = _getpointid(mostCurrent._cbopsipoint.getSelectedItem());
- //BA.debugLineNum = 306;BA.debugLine="iPSI = GlobalVar.SF.Val(txtPSIRdg.Text)";
+ //BA.debugLineNum = 307;BA.debugLine="iPSI = GlobalVar.SF.Val(txtPSIRdg.Text)";
 _ipsi = (int) (mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvvvv6(mostCurrent._txtpsirdg.getText()));
- //BA.debugLineNum = 307;BA.debugLine="sRemarks = txtRemarks.Text";
+ //BA.debugLineNum = 308;BA.debugLine="sRemarks = txtRemarks.Text";
 _sremarks = mostCurrent._txtremarks.getText();
- //BA.debugLineNum = 308;BA.debugLine="Starter.FLP.Connect";
+ //BA.debugLineNum = 309;BA.debugLine="Starter.FLP.Connect";
 mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .Connect();
- //BA.debugLineNum = 310;BA.debugLine="Log($\"FLP is COnnected? \"$ & Starter.FLP.IsConnec";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104595480",("FLP is COnnected? ")+BA.ObjectToString(mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .IsConnected()),0);
- //BA.debugLineNum = 312;BA.debugLine="LogColor($\"Latitude: \"$ & GlobalVar.Lat, Colors.M";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104595482",("Latitude: ")+mostCurrent._globalvar._lat /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
- //BA.debugLineNum = 313;BA.debugLine="LogColor($\"Longitude: \"$ & GlobalVar.Lon, Colors.";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104595483",("Longitude: ")+mostCurrent._globalvar._lon /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
- //BA.debugLineNum = 315;BA.debugLine="sLocation = GlobalVar.Lat & \",\" & GlobalVar.Lon";
+ //BA.debugLineNum = 311;BA.debugLine="Log($\"FLP is COnnected? \"$ & Starter.FLP.IsConnec";
+anywheresoftware.b4a.keywords.Common.LogImpl("872155160",("FLP is COnnected? ")+BA.ObjectToString(mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .IsConnected()),0);
+ //BA.debugLineNum = 313;BA.debugLine="LogColor($\"Latitude: \"$ & GlobalVar.Lat, Colors.M";
+anywheresoftware.b4a.keywords.Common.LogImpl("872155162",("Latitude: ")+mostCurrent._globalvar._lat /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+ //BA.debugLineNum = 314;BA.debugLine="LogColor($\"Longitude: \"$ & GlobalVar.Lon, Colors.";
+anywheresoftware.b4a.keywords.Common.LogImpl("872155163",("Longitude: ")+mostCurrent._globalvar._lon /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+ //BA.debugLineNum = 316;BA.debugLine="sLocation = GlobalVar.Lat & \",\" & GlobalVar.Lon";
 _slocation = mostCurrent._globalvar._lat /*String*/ +","+mostCurrent._globalvar._lon /*String*/ ;
- //BA.debugLineNum = 316;BA.debugLine="LogColor($\"Location is \"$ & sLocation, Colors.Yel";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104595486",("Location is ")+_slocation,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
- //BA.debugLineNum = 318;BA.debugLine="Starter.DBCon.BeginTransaction";
+ //BA.debugLineNum = 317;BA.debugLine="LogColor($\"Location is \"$ & sLocation, Colors.Yel";
+anywheresoftware.b4a.keywords.Common.LogImpl("872155166",("Location is ")+_slocation,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+ //BA.debugLineNum = 319;BA.debugLine="Starter.DBCon.BeginTransaction";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .BeginTransaction();
- //BA.debugLineNum = 319;BA.debugLine="Try";
-try { //BA.debugLineNum = 320;BA.debugLine="Starter.DBCon.ExecNonQuery2(\"INSERT INTO Pressur";
+ //BA.debugLineNum = 320;BA.debugLine="Try";
+try { //BA.debugLineNum = 321;BA.debugLine="Starter.DBCon.ExecNonQuery2(\"INSERT INTO Pressur";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecNonQuery2("INSERT INTO PressureDistReadings VALUES ("+BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Null)+", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(mostCurrent._globalvar._branchid /*int*/ ),(Object)(_psipointid),(Object)(_dateread),(Object)(_timeread),(Object)(_ipsi),(Object)(_sremarks),(Object)(mostCurrent._globalvar._userid /*int*/ ),(Object)(_sdatetime),(Object)(_slocation),anywheresoftware.b4a.keywords.Common.Null,anywheresoftware.b4a.keywords.Common.Null,(Object)(("")),(Object)(("0")),anywheresoftware.b4a.keywords.Common.Null,anywheresoftware.b4a.keywords.Common.Null}));
- //BA.debugLineNum = 322;BA.debugLine="Starter.DBCon.TransactionSuccessful";
+ //BA.debugLineNum = 323;BA.debugLine="Starter.DBCon.TransactionSuccessful";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .TransactionSuccessful();
- //BA.debugLineNum = 323;BA.debugLine="bRetVal = True";
+ //BA.debugLineNum = 324;BA.debugLine="bRetVal = True";
 _bretval = anywheresoftware.b4a.keywords.Common.True;
  } 
        catch (Exception e29) {
-			processBA.setLastException(e29); //BA.debugLineNum = 325;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104595495",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
- //BA.debugLineNum = 326;BA.debugLine="ToastMessageShow($\"Unable to save Pressure from";
+			processBA.setLastException(e29); //BA.debugLineNum = 326;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872155175",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 327;BA.debugLine="ToastMessageShow($\"Unable to save Pressure from";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(("Unable to save Pressure from Distribution Reading due to ")+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage()),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 327;BA.debugLine="bRetVal = False";
+ //BA.debugLineNum = 328;BA.debugLine="bRetVal = False";
 _bretval = anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 329;BA.debugLine="Starter.DBCon.EndTransaction";
+ //BA.debugLineNum = 330;BA.debugLine="Starter.DBCon.EndTransaction";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .EndTransaction();
- //BA.debugLineNum = 330;BA.debugLine="Return bRetVal";
+ //BA.debugLineNum = 331;BA.debugLine="Return bRetVal";
 if (true) return _bretval;
- //BA.debugLineNum = 331;BA.debugLine="End Sub";
+ //BA.debugLineNum = 332;BA.debugLine="End Sub";
 return false;
 }
 public static String  _savepsireading_onnegativeclicked(anywheresoftware.b4a.objects.ConcreteViewWrapper _view,Object _dialog) throws Exception{
 com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder _alert = null;
- //BA.debugLineNum = 676;BA.debugLine="Private Sub SavePSIReading_OnNegativeClicked (View";
- //BA.debugLineNum = 677;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
+ //BA.debugLineNum = 678;BA.debugLine="Private Sub SavePSIReading_OnNegativeClicked (View";
+ //BA.debugLineNum = 679;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
 _alert = new com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder();
- //BA.debugLineNum = 678;BA.debugLine="Alert.Initialize.Dismiss(Dialog)";
+ //BA.debugLineNum = 680;BA.debugLine="Alert.Initialize.Dismiss(Dialog)";
 _alert.Initialize().Dismiss((android.app.Dialog)(_dialog));
- //BA.debugLineNum = 679;BA.debugLine="End Sub";
+ //BA.debugLineNum = 681;BA.debugLine="End Sub";
 return "";
 }
 public static String  _savepsireading_onpositiveclicked(anywheresoftware.b4a.objects.ConcreteViewWrapper _view,Object _dialog) throws Exception{
 com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder _alert = null;
- //BA.debugLineNum = 681;BA.debugLine="Private Sub SavePSIReading_OnPositiveClicked (View";
- //BA.debugLineNum = 682;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
+ //BA.debugLineNum = 683;BA.debugLine="Private Sub SavePSIReading_OnPositiveClicked (View";
+ //BA.debugLineNum = 684;BA.debugLine="Dim Alert As AX_CustomAlertDialog";
 _alert = new com.aghajari.ax_customalertviewdialog.AX_CustomAlertDialogBuilder();
- //BA.debugLineNum = 683;BA.debugLine="Alert.Initialize.Dismiss(Dialog)";
+ //BA.debugLineNum = 685;BA.debugLine="Alert.Initialize.Dismiss(Dialog)";
 _alert.Initialize().Dismiss((android.app.Dialog)(_dialog));
- //BA.debugLineNum = 684;BA.debugLine="If GlobalVar.blnNewPSIDist = True Then";
+ //BA.debugLineNum = 686;BA.debugLine="If GlobalVar.blnNewPSIDist = True Then";
 if (mostCurrent._globalvar._blnnewpsidist /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 685;BA.debugLine="If Not(SavePSIDistRdg) Then";
+ //BA.debugLineNum = 687;BA.debugLine="If Not(SavePSIDistRdg) Then";
 if (anywheresoftware.b4a.keywords.Common.Not(_savepsidistrdg())) { 
- //BA.debugLineNum = 686;BA.debugLine="RequiredMsgBox($\"ERRORS SAVING\"$,$\"Unable to Sa";
+ //BA.debugLineNum = 688;BA.debugLine="RequiredMsgBox($\"ERRORS SAVING\"$,$\"Unable to Sa";
 _requiredmsgbox(("ERRORS SAVING"),("Unable to Save Pressure Reading due to")+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage());
- //BA.debugLineNum = 687;BA.debugLine="Return";
+ //BA.debugLineNum = 689;BA.debugLine="Return";
 if (true) return "";
  };
  }else {
- //BA.debugLineNum = 690;BA.debugLine="UpdatePSIDistRdg(GlobalVar.PSIDistDetailID)";
+ //BA.debugLineNum = 692;BA.debugLine="UpdatePSIDistRdg(GlobalVar.PSIDistDetailID)";
 _updatepsidistrdg(mostCurrent._globalvar._psidistdetailid /*int*/ );
  };
- //BA.debugLineNum = 692;BA.debugLine="ShowSaveSuccess";
+ //BA.debugLineNum = 694;BA.debugLine="ShowSaveSuccess";
 _showsavesuccess();
- //BA.debugLineNum = 693;BA.debugLine="End Sub";
+ //BA.debugLineNum = 695;BA.debugLine="End Sub";
 return "";
 }
 public static String  _showsavesuccess() throws Exception{
 anywheresoftware.b4a.objects.CSBuilder _cstitle = null;
 anywheresoftware.b4a.objects.CSBuilder _cscontent = null;
- //BA.debugLineNum = 712;BA.debugLine="Private Sub ShowSaveSuccess()";
- //BA.debugLineNum = 713;BA.debugLine="Dim csTitle As CSBuilder";
+ //BA.debugLineNum = 714;BA.debugLine="Private Sub ShowSaveSuccess()";
+ //BA.debugLineNum = 715;BA.debugLine="Dim csTitle As CSBuilder";
 _cstitle = new anywheresoftware.b4a.objects.CSBuilder();
- //BA.debugLineNum = 714;BA.debugLine="Dim csContent As CSBuilder";
+ //BA.debugLineNum = 716;BA.debugLine="Dim csContent As CSBuilder";
 _cscontent = new anywheresoftware.b4a.objects.CSBuilder();
- //BA.debugLineNum = 716;BA.debugLine="If GlobalVar.blnNewPSIDist = True Then";
+ //BA.debugLineNum = 718;BA.debugLine="If GlobalVar.blnNewPSIDist = True Then";
 if (mostCurrent._globalvar._blnnewpsidist /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 717;BA.debugLine="csTitle.Initialize.Size(18).Bold.Color(GlobalVar";
+ //BA.debugLineNum = 719;BA.debugLine="csTitle.Initialize.Size(18).Bold.Color(GlobalVar";
 _cstitle.Initialize().Size((int) (18)).Bold().Color((int) (mostCurrent._globalvar._poscolor /*double*/ )).Append(BA.ObjectToCharSequence(("S U C C E S S!"))).PopAll();
- //BA.debugLineNum = 718;BA.debugLine="csContent.Initialize.Size(14).Color(Colors.Black";
+ //BA.debugLineNum = 720;BA.debugLine="csContent.Initialize.Size(14).Color(Colors.Black";
 _cscontent.Initialize().Size((int) (14)).Color(anywheresoftware.b4a.keywords.Common.Colors.Black).Append(BA.ObjectToCharSequence(("New Pressure Reading has been successfully saved!"))).PopAll();
  }else {
- //BA.debugLineNum = 720;BA.debugLine="csTitle.Initialize.Size(18).Bold.Color(GlobalVar";
+ //BA.debugLineNum = 722;BA.debugLine="csTitle.Initialize.Size(18).Bold.Color(GlobalVar";
 _cstitle.Initialize().Size((int) (18)).Bold().Color((int) (mostCurrent._globalvar._poscolor /*double*/ )).Append(BA.ObjectToCharSequence(("S U C C E S S!"))).PopAll();
- //BA.debugLineNum = 721;BA.debugLine="csContent.Initialize.Size(14).Color(Colors.Black";
+ //BA.debugLineNum = 723;BA.debugLine="csContent.Initialize.Size(14).Color(Colors.Black";
 _cscontent.Initialize().Size((int) (14)).Color(anywheresoftware.b4a.keywords.Common.Colors.Black).Append(BA.ObjectToCharSequence(("Pressure Reading has been successfully updated!"))).PopAll();
  };
- //BA.debugLineNum = 724;BA.debugLine="MatDialogBuilder.Initialize(\"AddUpdatePSIReading\"";
+ //BA.debugLineNum = 726;BA.debugLine="MatDialogBuilder.Initialize(\"AddUpdatePSIReading\"";
 mostCurrent._matdialogbuilder.Initialize(mostCurrent.activityBA,"AddUpdatePSIReading");
- //BA.debugLineNum = 725;BA.debugLine="MatDialogBuilder.Title(csTitle)";
+ //BA.debugLineNum = 727;BA.debugLine="MatDialogBuilder.Title(csTitle)";
 mostCurrent._matdialogbuilder.Title(BA.ObjectToCharSequence(_cstitle.getObject()));
- //BA.debugLineNum = 726;BA.debugLine="MatDialogBuilder.Content(csContent)";
+ //BA.debugLineNum = 728;BA.debugLine="MatDialogBuilder.Content(csContent)";
 mostCurrent._matdialogbuilder.Content(BA.ObjectToCharSequence(_cscontent.getObject()));
- //BA.debugLineNum = 727;BA.debugLine="MatDialogBuilder.Theme(MatDialogBuilder.THEME_LIG";
+ //BA.debugLineNum = 729;BA.debugLine="MatDialogBuilder.Theme(MatDialogBuilder.THEME_LIG";
 mostCurrent._matdialogbuilder.Theme(mostCurrent._matdialogbuilder.THEME_LIGHT);
- //BA.debugLineNum = 728;BA.debugLine="MatDialogBuilder.CanceledOnTouchOutside(False)";
+ //BA.debugLineNum = 730;BA.debugLine="MatDialogBuilder.CanceledOnTouchOutside(False)";
 mostCurrent._matdialogbuilder.CanceledOnTouchOutside(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 729;BA.debugLine="MatDialogBuilder.Cancelable(False)";
+ //BA.debugLineNum = 731;BA.debugLine="MatDialogBuilder.Cancelable(False)";
 mostCurrent._matdialogbuilder.Cancelable(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 730;BA.debugLine="MatDialogBuilder.PositiveText(\"OK\").PositiveColor";
+ //BA.debugLineNum = 732;BA.debugLine="MatDialogBuilder.PositiveText(\"OK\").PositiveColor";
 mostCurrent._matdialogbuilder.PositiveText(BA.ObjectToCharSequence("OK")).PositiveColor((int) (mostCurrent._globalvar._poscolor /*double*/ ));
- //BA.debugLineNum = 731;BA.debugLine="MatDialogBuilder.Show";
+ //BA.debugLineNum = 733;BA.debugLine="MatDialogBuilder.Show";
 mostCurrent._matdialogbuilder.Show();
- //BA.debugLineNum = 732;BA.debugLine="End Sub";
+ //BA.debugLineNum = 734;BA.debugLine="End Sub";
 return "";
 }
 public static String  _toolbar_menuitemclick(de.amberhome.objects.appcompat.ACMenuItemWrapper _item) throws Exception{
@@ -1730,27 +1730,29 @@ mostCurrent._activity.Finish();
  //BA.debugLineNum = 172;BA.debugLine="End Sub";
 return "";
 }
-public static String  _txtpsirdg_enterpressed() throws Exception{
- //BA.debugLineNum = 272;BA.debugLine="Sub txtPSIRdg_EnterPressed";
+public static String  _txtpsirdg_focuschanged(boolean _hasfocus) throws Exception{
+ //BA.debugLineNum = 278;BA.debugLine="Sub txtPSIRdg_FocusChanged (HasFocus As Boolean)";
+ //BA.debugLineNum = 279;BA.debugLine="If HasFocus = True Then";
+if (_hasfocus==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 280;BA.debugLine="cKeyboard.ShowKeyboard(txtPSIRdg)";
+mostCurrent._ckeyboard.ShowKeyboard((android.widget.EditText)(mostCurrent._txtpsirdg.getObject()));
+ }else {
+ //BA.debugLineNum = 282;BA.debugLine="cKeyboard.HideKeyboard";
+mostCurrent._ckeyboard.HideKeyboard();
+ };
+ //BA.debugLineNum = 284;BA.debugLine="End Sub";
+return "";
+}
+public static boolean  _txtpsirdg_handleaction() throws Exception{
+ //BA.debugLineNum = 272;BA.debugLine="Private Sub txtPSIRdg_HandleAction() As Boolean";
  //BA.debugLineNum = 273;BA.debugLine="txtRemarks.RequestFocus";
 mostCurrent._txtremarks.RequestFocus();
  //BA.debugLineNum = 274;BA.debugLine="cKeyboard.HideKeyboard";
 mostCurrent._ckeyboard.HideKeyboard();
- //BA.debugLineNum = 275;BA.debugLine="End Sub";
-return "";
-}
-public static String  _txtpsirdg_focuschanged(boolean _hasfocus) throws Exception{
- //BA.debugLineNum = 277;BA.debugLine="Sub txtPSIRdg_FocusChanged (HasFocus As Boolean)";
- //BA.debugLineNum = 278;BA.debugLine="If HasFocus = True Then";
-if (_hasfocus==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 279;BA.debugLine="cKeyboard.ShowKeyboard(txtPSIRdg)";
-mostCurrent._ckeyboard.ShowKeyboard((android.widget.EditText)(mostCurrent._txtpsirdg.getObject()));
- }else {
- //BA.debugLineNum = 281;BA.debugLine="cKeyboard.HideKeyboard";
-mostCurrent._ckeyboard.HideKeyboard();
- };
- //BA.debugLineNum = 283;BA.debugLine="End Sub";
-return "";
+ //BA.debugLineNum = 275;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 276;BA.debugLine="End Sub";
+return false;
 }
 public static boolean  _updatepsidistrdg(int _irdgid) throws Exception{
 boolean _bretval = false;
@@ -1762,78 +1764,78 @@ long _ldate = 0L;
 int _ipsi = 0;
 String _slocation = "";
 String _sremarks = "";
- //BA.debugLineNum = 424;BA.debugLine="Private Sub UpdatePSIDistRdg(iRdgID As Int) As Boo";
- //BA.debugLineNum = 425;BA.debugLine="Dim bRetVal As Boolean";
+ //BA.debugLineNum = 425;BA.debugLine="Private Sub UpdatePSIDistRdg(iRdgID As Int) As Boo";
+ //BA.debugLineNum = 426;BA.debugLine="Dim bRetVal As Boolean";
 _bretval = false;
- //BA.debugLineNum = 426;BA.debugLine="Dim DateRead, TimeRead As String";
+ //BA.debugLineNum = 427;BA.debugLine="Dim DateRead, TimeRead As String";
 _dateread = "";
 _timeread = "";
- //BA.debugLineNum = 427;BA.debugLine="Dim PSIPointID As Int";
+ //BA.debugLineNum = 428;BA.debugLine="Dim PSIPointID As Int";
 _psipointid = 0;
- //BA.debugLineNum = 428;BA.debugLine="Dim sDateTime As String";
+ //BA.debugLineNum = 429;BA.debugLine="Dim sDateTime As String";
 _sdatetime = "";
- //BA.debugLineNum = 429;BA.debugLine="Dim lDate As Long";
+ //BA.debugLineNum = 430;BA.debugLine="Dim lDate As Long";
 _ldate = 0L;
- //BA.debugLineNum = 430;BA.debugLine="Dim iPSI As Int";
+ //BA.debugLineNum = 431;BA.debugLine="Dim iPSI As Int";
 _ipsi = 0;
- //BA.debugLineNum = 431;BA.debugLine="Dim sLocation, sRemarks As String";
+ //BA.debugLineNum = 432;BA.debugLine="Dim sLocation, sRemarks As String";
 _slocation = "";
 _sremarks = "";
- //BA.debugLineNum = 433;BA.debugLine="bRetVal = False";
+ //BA.debugLineNum = 434;BA.debugLine="bRetVal = False";
 _bretval = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 434;BA.debugLine="lDate = DateTime.Now";
+ //BA.debugLineNum = 435;BA.debugLine="lDate = DateTime.Now";
 _ldate = anywheresoftware.b4a.keywords.Common.DateTime.getNow();
- //BA.debugLineNum = 435;BA.debugLine="DateTime.DateFormat = \"yyyy-MM-dd HH:mm:ss a\"";
+ //BA.debugLineNum = 436;BA.debugLine="DateTime.DateFormat = \"yyyy-MM-dd HH:mm:ss a\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("yyyy-MM-dd HH:mm:ss a");
- //BA.debugLineNum = 436;BA.debugLine="sDateTime = DateTime.Date(lDate)";
+ //BA.debugLineNum = 437;BA.debugLine="sDateTime = DateTime.Date(lDate)";
 _sdatetime = anywheresoftware.b4a.keywords.Common.DateTime.Date(_ldate);
- //BA.debugLineNum = 439;BA.debugLine="TimeRead = sRdgTime";
+ //BA.debugLineNum = 440;BA.debugLine="TimeRead = sRdgTime";
 _timeread = mostCurrent._srdgtime;
- //BA.debugLineNum = 440;BA.debugLine="DateRead = GlobalVar.TranDate";
+ //BA.debugLineNum = 441;BA.debugLine="DateRead = GlobalVar.TranDate";
 _dateread = mostCurrent._globalvar._trandate /*String*/ ;
- //BA.debugLineNum = 443;BA.debugLine="PSIPointID = GetPointID(cboPSIPoint.SelectedItem)";
+ //BA.debugLineNum = 444;BA.debugLine="PSIPointID = GetPointID(cboPSIPoint.SelectedItem)";
 _psipointid = _getpointid(mostCurrent._cbopsipoint.getSelectedItem());
- //BA.debugLineNum = 444;BA.debugLine="iPSI = GlobalVar.SF.Val(txtPSIRdg.Text)";
+ //BA.debugLineNum = 445;BA.debugLine="iPSI = GlobalVar.SF.Val(txtPSIRdg.Text)";
 _ipsi = (int) (mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvvvv6(mostCurrent._txtpsirdg.getText()));
- //BA.debugLineNum = 445;BA.debugLine="sRemarks = txtRemarks.Text";
+ //BA.debugLineNum = 446;BA.debugLine="sRemarks = txtRemarks.Text";
 _sremarks = mostCurrent._txtremarks.getText();
- //BA.debugLineNum = 446;BA.debugLine="Starter.FLP.Connect";
+ //BA.debugLineNum = 447;BA.debugLine="Starter.FLP.Connect";
 mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .Connect();
- //BA.debugLineNum = 448;BA.debugLine="Log($\"FLP is COnnected? \"$ & Starter.FLP.IsConnec";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104726552",("FLP is COnnected? ")+BA.ObjectToString(mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .IsConnected()),0);
- //BA.debugLineNum = 450;BA.debugLine="LogColor($\"Latitude: \"$ & GlobalVar.Lat, Colors.M";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104726554",("Latitude: ")+mostCurrent._globalvar._lat /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
- //BA.debugLineNum = 451;BA.debugLine="LogColor($\"Longitude: \"$ & GlobalVar.Lon, Colors.";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104726555",("Longitude: ")+mostCurrent._globalvar._lon /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
- //BA.debugLineNum = 453;BA.debugLine="sLocation = GlobalVar.Lat & \",\" & GlobalVar.Lon";
+ //BA.debugLineNum = 449;BA.debugLine="Log($\"FLP is COnnected? \"$ & Starter.FLP.IsConnec";
+anywheresoftware.b4a.keywords.Common.LogImpl("872286232",("FLP is COnnected? ")+BA.ObjectToString(mostCurrent._starter._flp /*uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProviderWrapper*/ .IsConnected()),0);
+ //BA.debugLineNum = 451;BA.debugLine="LogColor($\"Latitude: \"$ & GlobalVar.Lat, Colors.M";
+anywheresoftware.b4a.keywords.Common.LogImpl("872286234",("Latitude: ")+mostCurrent._globalvar._lat /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+ //BA.debugLineNum = 452;BA.debugLine="LogColor($\"Longitude: \"$ & GlobalVar.Lon, Colors.";
+anywheresoftware.b4a.keywords.Common.LogImpl("872286235",("Longitude: ")+mostCurrent._globalvar._lon /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+ //BA.debugLineNum = 454;BA.debugLine="sLocation = GlobalVar.Lat & \",\" & GlobalVar.Lon";
 _slocation = mostCurrent._globalvar._lat /*String*/ +","+mostCurrent._globalvar._lon /*String*/ ;
- //BA.debugLineNum = 454;BA.debugLine="LogColor($\"Location is \"$ & sLocation, Colors.Yel";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104726558",("Location is ")+_slocation,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
- //BA.debugLineNum = 456;BA.debugLine="Starter.DBCon.BeginTransaction";
+ //BA.debugLineNum = 455;BA.debugLine="LogColor($\"Location is \"$ & sLocation, Colors.Yel";
+anywheresoftware.b4a.keywords.Common.LogImpl("872286238",("Location is ")+_slocation,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+ //BA.debugLineNum = 457;BA.debugLine="Starter.DBCon.BeginTransaction";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .BeginTransaction();
- //BA.debugLineNum = 457;BA.debugLine="Try";
-try { //BA.debugLineNum = 458;BA.debugLine="Starter.strCriteria = \"UPDATE PressureDistReadin";
+ //BA.debugLineNum = 458;BA.debugLine="Try";
+try { //BA.debugLineNum = 459;BA.debugLine="Starter.strCriteria = \"UPDATE PressureDistReadin";
 mostCurrent._starter._strcriteria /*String*/  = "UPDATE PressureDistReadings SET "+"PSIPointID = ?, "+"RdgDate = ?, "+"RdgTime = ?, "+"PSIReading = ?, "+"Remarks = ?, "+"ModifiedBy = ?, "+"ModifiedAt = ?, "+"ModifiedOn = ? "+"WHERE RdgID = "+BA.NumberToString(_irdgid);
- //BA.debugLineNum = 468;BA.debugLine="LogColor(Starter.strCriteria, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104726572",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
- //BA.debugLineNum = 470;BA.debugLine="Starter.DBCon.ExecNonQuery2(Starter.strCriteria,";
+ //BA.debugLineNum = 469;BA.debugLine="LogColor(Starter.strCriteria, Colors.Yellow)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872286252",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+ //BA.debugLineNum = 471;BA.debugLine="Starter.DBCon.ExecNonQuery2(Starter.strCriteria,";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecNonQuery2(mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.ArrayToList(new String[]{BA.NumberToString(_psipointid),_dateread,_timeread,BA.NumberToString(_ipsi),_sremarks,BA.NumberToString(mostCurrent._globalvar._userid /*int*/ ),_sdatetime,_slocation}));
- //BA.debugLineNum = 471;BA.debugLine="Starter.DBCon.TransactionSuccessful";
+ //BA.debugLineNum = 472;BA.debugLine="Starter.DBCon.TransactionSuccessful";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .TransactionSuccessful();
  } 
        catch (Exception e30) {
-			processBA.setLastException(e30); //BA.debugLineNum = 473;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1104726577",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
- //BA.debugLineNum = 474;BA.debugLine="ToastMessageShow($\"Unable to Update Pressure Rea";
+			processBA.setLastException(e30); //BA.debugLineNum = 474;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("872286257",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 475;BA.debugLine="ToastMessageShow($\"Unable to Update Pressure Rea";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(("Unable to Update Pressure Reading upon Distribution due to ")+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage()),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 475;BA.debugLine="bRetVal = False";
+ //BA.debugLineNum = 476;BA.debugLine="bRetVal = False";
 _bretval = anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 477;BA.debugLine="Starter.DBCon.EndTransaction";
+ //BA.debugLineNum = 478;BA.debugLine="Starter.DBCon.EndTransaction";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .EndTransaction();
- //BA.debugLineNum = 478;BA.debugLine="Return bRetVal";
+ //BA.debugLineNum = 479;BA.debugLine="Return bRetVal";
 if (true) return _bretval;
- //BA.debugLineNum = 480;BA.debugLine="End Sub";
+ //BA.debugLineNum = 481;BA.debugLine="End Sub";
 return false;
 }
 

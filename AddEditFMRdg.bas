@@ -145,6 +145,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	txtFMRdg.ForceDoneButton = True
 	cKeyboard.Initialize("CKB","keyboardview_trans")
 	cKeyboard.RegisterEditText(txtFMRdg,"txtFMRdg","num",True)
+	
+	txtFMRdg.Padding = Array As Int (0dip, -5dip, 0dip, -5dip)
 
 	InpTyp.Initialize
 	InpTyp.SetInputType(txtFMRdgRemarks,Array As Int(InpTyp.TYPE_CLASS_TEXT, InpTyp.TYPE_TEXT_FLAG_AUTO_CORRECT, InpTyp.TYPE_TEXT_FLAG_CAP_SENTENCES))
@@ -515,9 +517,10 @@ Sub chkDefaultTimeRead_CheckedChange(Checked As Boolean)
 	End If
 End Sub
 
-Sub txtFMRdg_EnterPressed
+Sub txtFMRdg_HandleAction() As Boolean
 	cKeyboard.HideKeyboard
 	txtFMRdgRemarks.RequestFocus
+	Return True
 End Sub
 
 Sub mskTimeRead_EnterPressed

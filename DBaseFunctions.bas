@@ -375,7 +375,7 @@ Public Sub GetUserID (sUserName As String, sUserPass As String) As Int
 	Dim iRetval As Int
 	Try
 		Starter.strCriteria = "SELECT UserID FROM tblUsers WHERE UserName = '" & sUserName & "' " & _
-							  "AND UserPassword = '" & sUserPass & "'"
+						  "AND UserPassword = '" & sUserPass & "'"
 		LogColor(Starter.strCriteria, Colors.Blue)
 		
 		iRetval = Starter.DBCon.ExecQuerySingleResult(Starter.strCriteria)
@@ -385,6 +385,30 @@ Public Sub GetUserID (sUserName As String, sUserPass As String) As Int
 		iRetval = 0
 	End Try
 	Return iRetval
+End Sub
+
+Public Sub IsUserExists (sUserName As String) As Boolean
+	'Get User's ID from the specified User Name and Password
+	Dim iRetval As Int
+	Dim bRetVal As Boolean
+	Try
+		Starter.strCriteria = "SELECT Count(UserID) FROM tblUsers WHERE UserName = '" & sUserName & "'"
+		LogColor(Starter.strCriteria, Colors.Magenta)
+		
+		iRetval = Starter.DBCon.ExecQuerySingleResult(Starter.strCriteria)
+		If iRetval > 0 Then
+			bRetVal = True
+		Else
+			bRetVal = False
+		End If
+	Catch
+		bRetVal = False
+		ToastMessageShow($"Unable to fetch User due to "$ & LastException.Message, False)
+		Log(LastException)
+		iRetval = 0
+	End Try
+	
+	Return bRetVal
 End Sub
 
 Public Sub isGetUserInfo (iUserID As Int) As Boolean
@@ -401,7 +425,8 @@ Public Sub isGetUserInfo (iUserID As Int) As Boolean
 			GlobalVar.UserName = rsTemp.GetString("UserName")
 			GlobalVar.UserPW = rsTemp.GetString("UserPassword")
 			GlobalVar.EmpName = rsTemp.GetString("EmpName")
-			GlobalVar.UserAvatar = SF.Upper(SF.Left(rsTemp.GetString("FirstName"),1) &SF.Left(rsTemp.GetString("LastName"),1))
+			GlobalVar.UserAvatar = SF.Upper(SF.Left(rsTemp.GetString("FirstName"),1) & SF.Left(rsTemp.GetString("LastName"),1))
+			GlobalVar.BranchID = rsTemp.GetInt("BranchID")
 			bRetVal = True
 		Else
 			bRetVal = False

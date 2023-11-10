@@ -1,11 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent" >
+	xmlns:tools="http://schemas.android.com/tools">
 
 
 	<android.inputmethodservice.KeyboardView
 		android:id="@+id/keyboardview_trans"
+		android:layout_width="match_parent"
+		android:layout_height="200dp"
 		style="@style/KeyboardStyle.trans"  />
 
 </RelativeLayout>

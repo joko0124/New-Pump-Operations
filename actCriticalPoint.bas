@@ -246,7 +246,11 @@ Sub clvList_VisibleRangeChanged (FirstIndex As Int, LastIndex As Int)
 				Pnl.LoadLayout("ListPSIDistRecords")
 				lblDistTimeRead.TextColor = GlobalVar.PriColor
 '				lblLocation.TextColor = GlobalVar.PriColor
-				lblDistPSIRdg.TextColor = GlobalVar.PriColor
+				If PR.iPSIDistRdg < 16 Then
+					lblDistPSIRdg.TextColor = GlobalVar.RedColor
+				Else
+					lblDistPSIRdg.TextColor = GlobalVar.PriColor
+				End If
 				
 				lblDistTimeRead.Text = PR.sPSIDistRdgTime
 				lblLocation.Text = PR.sPSIPoint & " - " & PR.sPSIDistLoc

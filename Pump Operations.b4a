@@ -348,18 +348,12 @@ Version=10
 #End Region
 
 Sub Process_Globals
-	'These global variables will be declared once when the application starts.
-	'These variables can be accessed from all modules.
 	Public Permissions As RuntimePermissions
 	Dim InpTyp As SLInpTypeConst
-	Private Font As Typeface = Typeface.LoadFromAssets("myfont.ttf")
 	Dim tmrSplash As Timer
 End Sub
 
 Sub Globals
-	'These global variables will be redeclared each time the activity is created.
-	'These variables can only be accessed from this module.
-
 	Dim mySnack As DSSnackbar
 	Dim imeKeyboard As IME
 
@@ -383,7 +377,6 @@ Sub Globals
 	Private btnIPSettings As Panel
 
 	Private pnlSearch As Panel
-	Private FontBold As Typeface = Typeface.LoadFromAssets("myfont_bold.ttf")
 
 	'Permissions
 	Private ReadStoragePermission As Boolean
@@ -400,7 +393,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("LoginNew")
 	DBaseFunctions.GetParameters
-	
+
 	InpTyp.Initialize
 	InpTyp.SetInputType(txtPassword,Array As Int(InpTyp.TYPE_CLASS_TEXT,InpTyp.TYPE_TEXT_VARIATION_PASSWORD))
 
@@ -412,11 +405,15 @@ Sub Activity_Create(FirstTime As Boolean)
 	isChecked = False
 	lblCheck.Text = ""
 	txtPassword.PasswordMode = True
-	txtUserName.Text = "joko"
-	txtPassword.Text = "0124"
+
+	txtUserName.Text = "arnold.fernandez@bwsi.com.ph"
+	txtPassword.Text = "3923bwsi12"
+	
 	Log(FirstTime)
 	If FirstTime = True Then
 		ShowSplash
+		tmrSplash.Initialize("DoSomething",300)
+		tmrSplash.Enabled = True
 		GlobalVar.DBVersion = DBaseFunctions.GetDBVersionNo
 		LogColor ($"App Version: "$ & Application.VersionCode, Colors.Yellow)
 		LogColor ($"DBase Version: "$ & GlobalVar.DBVersion, Colors.Blue)
@@ -429,9 +426,6 @@ Sub Activity_Create(FirstTime As Boolean)
 			ExitApplication
 		End If
 	End If
-	
-	tmrSplash.Initialize("DoSomething",300)
-	tmrSplash.Enabled = True
 
 	imeKeyboard.Initialize("ime")
 	CheckPermissions
@@ -441,28 +435,8 @@ Sub Activity_Create(FirstTime As Boolean)
 End Sub
 
 Sub Activity_Resume
-'	pnlSplash.Visible = False
-'	tmrSplash.Enabled = False
-'	If Starter.GPS1.GPSEnabled = False Then
-'		ShowGPSWarning
-'		Return
-'	Else
-'		Starter.rtp.CheckAndRequest(Starter.rtp.PERMISSION_ACCESS_FINE_LOCATION)
-'		Wait For Activity_PermissionResult (Permission As String, Result As Boolean)
-'		If Result Then CallSubDelayed(Starter, "StartGPS")
-'	End If
-'	
-'	If KVS.IsInitialized = False Then
-'		KVS.Initialize(File.DirInternal,"operations.dat")
-'	Else
-'		If IsThereUserData = True Then
-'			Wait For(RetrieveUserData) Complete(bRetVal As Boolean)
-'			If bRetVal = True Then
-'				StartActivity(MainScreen)
-'			End If
-'		End If
-'	End If
-'	CheckPermissions
+	tmrSplash.Enabled = False
+	pnlSplash.Visible = False
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -540,8 +514,7 @@ Sub chkShowPass_CheckedChange(Checked As Boolean)
 End Sub
 
 Sub btnLogin_Click
-	Dim rsUser As Cursor
-	
+
 	If GlobalVar.SF.Len(GlobalVar.SF.Trim(txtUserName.Text)) = 0 Then
 		Return
 	End If
@@ -550,46 +523,48 @@ Sub btnLogin_Click
 		Return
 	End If
 	
-	Starter.strCriteria = "SELECT * FROM tblUsers " & _
-					  "WHERE UserName = '" & txtUserName.Text & "'"
-	rsUser = Starter.DBCon.ExecQuery(Starter.strCriteria)
-	If rsUser.RowCount > 0 Then
-		rsUser.Position = 0
-		If rsUser.GetString("UserPassword") <> txtPassword.Text Then
+	Try
+		If DBaseFunctions.IsUserExists(txtUserName.Text) = True Then
+			Dim rsUser As Cursor
+			Starter.strCriteria = "SELECT * FROM tblUsers " & _
+					  		  "WHERE UserName = '" & txtUserName.Text & "'"
+			rsUser = Starter.DBCon.ExecQuery(Starter.strCriteria)
+			LogColor(Starter.strCriteria, Colors.Cyan)
 			
-			mySnack.Initialize("", Activity, "Password is Incorrect", mySnack.DURATION_SHORT)
-			MyFunctions.SetSnackBarTextColor(mySnack, Colors.White)
-			MyFunctions.SetSnackBarBackground(mySnack, GlobalVar.RedColor)
-			mySnack.Show
-
-			txtPassword.Text = ""
-			txtPassword.RequestFocus
-			imeKeyboard.ShowKeyboard(txtPassword)
-			Return
-		Else
-			GlobalVar.UserID = DBaseFunctions.GetUserID(txtUserName.Text, txtPassword.Text)
-			If DBaseFunctions.isGetUserInfo(GlobalVar.UserID) = False Then Return
-			If DBaseFunctions.isGetBranchInfo(GlobalVar.BranchID)  = False Then Return
-			GlobalVar.SysMode = DBaseFunctions.GetSystemMode(GlobalVar.BranchID)
-			If DBaseFunctions.IsMultiPos(GlobalVar.UserID) = True Then
-				ShowPositionList(GlobalVar.UserID)
+			If rsUser.RowCount > 0 Then
+				rsUser.Position = 0
+				If rsUser.GetString("UserPassword") <> txtPassword.Text Then
+					'error message
+					txtPassword.Text = ""
+					txtPassword.RequestFocus
+					imeKeyboard.ShowKeyboard(txtPassword)
+					Return
+				Else
+					GlobalVar.UserID = DBaseFunctions.GetUserID(txtUserName.Text, txtPassword.Text)
+					If DBaseFunctions.isGetUserInfo(GlobalVar.UserID) = False Then Return
+					If DBaseFunctions.isGetBranchInfo(GlobalVar.BranchID)  = False Then Return
+					GlobalVar.SysMode = DBaseFunctions.GetSystemMode(GlobalVar.BranchID)
+					If DBaseFunctions.IsMultiPos(GlobalVar.UserID) = True Then
+						ShowPositionList(GlobalVar.UserID)
+					End If
+					tmrSplash.Enabled = False
+				End If
+			Else
+				Return
 			End If
+		Else
+			CheckUser
+			Return
+			'Connect to Web App
+			'Download User Info
+			'Get Branch Info
+			'Get user's position to the web
+			
 		End If
-	Else 'User already in Local Database
-		mySnack.Initialize("TryOtherUser", Activity, "User Name not Found on Local Database", mySnack.DURATION_SHORT)
-		MyFunctions.SetSnackBarTextColor(mySnack, Colors.White)
-		MyFunctions.SetSnackBarBackground(mySnack, GlobalVar.RedColor)
-		mySnack.SetAction($"Retry"$)
-		mySnack.Show
-		Return
-	End If
-End Sub
-
-Private Sub TryOtherUser_Click
-	txtUserName.Text = ""
-	txtPassword.Text = ""
-	txtUserName.RequestFocus
-	imeKeyboard.ShowKeyboard(txtUserName)
+		
+	Catch
+		Log(LastException)
+	End Try
 End Sub
 
 Sub lblCheck_Click
@@ -605,19 +580,6 @@ End Sub
 
 Sub txtPassword_EnterPressed
 	btnLogin_Click
-End Sub
-
-Sub RoundBD(BD As BigDecimal, DP As Int) As BigDecimal
-	BD.Round(BD.Precision - BD.Scale + DP, BD.ROUND_HALF_UP )
-	Return BD
-End Sub
-
-Sub btnIPSettings_Click
-	MsgboxAsync($"IP Settings button clicked..."$,$"IP"$)
-End Sub
-
-Sub btnBranchSettings_Click
-	MsgboxAsync($"Branch Settings button clicked..."$,$"BRANCH"$)
 End Sub
 
 Sub pnlSearch_Touch (Action As Int, X As Float, Y As Float)
@@ -657,7 +619,7 @@ Private Sub ShowPositionList (iUserID As Int)
 			.SetTitle("Select your Position") _
 			.SetStyle(Alert.STYLE_SELECTOR) _
 			.SetOthers(ListItems) _
-			.SetActionsheetTypeface(Font) _
+			.SetActionsheetTypeface(GlobalVar.Font) _
 			.SetOnItemClickListener("PositionSelect") _
 			.SetOnViewBinder("PosFontSizeBinder") 'listeners
 		
@@ -679,6 +641,7 @@ Private Sub PositionSelect_OnItemClick (View As View, Selection As String, Posit
 	GlobalVar.UserPosID = DBaseFunctions.GetIDByCode("PosID","tblPositions","PosDesc",Selection)
 	GlobalVar.UserPos = Selection
 	LogColor(GlobalVar.UserPosID & " - " & GlobalVar.UserPos , Colors.Yellow)
+	
 	TheToast.Initialize(Activity)
 	TheToast.DefaultTextColor = Colors.White
 	TheToast.pnl.Color = GlobalVar.BlueColor
@@ -703,9 +666,6 @@ End Sub
 
 Public Sub LocationChanged(Location1 As Location)
 	Log($"Latitude = "$ & Location1.ConvertToMinutes(Location1.Latitude) & " - Longitude = " & Location1.ConvertToMinutes(Location1.Longitude) & $"Speed = $1.2{Location1.Speed} m/s "$)
-'	lblLat.Text = "Lat = " & Location1.ConvertToMinutes(Location1.Latitude)
-'	lblLon.Text = "Lon = " & Location1.ConvertToMinutes(Location1.Longitude)
-'	lblSpeed.Text = $"Speed = $1.2{Location1.Speed} m/s "$
 End Sub
 
 Private Sub ShowGPSWarning
@@ -719,12 +679,12 @@ Private Sub ShowGPSWarning
 			.SetMessage($"Please Turn On Location Services to,"$ & CRLF & $"Allow "BWSI APP" to"$ & CRLF &  $"Determine Your Location."$) _
 			.SetPositiveText("Cancel") _
 			.SetPositiveColor(GlobalVar.NegColor) _
-			.SetPositiveTypeface(FontBold) _
+			.SetPositiveTypeface(GlobalVar.FontBold) _
 			.SetNegativeText("Settings") _
 			.SetNegativeColor(GlobalVar.PosColor) _
-			.SetNegativeTypeface(Font) _
-			.SetTitleTypeface(Font) _
-			.SetMessageTypeface(Font) _
+			.SetNegativeTypeface(GlobalVar.Font) _
+			.SetTitleTypeface(GlobalVar.Font) _
+			.SetMessageTypeface(GlobalVar.Font) _
 			.SetOnPositiveClicked("AllowGPS") _	'listeners
 			.SetOnNegativeClicked("AllowGPS") _
 			.SetOnViewBinder("GPSFontSizeBinder") 'listeners
@@ -761,7 +721,7 @@ Private Sub GPSFontSizeBinder_OnBindView (View As View, ViewType As Int)
 '		CS.Typeface(Typeface.MATERIALICONS).Size(36).Color(Colors.Red).Append(Chr(0xE190))
 
 		CS.Initialize.Typeface(Typeface.DEFAULT_BOLD).Typeface(Typeface.MATERIALICONS).Size(26).Color(Colors.Red).Append(Chr(0xE1B3) & "  ")
-		CS.Typeface(Font).Size(22).Append(lbl.Text).Pop
+		CS.Typeface(GlobalVar.Font).Size(22).Append(lbl.Text).Pop
 
 		lbl.Text = CS.PopAll
 	End If
@@ -786,7 +746,7 @@ Private Sub PosFontSizeBinder_OnBindView (View As View, ViewType As Int)
 '		CS.Typeface(Typeface.MATERIALICONS).Size(36).Color(Colors.Red).Append(Chr(0xE190))
 
 		CS.Initialize.Typeface(Typeface.DEFAULT_BOLD).Typeface(Typeface.MATERIALICONS).Size(24).Color(Colors.Black).Append(Chr(0xE7FD) & " ")
-		CS.Typeface(Font).Size(20).Append(lbl.Text).Pop
+		CS.Typeface(GlobalVar.Font).Size(20).Append(lbl.Text).Pop
 
 		lbl.Text = CS.PopAll
 	End If
@@ -798,7 +758,7 @@ Private Sub PosFontSizeBinder_OnBindActionsheetView (View As View, Position As I
 	
 	Dim Lbl As Label = View
 '	Lbl.TextColor = Colors.Gray
-	Lbl.Typeface = Font
+	Lbl.Typeface = GlobalVar.Font
 	Lbl.TextSize = 20
 	
 '	Dim Parent As Panel = View.Parent
@@ -861,6 +821,7 @@ End Sub
 Private Sub DoSomething_Tick
 	Log("WORKING...")
 End Sub
+
 Private Sub ShowSplash
 	pnlSplash.Visible = True
 	Sleep(3000)
@@ -871,3 +832,177 @@ Private Sub pnlSplash_Touch (Action As Int, X As Float, Y As Float)
 	
 End Sub
 #End Region
+
+#Region User Message Box
+Private Sub UserWarning(sTitle As String, sMsg As String)
+	Dim Alert As AX_CustomAlertDialog
+
+	Alert.Initialize.Create _
+			.SetDialogStyleName("MyDialogDisableStatus") _	'Manifest style name
+			.SetStyle(Alert.STYLE_DIALOGUE) _
+			.SetCancelable(False) _
+			.SetTitle(sTitle) _
+			.SetMessage(sMsg) _
+			.SetPositiveText("Turn On WiFi") _
+			.SetPositiveColor(Colors.Blue) _
+			.SetPositiveTypeface(GlobalVar.FontBold) _
+			.SetNegativeText("Cancel") _
+			.SetNegativeColor(Colors.Red) _
+			.SetNegativeTypeface(GlobalVar.Font) _
+			.SetTitleTypeface(GlobalVar.Font) _
+			.SetMessageTypeface(GlobalVar.Font) _
+			.SetOnPositiveClicked("WarningUser") _	'listeners
+			.SetOnNegativeClicked("WarningUser") _
+			.SetOnViewBinder("WarningUser") 'listeners
+			
+	Alert.SetDialogBackground(MyFunctions.myCD)
+	Alert.Build.Show
+
+End Sub
+'Listeners
+Private Sub WarningUser_OnNegativeClicked (View As View, Dialog As Object)
+'	Dim Alert As AX_CustomAlertDialog
+'	Alert.Initialize.Dismiss(Dialog)
+'	blnWifiOn = False
+'
+'	vibration.vibrateOnce(2000)
+'	snack.Initialize("", Activity,$"Unable to log due to NO INTERNET CONNECTION."$,snack.DURATION_LONG)
+'	SetSnackBarBackground(snack,Colors.Red)
+'	SetSnackBarTextColor(snack,Colors.White)
+'	snack.Show
+'
+'	mySnack.Initialize("TryOtherUser", Activity, "User Name not Found on Local Database", mySnack.DURATION_SHORT)
+'	MyFunctions.SetSnackBarTextColor(mySnack, Colors.White)
+'	MyFunctions.SetSnackBarBackground(mySnack, GlobalVar.RedColor)
+'	mySnack.SetAction($"Retry"$)
+'	mySnack.Show
+'	
+'	ProgressDialogHide
+'
+End Sub
+
+Private Sub WarningUser_OnPositiveClicked (View As View, Dialog As Object)
+'	Dim Alert As AX_CustomAlertDialog
+'	Alert.Initialize.Dismiss(Dialog)
+'	Sleep(1000)
+'	blnWifiOn = True
+'	If blnWifiOn = True Then
+'		tglWifi.toggleWIFI
+'		ProgressDialogShow2($"Checking Database Server Connection."$ & CRLF & $"Please Wait..."$, False)
+'		GetUserAccount(GlobalVar.BranchID, txtUserName.Text, txtPassword.Text)
+'	End If
+End Sub
+
+Private Sub WarningUser_OnBindView (View As View, ViewType As Int)
+	Dim Alert As AX_CustomAlertDialog
+	Alert.Initialize
+	If ViewType = Alert.VIEW_TITLE Then ' Title
+		Dim lbl As Label = View
+'		lbl.TextSize = 30
+'		lbl.SetTextColorAnimated(2000,Colors.Magenta)
+		
+		
+		Dim CS As CSBuilder
+'		CS.Initialize.Typeface(Font).Append(lbl.Text & " ").Pop
+'		CS.Typeface(Typeface.MATERIALICONS).Size(36).Color(Colors.Red).Append(Chr(0xE190))
+
+		CS.Initialize.Typeface(Typeface.DEFAULT_BOLD).Typeface(Typeface.MATERIALICONS).Size(26).Color(Colors.Red).Append(Chr(0xE1B3) & "  ")
+		CS.Typeface(GlobalVar.Font).Size(22).Append(lbl.Text).Pop
+
+		lbl.Text = CS.PopAll
+	End If
+	If ViewType = Alert.VIEW_MESSAGE Then
+		Dim lbl As Label = View
+		lbl.TextSize = 16
+		lbl.TextColor = Colors.Gray
+	End If
+End Sub
+
+#End Region
+
+Sub CheckUser
+	Dim job As HttpJob
+	job.Initialize("AuthorizedUser",Me)
+
+	Dim postString As String
+	postString = $"grant_type=password&client_id=1&client_secret=&${GlobalVar.ClientSecretKey}&username=${txtUserName.Text}&password=${txtPassword.Text}"$
+	LogColor(postString, Colors.Cyan)
+	
+	job.PostString("https://rcis.bwsi.com.ph/oauth/token", "grant_type=password&client_id=1&client_secret=hMdFbFiwKznxdgzoGAZBLAzv6sLN9TFKlBk4Esz3&username=arnold.fernandez@bwsi.com.ph&password=3923bwsi12")
+'	job.PostString("https://rcis.bwsi.com.ph/oauth/token", postString)
+	' Set the "Content-Type" header to "application/json"
+	job.GetRequest.SetHeader("Content-Type", "application/json")
+	ProgressDialogShow("Sending authentication request...")
+End Sub
+
+Sub JobDone (Job As HttpJob)
+	
+	Dim RetVal As String
+	
+	ProgressDialogHide
+	Select Job.JobName
+		Case "GetAccessToken"
+			If Job.Success Then
+				Dim Parser As JSONParser
+				Parser.Initialize(Job.GetString)
+				Dim m As Map
+				m = Parser.NextObject
+			Else
+				ToastMessageShow("Error getting access token", True)
+			End If
+		Case "AuthorizedUser"
+			If Job.Success Then
+				ToastMessageShow($"Authorized User!"$,True)
+				RetVal = Job.GetString
+				Log(RetVal)
+				If RetVal = "[]" Then
+					Job.Release
+					Return
+				Else
+					If SaveUserToken(RetVal, txtUserName.Text, txtPassword.Text) = True Then
+						ProgressDialogHide
+					End If
+					GlobalVar.UserID = DBaseFunctions.GetUserID(txtUserName.Text, txtPassword.Text)
+					If DBaseFunctions.isGetUserInfo(GlobalVar.UserID) = False Then Return
+					If DBaseFunctions.isGetBranchInfo(GlobalVar.BranchID)  = False Then Return
+					GlobalVar.SysMode = DBaseFunctions.GetSystemMode(GlobalVar.BranchID)
+					If DBaseFunctions.IsMultiPos(GlobalVar.UserID) = True Then
+						ShowPositionList(GlobalVar.UserID)
+					End If
+					tmrSplash.Enabled = False
+				End If
+
+			Else
+				ToastMessageShow($"Not Authorized User!"$,True)
+			End If
+	End Select
+	Job.Release
+End Sub
+
+Private Sub SaveUserToken(sData As String, sUserName As String, sPass As String) As Boolean
+	Dim bRetVal As Boolean
+	Dim parser As JSONParser
+	Dim root As Map
+	
+	parser.Initialize(sData)
+	root = parser.NextObject
+	Dim sTokenType As String = root.Get("token_type")
+	Dim iExpiresIn As Int = root.Get("expires_in")
+	Dim sAccessToken As String = root.Get("access_token")
+	Dim sRefreshToken As String = root.Get("refresh_token")
+	
+	bRetVal = False
+	Starter.DBCon.BeginTransaction
+	Try
+		
+		Starter.strCriteria="INSERT INTO tblUsers VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+		Starter.DBCon.ExecNonQuery2(Starter.strCriteria , Array As Object($"1"$, $"5"$, $"Fernandez"$, $"Arnold"$, $"Bangit"$, Null, $"Arnold B. Fernandez"$, sUserName, sPass, $"1"$, $"0"$, sTokenType, iExpiresIn, sAccessToken, sRefreshToken))
+		Starter.DBCon.TransactionSuccessful
+		bRetVal = True
+	Catch
+		bRetVal = False
+		Log(LastException)
+	End Try
+	Starter.DBCon.EndTransaction
+	Return bRetVal
+End Sub

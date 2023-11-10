@@ -34,13 +34,11 @@ views.get("pnlpump").vw.setHeight((int)((23d / 100 * height) - ((1d / 100 * heig
 views.get("lblpumptitle").vw.setLeft((int)(0d));
 views.get("lblpumptitle").vw.setWidth((int)((views.get("pnlpump").vw.getWidth()) - (0d)));
 views.get("lblpumptitle").vw.setTop((int)(0d));
-views.get("lbl1").vw.setTop((int)((views.get("lblpumptitle").vw.getTop() + views.get("lblpumptitle").vw.getHeight())+(2d * scale)));
-views.get("lbl1").vw.setLeft((int)((2d / 100 * width)));
 views.get("lblcode").vw.setTop((int)((views.get("lblpumptitle").vw.getTop() + views.get("lblpumptitle").vw.getHeight())+(2d * scale)));
-views.get("lblcode").vw.setLeft((int)((views.get("lbl1").vw.getLeft() + views.get("lbl1").vw.getWidth())+(3d * scale)));
-views.get("lblcode").vw.setWidth((int)((views.get("pnlpump").vw.getWidth())-(5d * scale) - ((views.get("lbl1").vw.getLeft() + views.get("lbl1").vw.getWidth())+(3d * scale))));
-views.get("lbl6").vw.setTop((int)((views.get("lbl1").vw.getTop() + views.get("lbl1").vw.getHeight())+(2d * scale)));
-views.get("lbl6").vw.setLeft((int)((views.get("lbl1").vw.getLeft())));
+views.get("lblcode").vw.setLeft((int)((2d / 100 * width)));
+views.get("lblcode").vw.setWidth((int)((views.get("pnlpump").vw.getWidth())-(5d * scale) - ((2d / 100 * width))));
+views.get("lbl6").vw.setTop((int)((views.get("lblcode").vw.getTop() + views.get("lblcode").vw.getHeight())+(2d * scale)));
+views.get("lbl6").vw.setLeft((int)((views.get("lblcode").vw.getLeft())));
 views.get("pnlpsipoint").vw.setTop((int)((views.get("lbl6").vw.getTop())));
 views.get("pnlpsipoint").vw.setLeft((int)((views.get("lbl6").vw.getLeft() + views.get("lbl6").vw.getWidth())+(5d * scale)));
 views.get("pnlpsipoint").vw.setWidth((int)((views.get("pnlpump").vw.getWidth())-(2d / 100 * width) - ((views.get("lbl6").vw.getLeft() + views.get("lbl6").vw.getWidth())+(5d * scale))));

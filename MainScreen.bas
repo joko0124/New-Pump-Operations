@@ -1308,6 +1308,9 @@ End Sub
 #Region Critical Point
 Sub pnlCPM_Click
 	If GlobalVar.UserPosID = 5 Then
+		If GlobalVar.PumpHouseCode = "" Then
+			Return
+		End If
 		StartActivity(actCriticalPoint)
 '	ShowWaterBalance
 	Else

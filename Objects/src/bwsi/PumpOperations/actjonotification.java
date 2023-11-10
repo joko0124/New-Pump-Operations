@@ -361,12 +361,14 @@ public anywheresoftware.b4a.objects.LabelWrapper _lbldate = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lbljonum = null;
 public b4a.example.dateutils _dateutils = null;
 public bwsi.PumpOperations.main _main = null;
+public bwsi.PumpOperations.globalvar _globalvar = null;
+public bwsi.PumpOperations.myfunctions _myfunctions = null;
+public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
 public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
-public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
-public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
 public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
@@ -392,13 +394,11 @@ public bwsi.PumpOperations.addeditnonoperational _addeditnonoperational = null;
 public bwsi.PumpOperations.addeditproblem _addeditproblem = null;
 public bwsi.PumpOperations.addeditpsidistrecord _addeditpsidistrecord = null;
 public bwsi.PumpOperations.addeditpsirdg _addeditpsirdg = null;
-public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
+public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.dbutils _dbutils = null;
 public bwsi.PumpOperations.edittimerecord _edittimerecord = null;
 public bwsi.PumpOperations.firebasemessaging _firebasemessaging = null;
-public bwsi.PumpOperations.globalvar _globalvar = null;
 public bwsi.PumpOperations.miscfunctions _miscfunctions = null;
-public bwsi.PumpOperations.myfunctions _myfunctions = null;
 public bwsi.PumpOperations.myscale _myscale = null;
 public bwsi.PumpOperations.starter _starter = null;
 public bwsi.PumpOperations.validation _validation = null;
@@ -542,13 +542,13 @@ bwsi.PumpOperations.actjonotification._jos _joinfo = null;
  //BA.debugLineNum = 412;BA.debugLine="Dim JOInfo As JOs = Value";
 _joinfo = (bwsi.PumpOperations.actjonotification._jos)(_value);
  //BA.debugLineNum = 413;BA.debugLine="LogColor(Value, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166256898",BA.ObjectToString(_value),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("833816578",BA.ObjectToString(_value),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 414;BA.debugLine="LogColor(JOInfo.JOID, Colors.Red)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166256899",BA.NumberToString(_joinfo.JOID /*int*/ ),anywheresoftware.b4a.keywords.Common.Colors.Red);
+anywheresoftware.b4a.keywords.Common.LogImpl("833816579",BA.NumberToString(_joinfo.JOID /*int*/ ),anywheresoftware.b4a.keywords.Common.Colors.Red);
  //BA.debugLineNum = 415;BA.debugLine="LogColor(JOInfo.JONum, Colors.Magenta)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166256900",_joinfo.JONum /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("833816580",_joinfo.JONum /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 416;BA.debugLine="LogColor(JOInfo.JOStatus, Colors.Red)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166256901",BA.NumberToString(_joinfo.JOStatus /*int*/ ),anywheresoftware.b4a.keywords.Common.Colors.Red);
+anywheresoftware.b4a.keywords.Common.LogImpl("833816581",BA.NumberToString(_joinfo.JOStatus /*int*/ ),anywheresoftware.b4a.keywords.Common.Colors.Red);
  //BA.debugLineNum = 417;BA.debugLine="UpdateToReadJO(JOInfo.JOID)";
 _updatetoreadjo(_joinfo.JOID /*int*/ );
  //BA.debugLineNum = 418;BA.debugLine="FillJOList";
@@ -755,7 +755,7 @@ this.catchState = 63;
  //BA.debugLineNum = 163;BA.debugLine="Starter.strCriteria = \"SELECT * FROM tblJOs \" &";
 parent.mostCurrent._starter._strcriteria /*String*/  = "SELECT * FROM tblJOs "+"WHERE WasUploaded = '"+BA.NumberToString(0)+"' "+"ORDER BY substr (JOAssignedAt,1,4) || ' ' || substr(JOAssignedAt,6,2) || ' ' || substr(JOAssignedAt,9,2) || ' ' || substr(JOAssignedAt,18,2) || ' ' || (Case WHEN substr(JOAssignedAt,12,2) = '12' AND substr(JOAssignedAt,18,2) = 'AM' THEN '00' ELSE substr(JOAssignedAt,12,2) END) || ' ' || substr(JOAssignedAt,15,2) DESC";
  //BA.debugLineNum = 166;BA.debugLine="LogColor(Starter.strCriteria, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166060298",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("833619978",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 168;BA.debugLine="SenderFilter = Starter.DBCon.ExecQueryAsync(\"SQL";
 _senderfilter = parent.mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQueryAsync(processBA,"SQL",parent.mostCurrent._starter._strcriteria /*String*/ ,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(anywheresoftware.b4a.keywords.Common.Null)));
  //BA.debugLineNum = 169;BA.debugLine="Wait For (SenderFilter) SQL_QueryComplete (Succe";
@@ -839,7 +839,7 @@ _imin = (int) (parent.mostCurrent._globalvar._sf /*adr.stringfunctions.stringfun
  //BA.debugLineNum = 191;BA.debugLine="amPm =  GlobalVar.SF.Right(RS.GetString(\"JOAss";
 _ampm = parent.mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvv7(_rs.GetString("JOAssignedAt"),(long) (2));
  //BA.debugLineNum = 192;BA.debugLine="Log(sDateJO)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166060324",_sdatejo,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833620004",_sdatejo,0);
  //BA.debugLineNum = 193;BA.debugLine="If amPm = \"PM\" And iHour <> 12 Then";
 if (true) break;
 
@@ -959,11 +959,11 @@ case 33:
 this.state = 34;
 ;
  //BA.debugLineNum = 214;BA.debugLine="Log(sTimeJO)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166060346",_stimejo,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833620026",_stimejo,0);
  //BA.debugLineNum = 215;BA.debugLine="DateTime.TimeFormat = \"HH:mm:ss\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setTimeFormat("HH:mm:ss");
  //BA.debugLineNum = 216;BA.debugLine="LogColor(JOInfo.CustName, Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166060348",_joinfo.CustName /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("833620028",_joinfo.CustName /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 217;BA.debugLine="If DaysBetween(sDateJO, sTimeJO, DateTime.Date";
 if (true) break;
 
@@ -996,7 +996,7 @@ case 40:
 //C
 this.state = 41;
  //BA.debugLineNum = 222;BA.debugLine="LogColor (HoursBetween(sDateJO, sTimeJO, Date";
-anywheresoftware.b4a.keywords.Common.LogImpl("166060354",BA.NumberToString(_hoursbetween(_sdatejo,_stimejo,anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow()),anywheresoftware.b4a.keywords.Common.DateTime.Time(anywheresoftware.b4a.keywords.Common.DateTime.getNow()))),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("833620034",BA.NumberToString(_hoursbetween(_sdatejo,_stimejo,anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow()),anywheresoftware.b4a.keywords.Common.DateTime.Time(anywheresoftware.b4a.keywords.Common.DateTime.getNow()))),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 223;BA.debugLine="If HoursBetween(sDateJO, sTimeJO, DateTime.Da";
 if (true) break;
 
@@ -1108,7 +1108,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 246;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 247;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166060379",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833620059",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 61:
@@ -1116,7 +1116,7 @@ case 61:
 this.state = 64;
 ;
  //BA.debugLineNum = 250;BA.debugLine="Log($\"List of Job Order Records = ${NumberFormat";
-anywheresoftware.b4a.keywords.Common.LogImpl("166060382",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833620062",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
  if (true) break;
 
 case 63:
@@ -1124,7 +1124,7 @@ case 63:
 this.state = 64;
 this.catchState = 0;
  //BA.debugLineNum = 252;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166060384",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833620064",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1152,7 +1152,7 @@ public static void  _sql_querycomplete(boolean _success,anywheresoftware.b4a.sql
 public static String  _filterby_itemclicked(de.amberhome.objects.appcompat.ACMenuItemWrapper _item) throws Exception{
  //BA.debugLineNum = 148;BA.debugLine="Sub FilterBy_ItemClicked (Item As ACMenuItem)";
  //BA.debugLineNum = 149;BA.debugLine="Log(\"Popupmenu Item clicked: \" & Item.Id & \" - \"";
-anywheresoftware.b4a.keywords.Common.LogImpl("165994753","Popupmenu Item clicked: "+BA.NumberToString(_item.getId())+" - "+_item.getTitle(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833554433","Popupmenu Item clicked: "+BA.NumberToString(_item.getId())+" - "+_item.getTitle(),0);
  //BA.debugLineNum = 150;BA.debugLine="FilterJoList(Item.Id)";
 _filterjolist(_item.getId());
  //BA.debugLineNum = 151;BA.debugLine="End Sub";
@@ -1258,7 +1258,7 @@ case 10:
 this.state = 11;
 ;
  //BA.debugLineNum = 283;BA.debugLine="LogColor(Starter.strCriteria, Colors.Magenta)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166125850",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("833685530",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 285;BA.debugLine="Try";
 if (true) break;
 
@@ -1356,9 +1356,9 @@ _imin = (int) (parent.mostCurrent._globalvar._sf /*adr.stringfunctions.stringfun
  //BA.debugLineNum = 309;BA.debugLine="amPm =  GlobalVar.SF.Right(RS.GetString(\"JOAss";
 _ampm = parent.mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvv7(_rs.GetString("JOAssignedAt"),(long) (2));
  //BA.debugLineNum = 310;BA.debugLine="Log(sDateJO)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166125877",_sdatejo,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833685557",_sdatejo,0);
  //BA.debugLineNum = 311;BA.debugLine="Log(JOInfo.JOID & \", \" & JOInfo.CustName)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166125878",BA.NumberToString(_joinfo.JOID /*int*/ )+", "+_joinfo.CustName /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833685558",BA.NumberToString(_joinfo.JOID /*int*/ )+", "+_joinfo.CustName /*String*/ ,0);
  //BA.debugLineNum = 312;BA.debugLine="If amPm = \"PM\" And iHour <> 12 Then";
 if (true) break;
 
@@ -1478,7 +1478,7 @@ case 43:
 this.state = 44;
 ;
  //BA.debugLineNum = 333;BA.debugLine="Log(sTimeJO)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166125900",_stimejo,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833685580",_stimejo,0);
  //BA.debugLineNum = 334;BA.debugLine="DateTime.TimeFormat = \"HH:mm:ss\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setTimeFormat("HH:mm:ss");
  //BA.debugLineNum = 335;BA.debugLine="If DaysBetween(sDateJO, sTimeJO, DateTime.Date";
@@ -1513,7 +1513,7 @@ case 50:
 //C
 this.state = 51;
  //BA.debugLineNum = 340;BA.debugLine="LogColor (HoursBetween(sDateJO, sTimeJO, Date";
-anywheresoftware.b4a.keywords.Common.LogImpl("166125907",BA.NumberToString(_hoursbetween(_sdatejo,_stimejo,anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow()),anywheresoftware.b4a.keywords.Common.DateTime.Time(anywheresoftware.b4a.keywords.Common.DateTime.getNow()))),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("833685587",BA.NumberToString(_hoursbetween(_sdatejo,_stimejo,anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow()),anywheresoftware.b4a.keywords.Common.DateTime.Time(anywheresoftware.b4a.keywords.Common.DateTime.getNow()))),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 341;BA.debugLine="If HoursBetween(sDateJO, sTimeJO, DateTime.Da";
 if (true) break;
 
@@ -1625,7 +1625,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 364;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 365;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166125932",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833685612",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 71:
@@ -1633,7 +1633,7 @@ case 71:
 this.state = 74;
 ;
  //BA.debugLineNum = 368;BA.debugLine="Log($\"List of Job Order Records = ${NumberFormat";
-anywheresoftware.b4a.keywords.Common.LogImpl("166125935",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833685615",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
  if (true) break;
 
 case 73:
@@ -1641,7 +1641,7 @@ case 73:
 this.state = 74;
 this.catchState = 0;
  //BA.debugLineNum = 370;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166125937",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833685617",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1753,7 +1753,7 @@ return "";
 public static String  _jo_started_onpositiveclicked(anywheresoftware.b4a.objects.ConcreteViewWrapper _view,Object _dialog) throws Exception{
  //BA.debugLineNum = 600;BA.debugLine="Private Sub JO_Started_OnPositiveClicked (View As";
  //BA.debugLineNum = 603;BA.debugLine="LogColor(GlobalVar.SelectedJOID, Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166650115",BA.NumberToString(mostCurrent._globalvar._selectedjoid /*int*/ ),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("834209795",BA.NumberToString(mostCurrent._globalvar._selectedjoid /*int*/ ),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 605;BA.debugLine="If StartJO(GlobalVar.SelectedJOID) = True Then";
 if (_startjo(mostCurrent._globalvar._selectedjoid /*int*/ )==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 606;BA.debugLine="Alert.Initialize.Dismiss(Dialog)";
@@ -2037,7 +2037,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 527;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 528;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166453551",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("834013231",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 9:
@@ -2051,7 +2051,7 @@ case 11:
 this.state = 12;
 this.catchState = 0;
  //BA.debugLineNum = 532;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166453555",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("834013235",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 ;
@@ -2172,7 +2172,7 @@ mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .BeginTransaction()
 try { //BA.debugLineNum = 686;BA.debugLine="Starter.strCriteria = \"UPDATE tblJOs \" & _";
 mostCurrent._starter._strcriteria /*String*/  = "UPDATE tblJOs "+"SET JOStatus = ?, DateStarted = ? "+"WHERE JOID = "+BA.NumberToString(_ijoid);
  //BA.debugLineNum = 690;BA.debugLine="LogColor(Starter.strCriteria,Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166912273",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("834471953",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 691;BA.debugLine="Starter.DBCon.ExecNonQuery2(Starter.strCriteria,";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecNonQuery2(mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.ArrayToList(new String[]{"2",_sdatestart}));
  //BA.debugLineNum = 692;BA.debugLine="Starter.DBCon.TransactionSuccessful";
@@ -2184,7 +2184,7 @@ _bretval = anywheresoftware.b4a.keywords.Common.True;
 			processBA.setLastException(e17); //BA.debugLineNum = 696;BA.debugLine="bRetVal = False";
 _bretval = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 697;BA.debugLine="Log(LastException.Message)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166912280",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("834471960",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
  };
  //BA.debugLineNum = 699;BA.debugLine="Starter.DBCon.EndTransaction";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .EndTransaction();
@@ -2338,7 +2338,7 @@ parent._jocounts = (int)(Double.parseDouble(parent.mostCurrent._starter._dbcon /
  //BA.debugLineNum = 429;BA.debugLine="Starter.strCriteria = \"SELECT * FROM tblJOs \" &";
 parent.mostCurrent._starter._strcriteria /*String*/  = "SELECT * FROM tblJOs "+"WHERE WasUploaded = '"+BA.NumberToString(0)+"' "+"ORDER BY JOAssignedAt DESC";
  //BA.debugLineNum = 432;BA.debugLine="LogColor(Starter.strCriteria, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166322443",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("833882123",parent.mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 434;BA.debugLine="SenderFilter = Starter.DBCon.ExecQueryAsync(\"SQL";
 _senderfilter = parent.mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQueryAsync(processBA,"SQL",parent.mostCurrent._starter._strcriteria /*String*/ ,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(anywheresoftware.b4a.keywords.Common.Null)));
  if (true) break;
@@ -2459,7 +2459,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 469;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 470;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("166322481",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833882161",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 22:
@@ -2467,7 +2467,7 @@ case 22:
 this.state = -1;
 ;
  //BA.debugLineNum = 473;BA.debugLine="Log($\"List of Job Order Records = ${NumberFormat2";
-anywheresoftware.b4a.keywords.Common.LogImpl("166322484",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("833882164",("List of Job Order Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvjos._getsize()))+" Job Order Records"),0);
  //BA.debugLineNum = 475;BA.debugLine="End Sub";
 if (true) break;
 
@@ -2488,7 +2488,7 @@ mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .BeginTransaction()
 try { //BA.debugLineNum = 715;BA.debugLine="Starter.strCriteria = \"UPDATE tblJOs \" & _";
 mostCurrent._starter._strcriteria /*String*/  = "UPDATE tblJOs "+"SET WasRead = ? "+"WHERE JOID = "+BA.NumberToString(_ijoid);
  //BA.debugLineNum = 719;BA.debugLine="LogColor(Starter.strCriteria,Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("167043338",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("834603018",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 720;BA.debugLine="Starter.DBCon.ExecNonQuery2(Starter.strCriteria,";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecNonQuery2(mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.ArrayToList(new String[]{"1"}));
  //BA.debugLineNum = 721;BA.debugLine="Starter.DBCon.TransactionSuccessful";
@@ -2500,7 +2500,7 @@ _bretval = anywheresoftware.b4a.keywords.Common.True;
 			processBA.setLastException(e11); //BA.debugLineNum = 725;BA.debugLine="bRetVal = False";
 _bretval = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 726;BA.debugLine="Log(LastException.Message)";
-anywheresoftware.b4a.keywords.Common.LogImpl("167043345",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("834603025",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
  };
  //BA.debugLineNum = 728;BA.debugLine="Starter.DBCon.EndTransaction";
 mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .EndTransaction();

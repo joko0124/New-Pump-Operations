@@ -8,8 +8,15 @@ Sub Process_Globals
 	Public DBVersion As Int
 	Public ServerAddress As String
 	Public APIController As String = "ApiController"
-	Public BaseURL As String = "https://bowa-api.bwsi.com.ph/api/"
+	Public BaseURL As String : BaseURL = "https://rcis.bwsi.com.ph/api/"
+	Public RequestTokenURL As String : RequestTokenURL = "https://rcis.bwsi.com.ph/oauth/token"
+	Public RefreshTokenURL As String : RefreshTokenURL = "https://rcis.bwsi.com.ph/oauth/token"
 	
+	Public ClientSecretKey As String : ClientSecretKey = "hMdFbFiwKznxdgzoGAZBLAzv6sLN9TFKlBk4Esz3"
+	
+	Public Font As Typeface = Typeface.LoadFromAssets("myfont.ttf")
+	Public FontBold As Typeface = Typeface.LoadFromAssets("myfont_bold.ttf")
+
 	Public CSTitle As CSBuilder
 	Public CSSubtitle As CSBuilder
 	

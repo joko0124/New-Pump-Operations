@@ -6,8 +6,8 @@
     android:keyHeight="7.0000%p"
 	>
 	
-
-    <Row>
+	<Row android:keyHeight="2sp"></Row>
+		<Row>
         <Key android:codes="49" android:keyLabel="1" android:keyEdgeFlags="left"/>
         <Key android:codes="50" android:keyLabel="2"/>
         <Key android:codes="51" android:keyLabel="3" android:keyEdgeFlags="right"/>
@@ -26,9 +26,9 @@
     </Row>
 
     <Row>
-        <Key android:codes="-5" android:keyIcon="@drawable/baseline_backspace_black_24dp" android:keyEdgeFlags="left"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/baseline_backspace_white_20" android:keyEdgeFlags="left"/>
         <Key android:codes="48" android:keyLabel="0"/>
         <Key android:codes="-4" android:keyLabel="DONE" android:keyEdgeFlags="right"/>
     </Row>
-<Row android:keyHeight="3sp"></Row>
+	<Row android:keyHeight="2sp"></Row>
 </Keyboard>

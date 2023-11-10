@@ -187,13 +187,6 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".addedittimerecord"
-			android:label="BWSI Operations"
-			android:screenOrientation="unspecified">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
 			android:name=".mainscreen"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
@@ -208,14 +201,14 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".actcriticalpoint"
+			android:name=".actdccrjofindings"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".actdccrjofindings"
+			android:name=".actcriticalpoint"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
 		</activity>
@@ -398,6 +391,13 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".addeditpsirdg"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addedittimerecord"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
 		</activity>

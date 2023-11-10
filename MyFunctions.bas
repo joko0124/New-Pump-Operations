@@ -105,3 +105,26 @@ Public Sub myCD As ColorDrawable
 	mCD.Initialize(Colors.RGB(240,240,240),0)
 	Return mCD
 End Sub
+
+#Region UsersKeyValue
+Public Sub SaveUserSettings
+	
+End Sub
+
+Public Sub IsThereUserData() As Boolean
+	Dim blnRetVal As Boolean
+	blnRetVal = False
+	
+	Try
+		blnRetVal = True
+	Catch
+		blnRetVal = False
+		Log(LastException)
+	End Try
+	Return blnRetVal
+End Sub
+
+Public Sub RetrieveUserSettings
+	
+End Sub
+#End Region

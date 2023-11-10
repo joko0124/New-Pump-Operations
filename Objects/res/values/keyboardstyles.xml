@@ -2,7 +2,7 @@
 <resources>
 	<style name="KeyboardStyle" parent="@android:style/Widget.KeyboardView">
 		<item name="android:layout_width">match_parent</item>
-		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_height">match_parent</item>
 		<item name="android:layout_alignParentBottom">true</item>
 		<item name="android:layout_centerHorizontal">true</item>
 		<item name="android:focusable">true</item>
@@ -20,11 +20,13 @@
 	</style>
 
 	<style name="KeyboardStyle.trans">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">fill_parent</item>
 		<item name="android:keyTextSize">25sp</item>
 		<item name="android:labelTextSize">20sp</item>
-		<item name="android:background">#FF17A2B8</item>
+		<item name="android:background">#FF18A3B6</item>
 		<item name="android:keyBackground">@xml/rounded_gradient</item>
-		<item name="android:keyTextColor">#FF21262A</item>
+		<item name="android:keyTextColor">#FFFFFFFF</item>
 		<item name="android:keyPreviewLayout">@layout/keyboard_key_preview_orange</item>
 		
 	</style>

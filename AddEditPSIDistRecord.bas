@@ -62,7 +62,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	MyScale.SetRate(0.5)
 	Activity.LoadLayout("NewPsiRdgDist")
 
-	lblCode.Text = GlobalVar.PumpHouseCode & $" - "$ & GetPumpLocation(GlobalVar.PumpHouseID)
+	lblCode.Text = $"PUMP - "$ & GlobalVar.PumpHouseCode & $" - "$ & GetPumpLocation(GlobalVar.PumpHouseID)
 	imeKeyboard.Initialize("ime")
 	
 	InpTyp.Initialize
@@ -96,7 +96,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	End If
 
 	If FirstTime Then
-		FillPressurePoint(GlobalVar.PumpHouseID)
+'		FillPressurePoint(GlobalVar.PumpHouseID)
 	End If
 	txtPSIRdg.InputType = Bit.Or(txtPSIRdg.InputType,TYPE_TEXT_FLAG_NO_SUGGESTIONS)
 	txtPSIRdg.SingleLine = True
@@ -275,9 +275,10 @@ Sub mskTimeRead_FocusChanged(HasFocus As Boolean)
 	
 End Sub
 
-Sub txtPSIRdg_EnterPressed
+Private Sub txtPSIRdg_HandleAction() As Boolean
 	txtRemarks.RequestFocus
 	cKeyboard.HideKeyboard
+	Return True
 End Sub
 
 Sub txtPSIRdg_FocusChanged (HasFocus As Boolean)
@@ -541,6 +542,7 @@ Sub FillPressurePoint(iPumpID As Int)
 			Log(LastException)
 		End If
 		txtLocation.Text = GetLocation(cboPSIPoint.SelectedItem)
+		txtLocation.Padding = Array As Int (10dip, 0dip, 0dip, -5dip)
 
 	Catch
 		snack.Initialize("", Activity,$""$ & LastException.Message,5000)

@@ -137,12 +137,14 @@ public static uk.co.martinpearman.b4a.fusedlocationprovider.FusedLocationProvide
 public static boolean _flpstarted = false;
 public b4a.example.dateutils _dateutils = null;
 public bwsi.PumpOperations.main _main = null;
+public bwsi.PumpOperations.globalvar _globalvar = null;
+public bwsi.PumpOperations.myfunctions _myfunctions = null;
+public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
 public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
-public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
-public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
 public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
@@ -169,13 +171,11 @@ public bwsi.PumpOperations.addeditnonoperational _addeditnonoperational = null;
 public bwsi.PumpOperations.addeditproblem _addeditproblem = null;
 public bwsi.PumpOperations.addeditpsidistrecord _addeditpsidistrecord = null;
 public bwsi.PumpOperations.addeditpsirdg _addeditpsirdg = null;
-public bwsi.PumpOperations.dbasefunctions _dbasefunctions = null;
+public bwsi.PumpOperations.addedittimerecord _addedittimerecord = null;
 public bwsi.PumpOperations.dbutils _dbutils = null;
 public bwsi.PumpOperations.edittimerecord _edittimerecord = null;
 public bwsi.PumpOperations.firebasemessaging _firebasemessaging = null;
-public bwsi.PumpOperations.globalvar _globalvar = null;
 public bwsi.PumpOperations.miscfunctions _miscfunctions = null;
-public bwsi.PumpOperations.myfunctions _myfunctions = null;
 public bwsi.PumpOperations.myscale _myscale = null;
 public bwsi.PumpOperations.validation _validation = null;
 public bwsi.PumpOperations.httputils2service _httputils2service = null;
@@ -222,7 +222,7 @@ return null;
 public static String  _flp_connectionfailed(int _connectionresult1) throws Exception{
  //BA.debugLineNum = 122;BA.debugLine="Sub flp_ConnectionFailed(ConnectionResult1 As Int)";
  //BA.debugLineNum = 123;BA.debugLine="Log(\"Failed to connect to location provider\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127926273","Failed to connect to location provider",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("893913089","Failed to connect to location provider",0);
  //BA.debugLineNum = 124;BA.debugLine="Select ConnectionResult1";
 switch (BA.switchObjectToInt(_connectionresult1,_flp.ConnectionResult.NETWORK_ERROR)) {
 case 0: {
@@ -240,32 +240,32 @@ public static String  _flp_connectionsuccess() throws Exception{
 anywheresoftware.b4a.gps.LocationWrapper _location1 = null;
  //BA.debugLineNum = 107;BA.debugLine="Sub flp_ConnectionSuccess";
  //BA.debugLineNum = 108;BA.debugLine="Log(\"Connected to location provider\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127860737","Connected to location provider",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("893847553","Connected to location provider",0);
  //BA.debugLineNum = 109;BA.debugLine="Dim location1 As Location";
 _location1 = new anywheresoftware.b4a.gps.LocationWrapper();
  //BA.debugLineNum = 110;BA.debugLine="location1.Initialize";
 _location1.Initialize();
  //BA.debugLineNum = 112;BA.debugLine="Log(\"Connected to location provider\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127860741","Connected to location provider",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("893847557","Connected to location provider",0);
  //BA.debugLineNum = 113;BA.debugLine="LogColor(location1.Latitude,Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127860742",BA.NumberToString(_location1.getLatitude()),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("893847558",BA.NumberToString(_location1.getLatitude()),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 114;BA.debugLine="LogColor(location1.Longitude,Colors.Magenta)";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127860743",BA.NumberToString(_location1.getLongitude()),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("893847559",BA.NumberToString(_location1.getLongitude()),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 116;BA.debugLine="GlobalVar.Lat = $\"$1.4{location1.Latitude}\"$";
 mostCurrent._globalvar._lat /*String*/  = (""+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("1.4",(Object)(_location1.getLatitude()))+"");
  //BA.debugLineNum = 117;BA.debugLine="GlobalVar.Lon = $\"$1.4{location1.Longitude}\"$";
 mostCurrent._globalvar._lon /*String*/  = (""+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("1.4",(Object)(_location1.getLongitude()))+"");
  //BA.debugLineNum = 118;BA.debugLine="LogColor($\"Latitude: \"$ & GlobalVar.Lat, Colors.M";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127860747",("Latitude: ")+mostCurrent._globalvar._lat /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("893847563",("Latitude: ")+mostCurrent._globalvar._lat /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 119;BA.debugLine="LogColor($\"Longitude: \"$ & GlobalVar.Lon, Colors.";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127860748",("Longitude: ")+mostCurrent._globalvar._lon /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("893847564",("Longitude: ")+mostCurrent._globalvar._lon /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 120;BA.debugLine="End Sub";
 return "";
 }
 public static String  _flp_connectionsuspended(int _suspendedcause1) throws Exception{
  //BA.debugLineNum = 134;BA.debugLine="Sub flp_ConnectionSuspended(SuspendedCause1 As Int";
  //BA.debugLineNum = 135;BA.debugLine="Log(\"FusedLocationProvider1_ConnectionSuspended\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127991809","FusedLocationProvider1_ConnectionSuspended",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("893978625","FusedLocationProvider1_ConnectionSuspended",0);
  //BA.debugLineNum = 139;BA.debugLine="Select SuspendedCause1";
 switch (BA.switchObjectToInt(_suspendedcause1,_flp.SuspendedCause.CAUSE_NETWORK_LOST,_flp.SuspendedCause.CAUSE_SERVICE_DISCONNECTED)) {
 case 0: {
@@ -349,7 +349,7 @@ case 0:
 //C
 this.state = 1;
  //BA.debugLineNum = 27;BA.debugLine="Log(RTP.GetSafeDirDefaultExternal(\"\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("1127205380",parent._rtp.GetSafeDirDefaultExternal(""),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("893192196",parent._rtp.GetSafeDirDefaultExternal(""),0);
  //BA.debugLineNum = 28;BA.debugLine="DBPath = DBUtils.CopyDBFromAssets(\"MasterDB.db\")";
 parent._dbpath = parent.mostCurrent._dbutils._copydbfromassets /*String*/ (processBA,"MasterDB.db");
  //BA.debugLineNum = 30;BA.debugLine="Dim jo As JavaObject";
