@@ -146,10 +146,10 @@ public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
-public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actgpmhistory _actgpmhistory = null;
 public bwsi.PumpOperations.actjo _actjo = null;
 public bwsi.PumpOperations.actjoaccomplishedsas _actjoaccomplishedsas = null;
@@ -189,9 +189,9 @@ String _contenttext = "";
 String _contenttitle = "";
  //BA.debugLineNum = 38;BA.debugLine="Sub fm_MessageArrived (Message As RemoteMessage)";
  //BA.debugLineNum = 39;BA.debugLine="Log(\"Message arrived\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("885065729","Message arrived",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("785327873","Message arrived",0);
  //BA.debugLineNum = 40;BA.debugLine="Log($\"Message data: ${Message.GetData}\"$)";
-anywheresoftware.b4a.keywords.Common.LogImpl("885065730",("Message data: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_message.GetData().getObject()))+""),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("785327874",("Message data: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_message.GetData().getObject()))+""),0);
  //BA.debugLineNum = 50;BA.debugLine="MyIcon = LoadBitmapResize(File.DirAssets, \"icon.p";
 _myicon = anywheresoftware.b4a.keywords.Common.LoadBitmapResize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"icon.png",anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (24)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (24)),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 52;BA.debugLine="Dim n2 As NB6";
@@ -233,14 +233,14 @@ _nsum._build /*anywheresoftware.b4a.objects.NotificationWrapper*/ ((Object)(_con
  //BA.debugLineNum = 77;BA.debugLine="nSum.BadgeIconType(\"LARGE\").Number(sumNotifyID)";
 _nsum._badgeicontype /*bwsi.PumpOperations.nb6*/ ("LARGE")._number /*bwsi.PumpOperations.nb6*/ (_sumnotifyid);
  //BA.debugLineNum = 78;BA.debugLine="Log($\"Token: \"$ & fm.Token)";
-anywheresoftware.b4a.keywords.Common.LogImpl("885065768",("Token: ")+_fm.getToken(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("785327912",("Token: ")+_fm.getToken(),0);
  //BA.debugLineNum = 79;BA.debugLine="End Sub";
 return "";
 }
 public static String  _fm_tokenrefresh(String _token) throws Exception{
  //BA.debugLineNum = 81;BA.debugLine="Sub fm_TokenRefresh (Token As String)";
  //BA.debugLineNum = 82;BA.debugLine="Log(\"TokenRefresh: \" & Token)";
-anywheresoftware.b4a.keywords.Common.LogImpl("885131265","TokenRefresh: "+_token,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("785393409","TokenRefresh: "+_token,0);
  //BA.debugLineNum = 83;BA.debugLine="End Sub";
 return "";
 }

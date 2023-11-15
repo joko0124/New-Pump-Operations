@@ -138,10 +138,10 @@ public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
-public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actgpmhistory _actgpmhistory = null;
 public bwsi.PumpOperations.actjo _actjo = null;
 public bwsi.PumpOperations.actjoaccomplishedsas _actjoaccomplishedsas = null;
@@ -194,7 +194,7 @@ public static String  _hc_responseerror(anywheresoftware.b4h.okhttp.OkHttpClient
 bwsi.PumpOperations.httpjob _job = null;
  //BA.debugLineNum = 90;BA.debugLine="Sub hc_ResponseError (Response As OkHttpResponse,";
  //BA.debugLineNum = 91;BA.debugLine="Log($\"ResponseError. Reason: ${Reason}, Response:";
-anywheresoftware.b4a.keywords.Common.LogImpl("896206849",("ResponseError. Reason: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_reason))+", Response: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_response.getErrorResponse()))+""),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("796468993",("ResponseError. Reason: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_reason))+", Response: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_response.getErrorResponse()))+""),0);
  //BA.debugLineNum = 92;BA.debugLine="Response.Release";
 _response.Release();
  //BA.debugLineNum = 93;BA.debugLine="Dim job As HttpJob = TaskIdToJob.Get(TaskId)";
@@ -266,9 +266,9 @@ anywheresoftware.b4a.keywords.Common.File.Delete(_tempfolder,"~test.test");
  } 
        catch (Exception e6) {
 			processBA.setLastException(e6); //BA.debugLineNum = 30;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("895813639",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(processBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("796075783",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(processBA)),0);
  //BA.debugLineNum = 31;BA.debugLine="Log(\"Switching to File.DirInternal\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("895813640","Switching to File.DirInternal",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("796075784","Switching to File.DirInternal",0);
  //BA.debugLineNum = 32;BA.debugLine="TempFolder = File.DirInternal";
 _tempfolder = anywheresoftware.b4a.keywords.Common.File.getDirInternal();
  };

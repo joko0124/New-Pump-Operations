@@ -364,10 +364,10 @@ public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
-public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actjo _actjo = null;
 public bwsi.PumpOperations.actjoaccomplishedsas _actjoaccomplishedsas = null;
 public bwsi.PumpOperations.actjodetails _actjodetails = null;
@@ -520,7 +520,7 @@ bwsi.PumpOperations.actgpmhistory._gpmrecords _rec = null;
  //BA.debugLineNum = 197;BA.debugLine="Dim Rec As GPMRecords = Value";
 _rec = (bwsi.PumpOperations.actgpmhistory._gpmrecords)(_value);
  //BA.debugLineNum = 198;BA.debugLine="Log(Rec.ID)";
-anywheresoftware.b4a.keywords.Common.LogImpl("828770306",BA.NumberToString(_rec.ID /*int*/ ),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("729032450",BA.NumberToString(_rec.ID /*int*/ ),0);
  //BA.debugLineNum = 199;BA.debugLine="ShowGPMResDetails(Rec.ID)";
 _showgpmresdetails(_rec.ID /*int*/ );
  //BA.debugLineNum = 200;BA.debugLine="GlobalVar.GPMId = Rec.ID";
@@ -735,7 +735,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 157;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 158;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("828639266",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("728901410",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 13:
@@ -743,7 +743,7 @@ case 13:
 this.state = 16;
 ;
  //BA.debugLineNum = 161;BA.debugLine="Log($\"List of Time Records = ${NumberFormat2((Da";
-anywheresoftware.b4a.keywords.Common.LogImpl("828639269",("List of Time Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvlist._getsize()))+" Chlorine Records"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("728901413",("List of Time Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvlist._getsize()))+" Chlorine Records"),0);
  if (true) break;
 
 case 15:
@@ -759,7 +759,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 167;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 168;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("828639276",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("728901420",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -953,7 +953,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 237;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 238;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("828835875",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("729098019",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 6:

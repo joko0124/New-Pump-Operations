@@ -351,7 +351,8 @@ Sub clvTime_ItemClick (Index As Int, Value As Object)
 
 	If Rec.lTimeOff = 0 Then
 		blnAddTime = False
-		ConfirmPumpOff
+		ShowMessagePumpTime
+'		ConfirmPumpOff
 	Else
 		ShowPumpTimeRecDetails(GlobalVar.TimeDetailID)
 	End If
@@ -1235,4 +1236,41 @@ Private Sub EditProblemRecord_ButtonPressed(mDialog As MaterialDialog, sAction A
 			StartActivity(AddEditProblem)
 	End Select
 End Sub
+#End Region
+
+#Region New Message Box
+Private Sub ShowMessagePumpTime
+	Dim Alert As AX_CustomAlertDialog
+	
+	Dim items As List
+	items.Initialize
+	items.Add("Edit Pump On Time")
+	items.Add("Delete Record")
+	
+	Alert.Initialize.Create _
+			.SetDialogStyleName("MyDialog") _	'Manifest style name
+			.SetStyle(Alert.STYLE_ACTIONSHEET) _
+			.SetTitle("Select an option") _
+			.SetTitleColor(Colors.Black) _
+			.SetCancelText("Pump Off...") _
+			.SetNegativeTypeface(FontBold) _ 'Usable for Cancel Typeface
+			.SetOthers(items) _
+			.SetActionsheetTypeface(Font) _
+			.SetTitleTypeface(Font) _
+			.SetMessageTypeface(Font) _
+			.SetOnCancelClicked("PumpTime") _	'listeners
+			.SetOnItemClickListener("PumpTime") 	'listeners
+			
+	Alert.SetDialogBackground(MyFunctions.myCD)
+	Alert.Build.Show
+End Sub
+'Actionsheet More Button
+Private Sub PumpTime_OnCancelClicked (View As View, Dialog As Object)
+	If View<>Null Then
+		ToastMessageShow("More Button Clicked!",False)
+		Dim Alert As AX_CustomAlertDialog
+		Alert.Initialize.Dismiss(Dialog)
+	End If
+End Sub
+
 #End Region

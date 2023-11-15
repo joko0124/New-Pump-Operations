@@ -195,6 +195,33 @@ Public Sub GetDrainPipeSize (iPumpID As Int) As String
 	Return sRetval
 	
 End Sub
+
+Public Sub IsTherePressurePoint(iPumpID As Int) As Boolean
+	Dim bRetVal As Boolean
+	Dim totPressurePoint As Int
+	
+	bRetVal = False
+	totPressurePoint = 0
+	Try
+		Starter.strCriteria = "SELECT Count(PressurePoint.ID) AS TotPPoint " & _
+						  "FROM tblPressurePoint AS PressurePoint " & _
+						  "INNER JOIN tblPumpStation AS PumpStation ON PressurePoint.PumpHouseID = PumpStation.StationID " & _
+						  "WHERE PressurePoint.PumpHouseID = " & iPumpID
+
+		LogColor(Starter.strCriteria, Colors.Blue)
+		
+		totPressurePoint = Starter.DBCon.ExecQuerySingleResult(Starter.strCriteria)
+		If totPressurePoint > 0 Then
+			bRetVal = True
+		Else
+			bRetVal = False
+		End If
+	Catch
+		bRetVal = False
+		Log(LastException)
+	End Try
+	Return bRetVal
+End Sub
 #End Region
 
 #Region Transactions

@@ -1311,6 +1311,13 @@ Sub pnlCPM_Click
 		If GlobalVar.PumpHouseCode = "" Then
 			Return
 		End If
+		If DBaseFunctions.IsTherePressurePoint(GlobalVar.PumpHouseID) = False Then
+			MyToast.DefaultTextColor = Colors.White
+			MyToast.pnl.Color = GlobalVar.RedColor
+			MyFunctions.MyToastMsg(MyToast, $"No pressure point set for the Selected Pump!"$)
+
+			Return
+		End If
 		StartActivity(actCriticalPoint)
 '	ShowWaterBalance
 	Else

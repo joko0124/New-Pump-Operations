@@ -358,7 +358,6 @@ Sub Globals
 	Dim imeKeyboard As IME
 
 	Private btnLogin As B4XView
-	Private chkShowPass As B4XView
 	Private txtPassword As EditText
 	Private txtUserName As EditText
 	
@@ -387,6 +386,7 @@ Sub Globals
 	Private KVS As KeyValueStore
 	Private pnlSplash As Panel
 
+	Private lblShow As B4XView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -401,13 +401,14 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	txtUserName.Background = CDtxtBox
 	txtPassword.Background = CDtxtBox
-	chkShowPass.Checked = False
 	isChecked = False
 	lblCheck.Text = ""
 	txtPassword.PasswordMode = True
 
 	txtUserName.Text = "arnold.fernandez@bwsi.com.ph"
 	txtPassword.Text = "3923bwsi12"
+	txtUserName.Padding = Array As Int(3dip, 0dip,0dip,0dip)
+	txtPassword.Padding = Array As Int(3dip, 0dip,0dip,0dip)
 	
 	Log(FirstTime)
 	If FirstTime = True Then
@@ -429,7 +430,7 @@ Sub Activity_Create(FirstTime As Boolean)
 
 	imeKeyboard.Initialize("ime")
 	CheckPermissions
-	csAns.Initialize.Bold.Size(16).Color(Colors.White).Append($"YES"$).PopAll
+	csAns.Initialize.Bold.Color(0xFFF5F5DC).Size(16).Append($"YES"$).PopAll
 	
 	KVS.Initialize(File.DirInternal, "operations.dat")
 End Sub
@@ -451,6 +452,7 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean 'Return True to consume the ev
 		MyFunctions.SetSnackBarBackground(snack, GlobalVar.PriColor)
 		MyFunctions.SetSnackBarTextColor(snack, Colors.White)
 		snack.SetAction(csAns)
+		
 		snack.Show
 		Return True
 	Else
@@ -501,16 +503,6 @@ End Sub
 
 Private Sub btnClose_Click()
 	ExitApplication
-End Sub
-
-Sub chkShowPass_CheckedChange(Checked As Boolean)
-	txtPassword.PasswordMode = Checked
-	If Checked = True Then
-		lblCheck.Text = ""
-	Else
-		lblCheck.Text = Chr(0xE5CA)
-	End If
-	isChecked = Checked
 End Sub
 
 Sub btnLogin_Click
@@ -568,14 +560,13 @@ Sub btnLogin_Click
 End Sub
 
 Sub lblCheck_Click
-	If isChecked = False Then
-		isChecked = True
-		lblCheck.Text = ""
-	Else
-		isChecked = False
+	If lblCheck.Text = "" Then
 		lblCheck.Text = Chr(0xE5CA)
+		txtPassword.PasswordMode = False
+	Else
+		lblCheck.Text = ""
+		txtPassword.PasswordMode = True
 	End If
-	chkShowPass_CheckedChange(isChecked)
 End Sub
 
 Sub txtPassword_EnterPressed
@@ -1005,4 +996,22 @@ Private Sub SaveUserToken(sData As String, sUserName As String, sPass As String)
 	End Try
 	Starter.DBCon.EndTransaction
 	Return bRetVal
+End Sub
+
+Sub lblShow_Click
+	lblCheck_Click
+End Sub
+
+Private Sub SetSnackBarActionColor(iColor As Int)
+	Dim p As Panel
+
+	p = snack.View
+	For Each v As View In p.GetAllViewsRecursive
+		If v Is Label Then
+			Dim textv As Label
+			textv = v
+			textv.TextColor = iColor
+			Exit
+		End If
+	Next
 End Sub

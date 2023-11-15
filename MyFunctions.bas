@@ -17,15 +17,58 @@ End Sub
 
 Public Sub SetSnackBarTextColor(pSnack As DSSnackbar, pColor As Int)
 	Dim p As Panel
+	Dim labelList As List
+	labelList.Initialize
+
+
 	p = pSnack.View
+	
+	
+'	For Each v As View In p.GetAllViewsRecursive
+
+'		If v Is Label Then
+'			Dim textv As Label
+''			If v. = "YES" Then
+''				textv = v
+''				textv.TextColor = GlobalVar.PriColor
+''			Else
+'			textv = v
+'			textv.TextColor = pColor
+''			End If
+''			Exit
+'		End If
+'	Next
+
 	For Each v As View In p.GetAllViewsRecursive
 		If v Is Label Then
-			Dim textv As Label
-			textv = v
-			textv.TextColor = pColor
-			Exit
+			labelList.Add(v)
 		End If
 	Next
+
+	' Get the Label views in the layout
+	Dim labelViews As List
+	labelViews = labelList
+
+	' Test each Label
+	LogColor(labelViews.Size,Colors.Yellow)
+	
+	For Each lbl As Label In labelViews
+		Log(lbl.Tag)
+		If lbl.Text = "" Then
+			Log("Action Button")
+			lbl.TextColor = Colors.LightGray
+			lbl.Typeface = Typeface.DEFAULT_BOLD
+			lbl.TextSize = 20
+'			lbl.Color = pColor
+		Else
+			lbl.TextColor = pColor
+'			lbl.TextSize = 20
+
+			' Do something specific for Label 1
+		End If
+		' You can test other properties like lbl.Tag, lbl.TextColor, etc.
+	Next
+
 End Sub
 
 Public Sub FontBit (icon As String, font_size As Float, color As Int, awesome As Boolean) As Bitmap

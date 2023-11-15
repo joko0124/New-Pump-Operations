@@ -50,10 +50,10 @@ public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
-public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actgpmhistory _actgpmhistory = null;
 public bwsi.PumpOperations.actjo _actjo = null;
 public bwsi.PumpOperations.actjoaccomplishedsas _actjoaccomplishedsas = null;
@@ -446,17 +446,17 @@ _sdklevel = (int)(BA.ObjectToNumber(_jo.RunMethod("getTargetSDK",(Object[])(__c.
  //BA.debugLineNum = 53;BA.debugLine="If SdkLevel < 23 Then";
 if (_sdklevel<23) { 
  //BA.debugLineNum = 54;BA.debugLine="Log(\"support sOld\")";
-__c.LogImpl("888014861","support sOld",0);
+__c.LogImpl("788277005","support sOld",0);
  //BA.debugLineNum = 55;BA.debugLine="SupportLevel = S_OLD";
 _supportlevel = _s_old;
  }else if(_sdklevel>=26) { 
  //BA.debugLineNum = 57;BA.debugLine="Log(\"support sChannel \" & ChannelId & \" \" & Chan";
-__c.LogImpl("888014864","support sChannel "+_channelid+" "+BA.ObjectToString(_channelname),0);
+__c.LogImpl("788277008","support sChannel "+_channelid+" "+BA.ObjectToString(_channelname),0);
  //BA.debugLineNum = 58;BA.debugLine="SupportLevel = S_CHANNEL";
 _supportlevel = _s_channel;
  }else {
  //BA.debugLineNum = 60;BA.debugLine="Log(\"support sBuilder\")";
-__c.LogImpl("888014867","support sBuilder",0);
+__c.LogImpl("788277011","support sBuilder",0);
  //BA.debugLineNum = 61;BA.debugLine="SupportLevel = S_BUILDER";
 _supportlevel = _s_builder;
  };

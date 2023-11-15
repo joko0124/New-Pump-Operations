@@ -962,11 +962,11 @@ _isecs1 = (double)(Double.parseDouble(_matcher1.Group((int) (2))));
  //BA.debugLineNum = 446;BA.debugLine="iMilSecs1 = Matcher1.Group(3)/100";
 _imilsecs1 = (double)(Double.parseDouble(_matcher1.Group((int) (3))))/(double)100;
  //BA.debugLineNum = 448;BA.debugLine="LogColor($\"Minutes : \"$ & iMins1, Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952276",("Minutes : ")+BA.NumberToString(_imins1),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("721757972",("Minutes : ")+BA.NumberToString(_imins1),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 449;BA.debugLine="LogColor($\"Seconds : \"$ & iSecs1, Colors.Magent";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952277",("Seconds : ")+BA.NumberToString(_isecs1),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("721757973",("Seconds : ")+BA.NumberToString(_isecs1),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 450;BA.debugLine="LogColor($\"Milliseconds : \"$ & iMilSecs1, Color";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952278",("Milliseconds : ")+BA.NumberToString(_imilsecs1),anywheresoftware.b4a.keywords.Common.Colors.Green);
+anywheresoftware.b4a.keywords.Common.LogImpl("721757974",("Milliseconds : ")+BA.NumberToString(_imilsecs1),anywheresoftware.b4a.keywords.Common.Colors.Green);
  //BA.debugLineNum = 452;BA.debugLine="If iMins1 > 1 Then";
 if (_imins1>1) { 
  //BA.debugLineNum = 453;BA.debugLine="dTry1 = (iMins1 * 60) + iSecs1 + iMilSecs1";
@@ -993,11 +993,11 @@ _isecs2 = (double)(Double.parseDouble(_matcher2.Group((int) (2))));
  //BA.debugLineNum = 468;BA.debugLine="iMilSecs2 = Matcher2.Group(3)/100";
 _imilsecs2 = (double)(Double.parseDouble(_matcher2.Group((int) (3))))/(double)100;
  //BA.debugLineNum = 470;BA.debugLine="LogColor($\"Minutes : \"$ & iMins2, Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952298",("Minutes : ")+BA.NumberToString(_imins2),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("721757994",("Minutes : ")+BA.NumberToString(_imins2),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 471;BA.debugLine="LogColor($\"Seconds : \"$ & iSecs2, Colors.Magent";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952299",("Seconds : ")+BA.NumberToString(_isecs2),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("721757995",("Seconds : ")+BA.NumberToString(_isecs2),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 472;BA.debugLine="LogColor($\"Milliseconds : \"$ & iMilSecs2, Color";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952300",("Milliseconds : ")+BA.NumberToString(_imilsecs2),anywheresoftware.b4a.keywords.Common.Colors.Green);
+anywheresoftware.b4a.keywords.Common.LogImpl("721757996",("Milliseconds : ")+BA.NumberToString(_imilsecs2),anywheresoftware.b4a.keywords.Common.Colors.Green);
  //BA.debugLineNum = 474;BA.debugLine="If iMins2 > 1 Then";
 if (_imins2>1) { 
  //BA.debugLineNum = 475;BA.debugLine="dTry2 = (iMins2 * 60) + iSecs2 + iMilSecs2";
@@ -1024,11 +1024,11 @@ _isecs3 = (double)(Double.parseDouble(_matcher3.Group((int) (2))));
  //BA.debugLineNum = 490;BA.debugLine="iMilSecs3 = Matcher3.Group(3)/100";
 _imilsecs3 = (double)(Double.parseDouble(_matcher3.Group((int) (3))))/(double)100;
  //BA.debugLineNum = 492;BA.debugLine="LogColor($\"Minutes : \"$ & iMins3, Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952320",("Minutes : ")+BA.NumberToString(_imins3),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("721758016",("Minutes : ")+BA.NumberToString(_imins3),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 493;BA.debugLine="LogColor($\"Seconds : \"$ & iSecs3, Colors.Magent";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952321",("Seconds : ")+BA.NumberToString(_isecs3),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("721758017",("Seconds : ")+BA.NumberToString(_isecs3),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 494;BA.debugLine="LogColor($\"Milliseconds : \"$ & iMilSecs3, Color";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952322",("Milliseconds : ")+BA.NumberToString(_imilsecs3),anywheresoftware.b4a.keywords.Common.Colors.Green);
+anywheresoftware.b4a.keywords.Common.LogImpl("721758018",("Milliseconds : ")+BA.NumberToString(_imilsecs3),anywheresoftware.b4a.keywords.Common.Colors.Green);
  //BA.debugLineNum = 496;BA.debugLine="If iMins3 > 1 Then";
 if (_imins3>1) { 
  //BA.debugLineNum = 497;BA.debugLine="dTry3 = (iMins3 * 60) + iSecs3 + iMilSecs3";
@@ -1043,7 +1043,7 @@ _dtry3 = _isecs3+_imilsecs3;
 _dtry3 = mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvvvv6(mostCurrent._txttry3.getText());
  };
  //BA.debugLineNum = 506;BA.debugLine="LogColor($\"Try 1: \"$ & dTry1 & $\" Try 2: \"$ & dTr";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952334",("Try 1: ")+BA.NumberToString(_dtry1)+(" Try 2: ")+BA.NumberToString(_dtry2)+(" Try 3: ")+BA.NumberToString(_dtry3),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("721758030",("Try 1: ")+BA.NumberToString(_dtry1)+(" Try 2: ")+BA.NumberToString(_dtry2)+(" Try 3: ")+BA.NumberToString(_dtry3),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 508;BA.debugLine="If cboUOM.SelectedItem = \"Liter (L)\" Then";
 if ((mostCurrent._cbouom.getSelectedItem()).equals("Liter (L)")) { 
  //BA.debugLineNum = 509;BA.debugLine="mass = GlobalVar.SF.Val(txtBucketSize.Text) / 3.";
@@ -1065,13 +1065,13 @@ _totalgpm.Initialize(BA.NumberToString(_dretval));
  //BA.debugLineNum = 522;BA.debugLine="TotalGPM = RoundBD(TotalGPM,2)";
 _totalgpm = _roundbd(_totalgpm,(int) (2));
  //BA.debugLineNum = 524;BA.debugLine="LogColor($\"Average seconds: \"$ & aveSec, Colors.W";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952352",("Average seconds: ")+BA.NumberToString(_avesec),anywheresoftware.b4a.keywords.Common.Colors.White);
+anywheresoftware.b4a.keywords.Common.LogImpl("721758048",("Average seconds: ")+BA.NumberToString(_avesec),anywheresoftware.b4a.keywords.Common.Colors.White);
  //BA.debugLineNum = 525;BA.debugLine="LogColor($\"Hour: \"$ & hr, Colors.Green)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952353",("Hour: ")+BA.NumberToString(_hr),anywheresoftware.b4a.keywords.Common.Colors.Green);
+anywheresoftware.b4a.keywords.Common.LogImpl("721758049",("Hour: ")+BA.NumberToString(_hr),anywheresoftware.b4a.keywords.Common.Colors.Green);
  //BA.debugLineNum = 526;BA.debugLine="LogColor($\"Mass: \"$ & mass, Colors.Magenta)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952354",("Mass: ")+BA.NumberToString(_mass),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("721758050",("Mass: ")+BA.NumberToString(_mass),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 527;BA.debugLine="LogColor($\"Total GPM: \"$ & TotalGPM, Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825952355",("Total GPM: ")+BA.ObjectToString(_totalgpm),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("721758051",("Total GPM: ")+BA.ObjectToString(_totalgpm),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  //BA.debugLineNum = 529;BA.debugLine="Return TotalGPM";
 if (true) return (double)(BA.ObjectToNumber(_totalgpm));
  //BA.debugLineNum = 530;BA.debugLine="End Sub";
@@ -1272,7 +1272,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 422;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 423;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825886747",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("721692443",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1349,7 +1349,7 @@ _iretval = 0;
 try { //BA.debugLineNum = 300;BA.debugLine="Starter.strCriteria = \"SELECT GPMID FROM tblGPMH";
 mostCurrent._starter._strcriteria /*String*/  = "SELECT GPMID FROM tblGPMHistory "+"WHERE PumpID = "+BA.NumberToString(_ipumpid)+" "+"AND TranDate = '"+_strandate+"'";
  //BA.debugLineNum = 303;BA.debugLine="LogColor(Starter.strCriteria, Colors.Blue)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825427974",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Blue);
+anywheresoftware.b4a.keywords.Common.LogImpl("721233670",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Blue);
  //BA.debugLineNum = 305;BA.debugLine="iRetval = Starter.DBCon.ExecQuerySingleResult(St";
 _iretval = (int)(Double.parseDouble(mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQuerySingleResult(mostCurrent._starter._strcriteria /*String*/ )));
  } 
@@ -1357,7 +1357,7 @@ _iretval = (int)(Double.parseDouble(mostCurrent._starter._dbcon /*anywheresoftwa
 			processBA.setLastException(e7); //BA.debugLineNum = 307;BA.debugLine="ToastMessageShow($\"Unable to fetch GPM Record ID";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(("Unable to fetch GPM Record ID due to ")+anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage()),anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 308;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825427979",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("721233675",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 309;BA.debugLine="iRetval = 0";
 _iretval = (int) (0);
  };
@@ -1620,7 +1620,7 @@ _blnretval = anywheresoftware.b4a.keywords.Common.True;
 			processBA.setLastException(e50); //BA.debugLineNum = 973;BA.debugLine="blnRetVal = False";
 _blnretval = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 974;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("827787319",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("723593015",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 976;BA.debugLine="Return blnRetVal";
 if (true) return _blnretval;
@@ -1703,7 +1703,7 @@ _bretval = anywheresoftware.b4a.keywords.Common.True;
  } 
        catch (Exception e14) {
 			processBA.setLastException(e14); //BA.debugLineNum = 250;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825296913",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("721102609",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 251;BA.debugLine="bRetVal = False";
 _bretval = anywheresoftware.b4a.keywords.Common.False;
  };
@@ -1890,7 +1890,7 @@ _smin = "";
  //BA.debugLineNum = 649;BA.debugLine="Alert.Initialize.Dismiss2";
 mostCurrent._alert.Initialize().Dismiss2();
  //BA.debugLineNum = 652;BA.debugLine="LogColor($\"Return Value is: \"$ & RetVal, Colors.Y";
-anywheresoftware.b4a.keywords.Common.LogImpl("826476552",("Return Value is: ")+BA.NumberToString(_retval),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("722282248",("Return Value is: ")+BA.NumberToString(_retval),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 654;BA.debugLine="bdTime.Initialize(RetVal)";
 _bdtime.Initialize(BA.NumberToString(_retval));
  //BA.debugLineNum = 655;BA.debugLine="bdTime = RoundBD(bdTime,2)";
@@ -1903,7 +1903,7 @@ mostCurrent._txttry1.setText(BA.ObjectToCharSequence(mostCurrent._sw1.getText())
  //BA.debugLineNum = 661;BA.debugLine="dTime1 =  bdTime";
 _dtime1 = (double)(BA.ObjectToNumber(_bdtime));
  //BA.debugLineNum = 662;BA.debugLine="LogColor($\"1st Try: \"$ & dTime1, Colors.Magenta";
-anywheresoftware.b4a.keywords.Common.LogImpl("826476562",("1st Try: ")+BA.NumberToString(_dtime1),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
+anywheresoftware.b4a.keywords.Common.LogImpl("722282258",("1st Try: ")+BA.NumberToString(_dtime1),anywheresoftware.b4a.keywords.Common.Colors.Magenta);
  //BA.debugLineNum = 663;BA.debugLine="btnShowTimer2.Enabled = True";
 mostCurrent._btnshowtimer2.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  break; }
@@ -1913,7 +1913,7 @@ mostCurrent._txttry2.setText(BA.ObjectToCharSequence(mostCurrent._sw1.getText())
  //BA.debugLineNum = 666;BA.debugLine="dTime2 =  bdTime";
 _dtime2 = (double)(BA.ObjectToNumber(_bdtime));
  //BA.debugLineNum = 667;BA.debugLine="LogColor($\"2nd Try: \"$ & dTime2, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("826476567",("2nd Try: ")+BA.NumberToString(_dtime2),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("722282263",("2nd Try: ")+BA.NumberToString(_dtime2),anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 668;BA.debugLine="btnShowTimer3.Enabled = True";
 mostCurrent._btnshowtimer3.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  break; }
@@ -1923,7 +1923,7 @@ mostCurrent._txttry3.setText(BA.ObjectToCharSequence(mostCurrent._sw1.getText())
  //BA.debugLineNum = 671;BA.debugLine="dTime3 =  bdTime";
 _dtime3 = (double)(BA.ObjectToNumber(_bdtime));
  //BA.debugLineNum = 672;BA.debugLine="LogColor($\"3rd Try: \"$ & dTime3, Colors.Cyan)";
-anywheresoftware.b4a.keywords.Common.LogImpl("826476572",("3rd Try: ")+BA.NumberToString(_dtime3),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
+anywheresoftware.b4a.keywords.Common.LogImpl("722282268",("3rd Try: ")+BA.NumberToString(_dtime3),anywheresoftware.b4a.keywords.Common.Colors.Cyan);
  break; }
 }
 ;
@@ -2060,7 +2060,7 @@ _bretval = anywheresoftware.b4a.keywords.Common.True;
  } 
        catch (Exception e15) {
 			processBA.setLastException(e15); //BA.debugLineNum = 289;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("825362464",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("721168160",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 290;BA.debugLine="bRetVal = False";
 _bretval = anywheresoftware.b4a.keywords.Common.False;
  };

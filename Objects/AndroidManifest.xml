@@ -208,6 +208,13 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
+			android:name=".actgpmcalc"
+			android:label="BWSI Operations"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
 			android:name=".actcriticalpoint"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
@@ -223,13 +230,6 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".actdebugkeyboard"
-			android:label="BWSI Operations"
-			android:screenOrientation="unspecified">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".actgpmcalc"
 			android:label="BWSI Operations"
 			android:screenOrientation="unspecified">
 		</activity>

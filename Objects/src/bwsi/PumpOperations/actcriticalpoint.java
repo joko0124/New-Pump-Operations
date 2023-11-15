@@ -365,9 +365,9 @@ public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
-public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actgpmhistory _actgpmhistory = null;
 public bwsi.PumpOperations.actjo _actjo = null;
 public bwsi.PumpOperations.actjoaccomplishedsas _actjoaccomplishedsas = null;
@@ -528,7 +528,7 @@ bwsi.PumpOperations.actcriticalpoint._pressuredistrecords _rec = null;
  //BA.debugLineNum = 263;BA.debugLine="Dim Rec As PressureDistRecords = Value";
 _rec = (bwsi.PumpOperations.actcriticalpoint._pressuredistrecords)(_value);
  //BA.debugLineNum = 264;BA.debugLine="Log(Rec.ID)";
-anywheresoftware.b4a.keywords.Common.LogImpl("820971522",BA.NumberToString(_rec.ID /*int*/ ),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724641538",BA.NumberToString(_rec.ID /*int*/ ),0);
  //BA.debugLineNum = 265;BA.debugLine="ShowPSIDistRecDetails(Rec.ID)";
 _showpsidistrecdetails(_rec.ID /*int*/ );
  //BA.debugLineNum = 266;BA.debugLine="GlobalVar.PSIDistDetailID = Rec.ID";
@@ -618,7 +618,7 @@ _pcount = 0;
 try { //BA.debugLineNum = 125;BA.debugLine="Starter.strCriteria = \"SELECT * FROM tblPressure";
 mostCurrent._starter._strcriteria /*String*/  = "SELECT * FROM tblPressurePoint "+"WHERE PumpHouseID = "+BA.NumberToString(mostCurrent._globalvar._pumphouseid /*int*/ )+" "+"ORDER BY id ASC";
  //BA.debugLineNum = 129;BA.debugLine="LogColor(Starter.strCriteria, Colors.Blue)";
-anywheresoftware.b4a.keywords.Common.LogImpl("820578321",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Blue);
+anywheresoftware.b4a.keywords.Common.LogImpl("724248337",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Blue);
  //BA.debugLineNum = 131;BA.debugLine="rsPoint =  Starter.DBCon.ExecQuery (Starter.strC";
 _rspoint = (anywheresoftware.b4a.sql.SQL.CursorWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.CursorWrapper(), (android.database.Cursor)(mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery(mostCurrent._starter._strcriteria /*String*/ )));
  //BA.debugLineNum = 132;BA.debugLine="If rsPoint.RowCount > 0 Then";
@@ -695,7 +695,7 @@ return "";
 public static String  _filterby_itemclicked(de.amberhome.objects.appcompat.ACMenuItemWrapper _item) throws Exception{
  //BA.debugLineNum = 169;BA.debugLine="Sub FilterBy_ItemClicked (Item As ACMenuItem)";
  //BA.debugLineNum = 170;BA.debugLine="Log(\"Popupmenu Item clicked: \" & Item.Id & \" - \"";
-anywheresoftware.b4a.keywords.Common.LogImpl("820774913","Popupmenu Item clicked: "+BA.NumberToString(_item.getId())+" - "+_item.getTitle(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724444929","Popupmenu Item clicked: "+BA.NumberToString(_item.getId())+" - "+_item.getTitle(),0);
  //BA.debugLineNum = 171;BA.debugLine="Select Case Item.Id";
 switch (BA.switchObjectToInt(_item.getId(),(int) (0))) {
 case 0: {
@@ -851,7 +851,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 373;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 374;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("821233701",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724903717",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 13:
@@ -859,7 +859,7 @@ case 13:
 this.state = 16;
 ;
  //BA.debugLineNum = 377;BA.debugLine="Log($\"List of Time Records = ${NumberFormat2((Da";
-anywheresoftware.b4a.keywords.Common.LogImpl("821233704",("List of Time Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvlist._getsize()))+" PSI Distribution Records."),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724903720",("List of Time Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvlist._getsize()))+" PSI Distribution Records."),0);
  if (true) break;
 
 case 15:
@@ -875,7 +875,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 383;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 384;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("821233711",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724903727",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1038,7 +1038,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 218;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 219;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("820840484",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724510500",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 13:
@@ -1046,7 +1046,7 @@ case 13:
 this.state = 16;
 ;
  //BA.debugLineNum = 222;BA.debugLine="Log($\"List of Time Records = ${NumberFormat2((Da";
-anywheresoftware.b4a.keywords.Common.LogImpl("820840487",("List of Time Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvlist._getsize()))+" PSI Distribution Records."),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724510503",("List of Time Records = "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(anywheresoftware.b4a.keywords.Common.NumberFormat2((anywheresoftware.b4a.keywords.Common.DateTime.getNow()-_starttime)/(double)1000,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)))+" seconds to populate "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(parent.mostCurrent._clvlist._getsize()))+" PSI Distribution Records."),0);
  if (true) break;
 
 case 15:
@@ -1062,7 +1062,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 228;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 229;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("820840494",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724510510",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1240,7 +1240,7 @@ parent.mostCurrent._myfunctions._setsnackbarbackground /*String*/ (mostCurrent.a
  //BA.debugLineNum = 298;BA.debugLine="snack.Show";
 parent.mostCurrent._snack.Show();
  //BA.debugLineNum = 299;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("821037086",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("724707102",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 
 case 6:

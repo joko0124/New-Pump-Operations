@@ -41,10 +41,10 @@ public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
-public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actgpmhistory _actgpmhistory = null;
 public bwsi.PumpOperations.actjo _actjo = null;
 public bwsi.PumpOperations.actjoaccomplishedsas _actjoaccomplishedsas = null;
@@ -229,7 +229,7 @@ String _s = "";
  //BA.debugLineNum = 154;BA.debugLine="Dim s As String = $\"Error (position - ${Start}):";
 _s = ("Error (position - "+__c.SmartStringFormatter("",(Object)(_start))+"): "+__c.SmartStringFormatter("",(Object)(_msg))+"");
  //BA.debugLineNum = 156;BA.debugLine="LogColor(s, Colors.Red)";
-__c.LogImpl("9123207683",_s,__c.Colors.Red);
+__c.LogImpl("9123469827",_s,__c.Colors.Red);
  //BA.debugLineNum = 160;BA.debugLine="ErrorString.Append(s).Append(CRLF)";
 _errorstring.Append(_s).Append(__c.CRLF);
  //BA.debugLineNum = 161;BA.debugLine="End Sub";
@@ -975,7 +975,7 @@ _name = BA.ObjectToString(_tag.Extra /*anywheresoftware.b4a.objects.collections.
  //BA.debugLineNum = 249;BA.debugLine="If mTextEngine.CustomFonts.ContainsKey(name) =";
 if (_mtextengine._customfonts /*anywheresoftware.b4a.objects.collections.Map*/ .ContainsKey((Object)(_name))==__c.False) { 
  //BA.debugLineNum = 250;BA.debugLine="Log(\"Font missing from TextEngine.CustomFonts";
-__c.LogImpl("9123469884","Font missing from TextEngine.CustomFonts: "+_name,0);
+__c.LogImpl("9123732028","Font missing from TextEngine.CustomFonts: "+_name,0);
  }else {
  //BA.debugLineNum = 252;BA.debugLine="Dim NewFont As B4XFont =  mTextEngine.CustomF";
 _newfont = (anywheresoftware.b4a.objects.B4XViewWrapper.B4XFont)(_mtextengine._customfonts /*anywheresoftware.b4a.objects.collections.Map*/ .Get((Object)(_name)));

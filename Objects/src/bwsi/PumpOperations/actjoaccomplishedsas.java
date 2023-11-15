@@ -362,10 +362,10 @@ public bwsi.PumpOperations.actnewproduction _actnewproduction = null;
 public bwsi.PumpOperations.mainscreen _mainscreen = null;
 public bwsi.PumpOperations.actcmjofindings _actcmjofindings = null;
 public bwsi.PumpOperations.actdccrjofindings _actdccrjofindings = null;
+public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actcriticalpoint _actcriticalpoint = null;
 public bwsi.PumpOperations.actdcdajofindings _actdcdajofindings = null;
 public bwsi.PumpOperations.actdebugkeyboard _actdebugkeyboard = null;
-public bwsi.PumpOperations.actgpmcalc _actgpmcalc = null;
 public bwsi.PumpOperations.actgpmhistory _actgpmhistory = null;
 public bwsi.PumpOperations.actjo _actjo = null;
 public bwsi.PumpOperations.actjodetails _actjodetails = null;
@@ -516,7 +516,7 @@ _splumbersid = "";
 try { //BA.debugLineNum = 117;BA.debugLine="Starter.strCriteria = \"SELECT JOs.JOCatCode, JOs";
 mostCurrent._starter._strcriteria /*String*/  = "SELECT JOs.JOCatCode, JOs.JoDesc, JOs.JONo, JOs.RefNo, JOs.CustName, JOs.CustAddress, "+"Findings.AcctClass || ' - ' || Findings.AcctSubClass As AcctClassification, Findings.ConType, Findings.Remarks, "+"JOs.DateStarted, JOs.DateFinished, JOs.AccomplishedBy, constant_con_types.ConTypeDesc "+"FROM tblJOs As JOs "+"INNER JOIN tblJOSASFindings AS Findings ON JOs.JOID = Findings.JOID "+"INNER JOIN constant_con_types ON Findings.ConType = constant_con_types.id "+"WHERE Findings.JOID = "+BA.NumberToString(_ijoid);
  //BA.debugLineNum = 124;BA.debugLine="LogColor(Starter.strCriteria, Colors.Yellow)";
-anywheresoftware.b4a.keywords.Common.LogImpl("831588363",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
+anywheresoftware.b4a.keywords.Common.LogImpl("731850507",mostCurrent._starter._strcriteria /*String*/ ,anywheresoftware.b4a.keywords.Common.Colors.Yellow);
  //BA.debugLineNum = 126;BA.debugLine="RSJOSASDetails = Starter.DBCon.ExecQuery(Starter";
 _rsjosasdetails = (anywheresoftware.b4a.sql.SQL.CursorWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.CursorWrapper(), (android.database.Cursor)(mostCurrent._starter._dbcon /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery(mostCurrent._starter._strcriteria /*String*/ )));
  //BA.debugLineNum = 128;BA.debugLine="If RSJOSASDetails.RowCount > 0 Then";
@@ -551,14 +551,14 @@ _splumbersid = _rsjosasdetails.GetString("AccomplishedBy");
 mostCurrent._lblaccomplishedby.setText(BA.ObjectToCharSequence(mostCurrent._globalvar._sf /*adr.stringfunctions.stringfunctions*/ ._vvvvvvv5(mostCurrent._dbasefunctions._getplumbernames /*String*/ (mostCurrent.activityBA,_splumbersid))));
  }else {
  //BA.debugLineNum = 146;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("831588385",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("731850529",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 147;BA.debugLine="Return";
 if (true) return "";
  };
  } 
        catch (Exception e27) {
 			processBA.setLastException(e27); //BA.debugLineNum = 151;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("831588390",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("731850534",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 153;BA.debugLine="RSJOSASDetails.Close";
 _rsjosasdetails.Close();
